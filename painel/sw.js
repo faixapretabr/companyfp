@@ -1,6 +1,6 @@
 /* PAINEL FP — service worker. Troque a versão a cada publicação. */
-const V = 'painel-fp-v16';
-const SHELL = ['./', 'index.html', 'css/app.css?v=14', 'js/app.js?v=14','js/db.js?v=14','js/data.js?v=14', 'manifest.json', 'escritorio.html', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png', 'icons/logo-96.png'];
+const V = 'painel-fp-v17';
+const SHELL = ['./', 'index.html', 'css/app.css?v=16', 'js/app.js?v=16','js/db.js?v=16','js/data.js?v=16', 'manifest.json', 'escritorio.html', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png', 'icons/logo-96.png'];
 
 self.addEventListener('install', e => e.waitUntil(caches.open(V).then(c => c.addAll(SHELL))));
 

@@ -119,6 +119,21 @@
   loadStatus();
   setInterval(function () { if (!document.hidden) loadStatus(); }, 60000);
 
+  /* ---------- instalar o app ---------- */
+  var deferredPrompt = null;
+  var standalone = window.matchMedia && matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); deferredPrompt = e; $('inst').hidden = false;
+  });
+  window.addEventListener('appinstalled', function () { deferredPrompt = null; $('inst').hidden = true; $('ios-tip').hidden = true; });
+  if (!standalone && /iphone|ipad|ipod/i.test(navigator.userAgent)) $('ios-tip').hidden = false;
+  $('inst').addEventListener('click', function (e) {
+    e.preventDefault();
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.finally(function () { deferredPrompt = null; $('inst').hidden = true; });
+  });
+
   /* ---------- rede e atualização ---------- */
   function net() { $('off').hidden = navigator.onLine !== false; }
   window.addEventListener('online', net); window.addEventListener('offline', net);
