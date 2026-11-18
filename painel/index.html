@@ -14,7 +14,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@700&display=swap">
-<link rel="stylesheet" href="css/app.css?v=16">
+<link rel="stylesheet" href="css/app.css?v=19">
 </head>
 <body>
 <a class="skip" href="#main">Pular para o conteúdo</a>
@@ -66,15 +66,14 @@
   <div class="hd">
     <div class="lb">Escritório</div>
     <h1 tabindex="-1">Escritório</h1>
-    <p>A equipe nas mesas, com o status de cada um.</p>
+    <p>Os agentes por departamento, com o status de cada um.</p>
     
   </div>
-  <div class="stage"><svg id="sc" viewBox="0 0 300 220" role="img" aria-label="Escritório isométrico em pixel com sete mesas"></svg></div>
   <div>
-    <div class="lb">Status da equipe</div>
+    <div class="lb">Status dos agentes</div>
     <div class="list" id="ag" aria-live="polite"></div>
   </div>
-  <p class="src">Os status vêm do banco (tabela status), com o tempo da última atualização ao lado. Quem nunca registrou aparece como "sem sinal".</p>
+  <p class="src">O status vem do banco, com o tempo da última atualização ao lado. Agente que nunca registrou aparece como "sem sinal".</p>
 </section>
 
 <!-- GERÊNCIA -->
@@ -100,14 +99,13 @@
     <div class="go lb">↓ chat</div>
     <div><b class="lb who">Cláudio (Claude) · head</b>Lidera a operação, consolida pendências, redige procedimentos e aciona o Osvaldo.</div>
     <div class="go lb">↓ e-mail com a palavra-chave</div>
-    <div><b class="lb who">Osvaldo (Instinct) · coordenação</b>Executa o que o Cláudio solicitar e coordena o time. Cria e guarda chaves no cofre.</div>
+    <div><b class="lb who">Osvaldo (Instinct) · G01 Gestão Geral</b>Executa o que o Cláudio solicitar e coordena os agentes. Cria e guarda chaves no cofre.</div>
     <div class="go lb">↓ campainha ou Slack</div>
   </div>
   <div class="cards">
-    <div class="cd"><div class="lb">Produto</div><h3>Vicente</h3><ul><li>Desenvolve os produtos do catálogo</li><li>Modelagem 3D e arquivos de malha</li></ul><p class="src">Entrega: modelo pronto para imprimir.</p></div>
-    <div class="cd"><div class="lb">Tecnologia</div><h3>Dante</h3><ul><li>Loja, sistemas e ferramentas</li><li>Revisão técnica e verificações em leitura</li></ul><p class="src">Entrega: parecer e roteiro pronto.</p></div>
-    <div class="cd"><div class="lb">Marca</div><h3>Helena</h3><ul><li>Estratégia de marketing</li><li>Design e identidade visual</li></ul><p class="src">Entrega: peças e plano de campanha.</p></div>
-    <div class="cd"><div class="lb">Conteúdo</div><h3>Severino (Meta AI)</h3><ul><li>Produção de mídia e legendas</li><li>Estudo das redes sociais</li></ul><p class="src">Entrega: rascunho para aprovação.</p></div>
+    <div class="cd"><div class="lb">Marketing · M01 a M04</div><h3>Marca e conteúdo</h3><ul><li>M01 estratégia e identidade (Helena)</li><li>M02 conteúdo e criação (Severino)</li><li>M03 tráfego pago, M04 relacionamento</li></ul><p class="src">Entrega: peças, plano e campanha.</p></div>
+    <div class="cd"><div class="lb">Operação · O01 a O04</div><h3>Pedido a pós-venda</h3><ul><li>O01 atendimento, O02 pedido e entrega</li><li>O03 insumo e estoque, O04 caixa e MEI</li></ul><p class="src">Entrega: pedido pronto, estoque e caixa em dia.</p></div>
+    <div class="cd"><div class="lb">Inteligência · I01 a I08</div><h3>Competitiva</h3><ul><li>I01 a I06 pesquisam concorrente, demanda, oferta, preço, fornecedor e produto</li><li>I07 confere legalidade, I08 coordena</li></ul><p class="src">Entrega: oportunidade com dono e prazo.</p></div>
   </div>
 
   <div class="blk sec"><h2>Regras de trabalho</h2></div>
@@ -151,7 +149,7 @@
     <p>Lista da operação com responsável, status e prazo.</p>
   </div>
   <form class="fm" id="tf-new"><div class="lb">Nova tarefa</div>
-    <input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><select name="dono" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>Vicente</option><option>Dante</option><option>Helena</option><option>Severino</option></select><label class="lb">Prazo<input name="prazo" type="date"></label>
+    <input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><select name="dono" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<input name="prazo" type="date"></label>
     <button class="btn" type="submit" aria-label="Adicionar" title="Adicionar">＋</button><p class="msg src" role="status"></p></form>
   <div class="qf" id="tf-filas" aria-label="Filas por responsável"></div>
   <div id="tf-list" class="list" aria-live="polite"><p class="src">Carregando…</p></div>
@@ -166,7 +164,7 @@
   </div>
   <form class="fm" id="ov-new"><div class="lb">Novo registro</div>
     <select name="tipo"><option value="ideia">Ideia</option><option value="auditoria">Auditoria</option><option value="reclamacao">Reclamação</option></select>
-    <textarea name="texto" required rows="3" maxlength="1500" placeholder="Descreva"></textarea><input name="autor" maxlength="40" placeholder="Quem registra"><select name="responsavel" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>Vicente</option><option>Dante</option><option>Helena</option><option>Severino</option></select>
+    <textarea name="texto" required rows="3" maxlength="1500" placeholder="Descreva"></textarea><input name="autor" maxlength="40" placeholder="Quem registra"><select name="responsavel" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select>
     <button class="btn" type="submit" aria-label="Enviar" title="Enviar">➤</button><p class="msg src" role="status"></p></form>
   <div id="ov-list" class="list" aria-live="polite"><p class="src">Carregando…</p></div>
 </section>
@@ -231,8 +229,8 @@
   <label class="lb">E-mail<input name="email" type="email" autocomplete="username" required></label>
   <label class="lb">Senha<input name="password" type="password" autocomplete="current-password" required></label>
   <button class="btn" type="submit" aria-label="Entrar" title="Entrar">→</button><p class="msg src" id="lg-m" role="alert"></p></form></div>
-<script src="js/db.js?v=16"></script>
-<script src="js/app.js?v=16"></script>
-<script src="js/data.js?v=16"></script>
+<script src="js/db.js?v=19"></script>
+<script src="js/app.js?v=19"></script>
+<script src="js/data.js?v=19"></script>
 </body>
 </html>

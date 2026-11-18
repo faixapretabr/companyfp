@@ -6,14 +6,12 @@
   /* ---------- dados ---------- */
   var ROUTES = { inicio: 'Painel', escritorio: 'Escritório', decidir: 'Decidir', produtos: 'Produtos', tarefas: 'Tarefas', ouvidoria: 'Ouvidoria', links: 'Links úteis' };
   var STATUS = { 'sem-sinal': 'Sem sinal', trabalhando: 'Trabalhando', aguardando: 'Aguardando', parado: 'Parado' };
-  var TEAM = [ /* x,y em ladrilhos: liderança na diagonal central, time nas laterais */
-    { id: 'joao', nome: 'João', area: 'Titular', x: 0.7, y: 1.5, w: 1.6 },
-    { id: 'claudio', nome: 'Cláudio', area: 'Head', x: 2.8, y: 3.6, w: 1.6 },
-    { id: 'osvaldo', nome: 'Osvaldo', area: 'Coordenação', x: 4.9, y: 5.7, w: 1.6 },
-    { id: 'vicente', nome: 'Vicente', area: 'Produto', x: 0.2, y: 4.6, w: 1.6 },
-    { id: 'dante', nome: 'Dante', area: 'Tecnologia', x: 0.8, y: 6.9, w: 1.6 },
-    { id: 'helena', nome: 'Helena', area: 'Marca', x: 3.8, y: 1, w: 1.6 },
-    { id: 'severino', nome: 'Severino', area: 'Conteúdo', x: 6.2, y: 1.6, w: 1.6 }
+  /* Organograma (DECISOES 9): agentes por código, agrupados por departamento */
+  var DEPS = [
+    { nome: 'Gestão Geral', ag: [['g01', 'Osvaldo · coordenação']] },
+    { nome: 'Marketing', ag: [['m01', 'Estratégia e marca'], ['m02', 'Conteúdo e criação'], ['m03', 'Tráfego pago'], ['m04', 'Relacionamento']] },
+    { nome: 'Operação', ag: [['o01', 'Atendimento'], ['o02', 'Pedido e entrega'], ['o03', 'Insumo e estoque'], ['o04', 'Caixa e MEI']] },
+    { nome: 'Inteligência Competitiva', ag: [['i01', 'Concorrentes'], ['i02', 'Demanda e nichos'], ['i03', 'Ofertas e revenda'], ['i04', 'Preço e frete'], ['i05', 'Fornecedores'], ['i06', 'Produtos de referência'], ['i07', 'Conferência legal'], ['i08', 'Coordenação de I01 a I07']] }
   ];
 
   /* ---------- menu ---------- */
@@ -35,7 +33,7 @@
   /* ---------- rotas ---------- */
   var first = true;
   function route() {
-    var r = (location.hash || '#inicio').slice(1); if (r === 'gerencia') r = 'decidir'; if (r === 'banco') r = 'produtos';
+    var r = (location.hash || (/escritorio\.html$/.test(location.pathname) ? '#escritorio' : '#inicio')).slice(1); if (r === 'gerencia') r = 'decidir'; if (r === 'banco') r = 'produtos';
     if (!ROUTES[r]) r = 'inicio';
     document.querySelectorAll('.pg').forEach(function (s) { s.hidden = s.id !== 'p-' + r; });
     document.querySelectorAll('.drw a,.bn a').forEach(function (a) {
@@ -50,48 +48,26 @@
   }
   window.addEventListener('hashchange', route);
 
-  /* ---------- escritório isométrico ---------- */
-  var TW = 18, TH = 9, OX = 150, OY = 62, N = 8, WALL = 50;
-  function P(x, y, z) { return (OX + (x - y) * TW).toFixed(1) + ',' + (OY + (x + y) * TH - z).toFixed(1); }
-  function poly(pts, cls) { return '<polygon class="' + cls + '" points="' + pts.join(' ') + '"/>'; }
-  function box(x, y, w, d, z0, h) {
-    var z1 = z0 + h;
-    return poly([P(x, y + d, z0), P(x + w, y + d, z0), P(x + w, y + d, z1), P(x, y + d, z1)], 'l') +
-      poly([P(x + w, y, z0), P(x + w, y + d, z0), P(x + w, y + d, z1), P(x + w, y, z1)], 'r') +
-      poly([P(x, y, z1), P(x + w, y, z1), P(x + w, y + d, z1), P(x, y + d, z1)], 'top');
-  }
+  /* ---------- escritório: cartões por departamento ---------- */
   function drawOffice() {
-    var o = poly([P(0, 0, 0), P(N, 0, 0), P(N, 0, WALL), P(0, 0, WALL)], 'wa') +
-      poly([P(0, 0, 0), P(0, N, 0), P(0, N, WALL), P(0, 0, WALL)], 'wb');
-    for (var i = 0; i < N; i++) for (var j = 0; j < N; j++)
-      o += poly([P(i, j, 0), P(i + 1, j, 0), P(i + 1, j + 1, 0), P(i, j + 1, 0)], 't' + ((i + j) % 2));
-    var parts = [], labels = '';
-    TEAM.forEach(function (a) {
-      var cx = a.x + a.w / 2;
-      parts.push({ d: cx + a.y, svg: box(cx - 0.4, a.y - 0.8, 0.8, 0.8, 0, 16) + box(cx - 0.3, a.y - 0.7, 0.6, 0.6, 16, 7) });
-      parts.push({ d: a.x + a.y + a.w + 1, svg: box(a.x, a.y, a.w, 1, 0, 11) });
-      var p = P(cx, a.y - 0.4, 36).split(',');
-      labels += '<text x="' + p[0] + '" y="' + p[1] + '" text-anchor="middle">' + a.nome + '</text>' +
-        '<rect id="lamp-' + a.id + '" data-st="sem-sinal" x="' + (p[0] - 3) + '" y="' + (+p[1] + 3) + '" width="6" height="6"/>';
-    });
-    parts.sort(function (a, b) { return a.d - b.d; });
-    $('sc').innerHTML = o + parts.map(function (p) { return p.svg; }).join('') + labels;
-    $('ag').innerHTML = TEAM.map(function (a) {
-      return '<div class="ag" id="ag-' + a.id + '" data-st="sem-sinal"><div><b>' + a.nome + '</b><div class="lb">' + a.area +
-        '</div></div><span class="st"><span class="dot"></span><span class="tx">' + STATUS['sem-sinal'] + '</span></span></div>';
+    $('ag').innerHTML = DEPS.map(function (d) {
+      return '<div class="dep"><div class="lb">' + d.nome + '</div>' + d.ag.map(function (a) {
+        return '<div class="ag" id="ag-' + a[0] + '" data-st="sem-sinal"><div><b>' + a[0].toUpperCase() + '</b><div class="lb">' + a[1] +
+          '</div></div><span class="st"><span class="dot"></span><span class="tx">' + STATUS['sem-sinal'] + '</span></span></div>';
+      }).join('') + '</div>';
     }).join('');
   }
-  /* ponto de entrada do tempo real: FP.setStatus('dante','trabalhando') */
+  /* ponto de entrada do tempo real: FP.setStatus('m01','trabalhando') */
   function setStatus(id, st) {
     if (!STATUS[st]) return;
-    var row = $('ag-' + id), lamp = $('lamp-' + id);
+    var row = $('ag-' + id);
     if (!row) return;
     row.dataset.st = st; row.querySelector('.tx').textContent = STATUS[st];
-    if (lamp) lamp.dataset.st = st;
   }
   window.FP = { setStatus: setStatus };
 
   /* ---------- status da equipe (banco: pessoas + status, so leitura) ---------- */
+  var ALIAS = { osvaldo: 'g01', helena: 'm01', severino: 'm02' }; /* decisão 9 */
   function normId(n) { return String(n || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
   function quando(ts) {
     if (!ts) return '';
@@ -105,7 +81,7 @@
   function loadStatus() {
     if (!window.FPDB || !FPDB.session()) return;
     Promise.all([FPDB.get('pessoas?select=id,nome'), FPDB.get('status?select=pessoa_id,estado,tarefa,atualizado_em')]).then(function (rr) {
-      var nomes = {}; rr[0].forEach(function (p) { nomes[p.id] = normId(p.nome); });
+      var nomes = {}; rr[0].forEach(function (p) { var m = /\b([gmoi]\d{2})\b/i.exec(p.nome || ''); nomes[p.id] = m ? m[1].toLowerCase() : (ALIAS[normId(p.nome)] || normId(p.nome)); });
       rr[1].forEach(function (st) {
         var id = nomes[st.pessoa_id]; if (!id || !$('ag-' + id)) return;
         setStatus(id, st.estado);
