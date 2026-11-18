@@ -27,4 +27,4 @@ Texto e regra ficam no repositório. Registro vivo (linhas que mudam toda hora) 
 
 ## Pendências de organização
 - `CATALOGO.md` e `manual/` aparecem citados em `DECISOES.md` mas ainda não existem.
-- Ativação dos agentes: por fase, depois. G01 (Osvaldo) ainda sem cartão.
+- Ativação dos agentes: por fase, depois. G, E e P (Osvaldo, Dante, Vicente) já existem fora do repositório e não têm cartão aqui.
