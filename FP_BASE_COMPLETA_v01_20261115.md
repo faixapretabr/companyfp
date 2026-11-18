@@ -5,7 +5,7 @@
 
 ## Para que serve
 
-Uma fonte só, curta e concreta, para qualquer pessoa ou agente (Cláudio, Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Helena, Severino) consultar antes de agir. Se uma informação está aqui, ela vale. Se conflita com um arquivo antigo, vale a daqui.
+Uma fonte só, curta e concreta, para qualquer pessoa ou agente (Cláudio, Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Departamento Marketing, Severino) consultar antes de agir. Se uma informação está aqui, ela vale. Se conflita com um arquivo antigo, vale a daqui.
 
 ## Os 11 arquivos
 
@@ -77,7 +77,7 @@ Meta atual: lançar a Coleção GEN (10 objetos) mirando o **Natal de 2026**. Bl
 1. O Claude (Cláudio) é o head da operação.
 2. O catálogo inicial é fechado: os 10 objetos lançam juntos.
 3. Regra de venda: desenvolver → imprimir protótipo → ajustar → imprimir o piloto. **Só vende com o produto final aprovado na mão**, produzindo sob demanda.
-4. Time: Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Helena e Severino (Meta AI). Bento, Dora e Nilo saíram.
+4. Time: Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Departamento Marketing e Severino (Meta AI). Bento, Dora e Nilo saíram.
 5. Todo material e o painel seguem a identidade da marca (arquivo 02).
 
 ## Quem é quem
@@ -89,7 +89,7 @@ Meta atual: lançar a Coleção GEN (10 objetos) mirando o **Natal de 2026**. Bl
 | **Departamento Gestão** | Instinct | Coordenação. Executa o que o Cláudio pede e coordena o time | Execução, registro, organização de arquivos, chaves no cofre |
 | **Departamento de Produtos** | Instinct | Produto e modelagem 3D (CDP) | STL, prancha, orientação de impressão, correções |
 | **Departamento Ecommerce** | Instinct | Tecnologia e ferramentas (CTO); revisão técnica independente | Painel, loja, domínio, integrações, parecer técnico |
-| **Helena** | Instinct | Marketing e design | Direção de marca, peças, plano de campanha |
+| **Departamento Marketing** | Instinct | Marketing e design | Direção de marca, peças, plano de campanha |
 | **Severino** | Meta AI Plus | Mídia, redes sociais e conteúdo | Legendas, roteiros, posts, vídeos curtos (rascunho para aprovação) |
 
 ## Alçadas: quem pode o quê
@@ -115,7 +115,7 @@ CLÁUDIO
   ↓ e-mail (só e-mail, com a palavra mágica no corpo)
 DEPARTAMENTO GESTÃO
   ↓ campainha do Escritório ou Slack #batepapo-fp
-DEPARTAMENTO DE PRODUTOS · DEPARTAMENTO ECOMMERCE · HELENA · SEVERINO
+DEPARTAMENTO DE PRODUTOS · DEPARTAMENTO ECOMMERCE · DEPARTAMENTO MARKETING · SEVERINO
 ```
 
 - **João ↔ Cláudio:** chat. O João só recebe o que exige decisão dele, na fila de no máximo 3 itens, com a recomendação na frente.
@@ -146,7 +146,7 @@ DEPARTAMENTO DE PRODUTOS · DEPARTAMENTO ECOMMERCE · HELENA · SEVERINO
 
 # FP · 02 · MARCA
 
-> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Helena · Status: VIGENTE
+> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Departamento Marketing · Status: VIGENTE
 > Resume o Manual de identidade visual (15 p.), a Apresentação da marca (12 p.) e o P01 (14/11). Para o logo, use sempre o arquivo vetorial original em 00_MARCA (FP_MARCA_LOGOS_ICONES_v01_20261114.zip).
 
 ## Conceito
@@ -257,14 +257,14 @@ Seis perguntas, uma resposta: sim. Senão, refaz.
 - Os PDFs citam o site **faixapreta.co**; o domínio registrado na Hostinger e já apontado para a Nuvemshop em 14/11 (relato da coordenação) é **faixapreta.shop**. Vale o .shop.
 - Os PDFs chamam o vaso de "Vaso FP08" e mostram "porta-lápis" e "mini gaveta" com medidas antigas (150 × 150 × 20). São imagens conceituais. Código e medida que valem estão no arquivo 04.
 - A coleção agora se chama **GEN** (decisão do João, 15/11). "Coleção 05 – Utilitária" e #Colecao05 estão aposentados.
-- Paleta e tipografia foram conferidas pela Helena contra o Manual (p. 6–7), sem correção. O logo vetorial (zip em 00_MARCA) ainda não foi conferido arquivo a arquivo.
+- Paleta e tipografia foram conferidas pelo Departamento Marketing contra o Manual (p. 6–7), sem correção. O logo vetorial (zip em 00_MARCA) ainda não foi conferido arquivo a arquivo.
 
 
 ---
 
 # FP · 03 · CONTEÚDO E LANÇAMENTO
 
-> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Helena (direção) e Severino (produção) · Status: VIGENTE
+> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Departamento Marketing (direção) e Severino (produção) · Status: VIGENTE
 > Resume o Guia de conteúdo e lançamento (Documento 03, 10 p.) e o P05 (14/11). Visual segue o arquivo 02.
 
 ## Regra de ouro: 80 / 20 / 0
@@ -301,7 +301,7 @@ Vídeo "como funciona": **só depois de 30 dias do lançamento** (1 vídeo).
 
 ## Fluxo de uma peça
 
-1. Helena define a direção (objetivo, produto, mensagem).
+1. Departamento Marketing define a direção (objetivo, produto, mensagem).
 2. Severino produz o rascunho.
 3. Checklist "antes de postar" (abaixo) + checklist de marca (arquivo 02).
 4. Cláudio aprova e libera a publicação.
@@ -324,7 +324,7 @@ Vídeo "como funciona": **só depois de 30 dias do lançamento** (1 vídeo).
 5. CTA — Ver coleção → link na bio. Qual desses você colocaria na sua mesa? *(suspenso até a loja publicar)*
 
 **Bio sugerida:** Objetos do cotidiano. Design funcional. Nada é só o que parece. *(O "↓ Ver coleção" volta quando a loja abrir.)*
-**Hashtags:** #FaixaPreta #NadaESoOQueParece #DesignFuncional #ObjetosDoCotidiano (#Colecao05 aposentada; hashtag da Coleção GEN a definir pela Helena).
+**Hashtags:** #FaixaPreta #NadaESoOQueParece #DesignFuncional #ObjetosDoCotidiano (#Colecao05 aposentada; hashtag da Coleção GEN a definir pelo Departamento Marketing).
 
 ## Calendário de lançamento (7 dias)
 
@@ -351,7 +351,7 @@ Dia 30+: 1 vídeo "como funciona".
 
 Seis sim → pode postar.
 
-## Estado do conteúdo (relato da Helena, 15/11)
+## Estado do conteúdo (relato do Departamento Marketing, 15/11)
 
 - 4 posts com texto e proposta entregues (v07). Post 2: montagem de 13 s em revisão. Posts 1, 3 e 4: sem criativo final.
 - Série em vídeo: v02 + 1 curto entregues; os 3 episódios não estão finalizados.
@@ -492,7 +492,7 @@ Os rodapés internos desses objetos se contradizem ("Revisão Departamento Ecomm
 | **E4 Protótipo** | Departamento de Produtos fatia e simula a peça inteira e mostra resultado, configurações e riscos. João aprova a simulação e imprime (na máquina própria ou no fornecedor). | Departamento de Produtos, João | Protótipo impresso |
 | **E5 Teste e ajuste** | João testa: encaixes e folgas, funcionamento, resistência, estabilidade, montagem, remoção de suporte, acabamento. Problema → Departamento de Produtos corrige → volta à E4. | João testa; Departamento de Produtos corrige | Lista de ajustes zerada |
 | **E6 Piloto aprovado** | Impressão da versão final. João aprova na mão. Registra peso real, medidas físicas, material, cor, tempo de impressão. | João aprova | **Produto validado** |
-| **E7 Pronto para vender** | Fotos reais, preço, cadastro na loja, texto. Produção sob demanda a partir daqui. | Helena/Severino (foto e texto), Departamento Ecommerce (loja), João (preço) | Produto publicado |
+| **E7 Pronto para vender** | Fotos reais, preço, cadastro na loja, texto. Produção sob demanda a partir daqui. | Departamento Marketing/Severino (foto e texto), Departamento Ecommerce (loja), João (preço) | Produto publicado |
 
 **Parada do João:** E1 (arquitetura), E4 (simulação antes de imprimir) e E6 (aprovação final). Impressão e compra de material sempre com autorização do João.
 
@@ -761,7 +761,7 @@ Google Drive e Gmail (conta da FP), Slack (#batepapo-fp), Cloudflare (Worker e P
 # FP · 09 · DECISÕES E PENDÊNCIAS
 
 > Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Cláudio · Status: VIGENTE
-> Arquivo vivo. Toda decisão nova entra aqui com data e quem decidiu. Pendência resolvida sai da lista e vira decisão. Revisado com o time (Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Helena) em 15/11.
+> Arquivo vivo. Toda decisão nova entra aqui com data e quem decidiu. Pendência resolvida sai da lista e vira decisão. Revisado com o time (Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Departamento Marketing) em 15/11.
 
 ## Fila do João (máx. 3, recomendação na frente)
 
@@ -793,7 +793,7 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 | 15/11 | Claude (Cláudio) é o head da Faixa Preta | João |
 | 15/11 | Catálogo fechado: os 10 objetos lançam juntos | João |
 | 15/11 | Regra de venda: protótipo → ajuste → piloto aprovado na mão → venda sob demanda | João |
-| 15/11 | Time: Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Helena, Severino. Bento, Dora e Nilo saem | João |
+| 15/11 | Time: Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Departamento Marketing, Severino. Bento, Dora e Nilo saem | João |
 | 15/11 | Cláudio ↔ Departamento Gestão só por e-mail, com palavra mágica; conferência a cada 30 min; pedido com prazo | João |
 | 15/11 08h15 | Cada membro posta o próprio status no Escritório LIVE, com chave pessoal entregue pelo cofre | João |
 | 15/11 08h17 | A palavra do Cláudio vale como a do João (inclui publicação). Gasto, primeiro login, senhas e CPF continuam só com o João. Impressão e compra com o João | João |
@@ -817,7 +817,7 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 - Preço; política de troca, cancelamento e arrependimento; publicar a política v03.
 - WhatsApp comercial (número e autorização de criação).
 - Autorizar o cadastro do Mercado Livre (PF); verificação no TikTok Shop.
-- Verba de mídia paga (proposta da Helena: R$ 490 por 7 dias). Nada ativado.
+- Verba de mídia paga (proposta do Departamento Marketing: R$ 490 por 7 dias). Nada ativado.
 - Acesso do João Victor à pasta "Faixa Preta - 10 objetos".
 - Pasta "Faixa Preta - Documentação oficial" no seu Drive pessoal (3 PDFs + 8 DOCX): passa a ser histórico, já que esta base a substitui.
 - Impressora: confirmar se há A1 mini própria ou se a produção fica no fornecedor.
@@ -834,7 +834,7 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 - Conferir o estado atual do DNS do faixapreta.shop.
 - Parecer identificado de [05], [06] e [10], se for usado.
 
-**Helena**
+**Departamento Marketing**
 - Conferir o logo vetorial (zip em 00_MARCA).
 - Hashtag da Coleção GEN.
 - Fechar criativos dos posts 1, 3 e 4 e a montagem do post 2.
@@ -855,14 +855,14 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 | 2 | PDFs da marca citam **faixapreta.co**; o domínio registrado e apontado é **faixapreta.shop** | Vale faixapreta.shop |
 | 3 | Lista Real v17 aponta versões antigas de [01], [02], [03] | **Resolvido:** v07-2p, LEVE e B150 (decisões de 14/11 à tarde) |
 | 4 | Rodapés de [05], [06], [10]: "PENDENTE" x "CONFEREM" | **Resolvido:** vale "pendente de comprovação" |
-| 5 | P05 a P08 e a Helena citam publicação reservada ao titular | **Superado** pela regra de 15/11 08h17: a palavra do Cláudio vale como a do João, inclusive para publicar. Gasto continua só com o João |
+| 5 | P05 a P08 e o Departamento Marketing citam publicação reservada ao titular | **Superado** pela regra de 15/11 08h17: a palavra do Cláudio vale como a do João, inclusive para publicar. Gasto continua só com o João |
 | 6 | P03 assume só fabricação por terceiros | Arquivo 05: máquina própria ou fornecedor, escolha do João |
 | 7 | P04 cita "lista real v19"; o último arquivo no Drive é a v17; o Departamento de Produtos cita "pacote v21" | Vale esta base. Listas não serão mais reemitidas |
 | 8 | Manual chama o vaso de "FP08"; no catálogo, FP-008 é o Powerbank | Vale o arquivo 04 (vaso = FP-003) |
 | 9 | Manual mostra a gaveta com 150 × 150 × 20 mm | Imagem conceitual. Vale o arquivo 04 |
 | 10 | Autores antigos (Bento, Dora, Nilo) assinam arquivos | Saíram do time; arquivos ficam como histórico |
 | 11 | P05 cita a pasta "Faixa Preta - Documentação oficial" | Existe no Drive pessoal do João, fora da conta da FP. Vira histórico |
-| 12 | Um resumo de 15/11 chama o Departamento Gestão de "CMO" | Departamento Gestão = coordenação; marketing = Helena |
+| 12 | Um resumo de 15/11 chama o Departamento Gestão de "CMO" | Departamento Gestão = coordenação; marketing = Departamento Marketing |
 | 13 | "Coleção 05 – Utilitária" nos PDFs | Coleção GEN (15/11) |
 
 
