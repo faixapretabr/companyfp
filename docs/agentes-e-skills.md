@@ -12,7 +12,7 @@ A operação da Faixa Preta é tocada por uma equipe de agentes, liderada pelo C
 Ferramentas de IA da equipe:
 
 - **Claude**: Cláudio, head da operação.
-- **Instinct (beta, sem limite)**: Osvaldo, coordenador do time de agentes independentes.
+- **Instinct (beta, sem limite)**: Departamento Gestão, coordenador do time de agentes independentes.
 - **Meta AI**: Severino, produção de mídia, redes sociais e conteúdo.
 
 ---
@@ -22,13 +22,13 @@ Ferramentas de IA da equipe:
 | Agente | Papel | Ferramenta |
 |---|---|---|
 | **Cláudio** | Head da operação. Lidera, decide, faz a conferência final das entregas e o deploy direto no Cloudflare. | Claude |
-| **Osvaldo** | Coordena o time de agentes independentes. Faz a checagem diária de Drive, Gmail e Worker (somente leitura), cobra prazos da equipe, organiza o Drive sem apagar nada e envia um resumo diário de no máximo 10 linhas. | Instinct (ilimitado) |
-| **Vicente** | Produtos e modelagem. | Agente da equipe |
-| **Dante** | Tecnologia e ferramentas. | Agente da equipe |
-| **Helena** | Marketing e design. | Agente da equipe |
+| **Departamento Gestão** | Coordena o time de agentes independentes. Faz a checagem diária de Drive, Gmail e Worker (somente leitura), cobra prazos da equipe, organiza o Drive sem apagar nada e envia um resumo diário de no máximo 10 linhas. | Instinct (ilimitado) |
+| **Departamento de Produtos** | Produtos e modelagem. | Agente da equipe |
+| **Departamento Ecommerce** | Tecnologia e ferramentas. | Agente da equipe |
+| **Departamento Marketing** | Marketing e design. | Agente da equipe |
 | **Severino** | Produção de mídia, redes sociais e conteúdo. | Meta AI |
 
-Bento, Dora e Nilo eram da equipe de marketing da Helena e deixaram o time.
+Bento, Dora e Nilo eram da equipe de marketing do Departamento Marketing e deixaram o time.
 
 ### Responsabilidades do Cláudio
 
@@ -36,9 +36,9 @@ Bento, Dora e Nilo eram da equipe de marketing da Helena e deixaram o time.
 - Fila de decisões para o João, com no máximo 3 itens, sempre com a recomendação na frente.
 - Conferência final das entregas antes de qualquer publicação.
 - Deploy direto no Cloudflare, autorizado pelo João em 15/11/2026.
-- Rascunhos de texto do Osvaldo passam por conferência do Cláudio.
+- Rascunhos de texto do Departamento Gestão passam por conferência do Cláudio.
 
-### Responsabilidades do Osvaldo
+### Responsabilidades do Departamento Gestão
 
 - Checagem diária de Drive, Gmail e Worker, só para leitura.
 - Cobrança de prazos da equipe.
@@ -52,16 +52,16 @@ O Cláudio lê só o resumo e a fila, não os arquivos inteiros. Isso economiza 
 ## 3. Fluxo de comunicação
 
 ```
-João → Cláudio (chat) → Osvaldo (e-mail) → Vicente / Dante / Helena / Severino (campainha ou Slack)
+João → Cláudio (chat) → Departamento Gestão (e-mail) → Departamento de Produtos / Departamento Ecommerce / Departamento Marketing / Severino (campainha ou Slack)
 ```
 
 Regras:
 
-- Pedidos ao Osvaldo passam por e-mail, com a palavra de acionamento no corpo. Sem ela, o Osvaldo não executa. A palavra fica registrada no cofre da equipe, não neste documento.
-- Todo e-mail ao Osvaldo pede um prazo, e o prazo vai escrito no próprio e-mail. O Cláudio agenda uma tarefa para conferir a resposta nessa hora.
-- O Osvaldo também pode falar com o Cláudio direto pelas sessões, além do e-mail.
+- Pedidos ao Departamento Gestão passam por e-mail, com a palavra de acionamento no corpo. Sem ela, o Departamento Gestão não executa. A palavra fica registrada no cofre da equipe, não neste documento.
+- Todo e-mail ao Departamento Gestão pede um prazo, e o prazo vai escrito no próprio e-mail. O Cláudio agenda uma tarefa para conferir a resposta nessa hora.
+- O Departamento Gestão também pode falar com o Cláudio direto pelas sessões, além do e-mail.
 - Credenciais e senhas nunca vão por e-mail nem para canal público.
-- Osvaldo e Cláudio trabalham como um time, em harmonia.
+- Departamento Gestão e Cláudio trabalham como um time, em harmonia.
 
 ### Regra de decisão
 

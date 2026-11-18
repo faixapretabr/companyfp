@@ -8,9 +8,11 @@
   var TEAM = ['João', 'Cláudio', 'Osvaldo', 'M01', 'M02', 'M03', 'M04', 'O01', 'O02', 'O03', 'O04', 'I01', 'I02', 'I03', 'I04', 'I05', 'I06', 'I07', 'I08']; /* organograma: decisão 9 */
   var ART = { 'João': 'o', 'Cláudio': 'o', 'Osvaldo': 'o' }; function art(n) { return ART[n] || 'o'; }
   var DEPT = { 'Osvaldo': 'G01' };
+  /* nome exibido; o valor gravado continua 'Osvaldo' para não orfanar tarefas antigas */
+  var LBL = { 'Osvaldo': 'Departamento Gestão' }; function lbl(n) { return LBL[n] || n; }
   function rsel(tab, id, cur) {
     var o = '<option value="">Sem responsável</option>', list = TEAM.slice(); if (cur && list.indexOf(cur) < 0) list.push(cur);
-    list.forEach(function (n) { o += '<option' + (n === cur ? ' selected' : '') + '>' + esc(n) + '</option>'; });
+    list.forEach(function (n) { o += '<option value="' + esc(n) + '"' + (n === cur ? ' selected' : '') + '>' + esc(lbl(n)) + '</option>'; });
     return '<label class="src">Responsável<select class="rs" data-t="' + tab + '" data-id="' + id + '" aria-label="Responsável">' + o + '</select></label>';
   }
   document.addEventListener('change', function (e) {
@@ -91,7 +93,7 @@
   }
   function quemSel(def) {
     var o = '';
-    TEAM.forEach(function (n) { o += '<option' + (n === (def || 'João') ? ' selected' : '') + '>' + n + '</option>'; });
+    TEAM.forEach(function (n) { o += '<option value="' + esc(n) + '"' + (n === (def || 'João') ? ' selected' : '') + '>' + esc(lbl(n)) + '</option>'; });
     return '<label class="lb">Quem registra<select name="quem">' + o + '</select></label>';
   }
   function dbtn(a, ic, lb) { return '<button type="button" class="cp" data-act="dcs-acao" data-a="' + a + '" aria-label="' + lb + '">' + ic + '<span>' + lb + '</span></button>'; }
@@ -335,7 +337,7 @@
     rows.forEach(function (r) {
       if (r.estado === 'concluida') return;
       var prz = r.prazo ? new Date(r.prazo).getTime() : 0;
-      if (prz && prz < agora) out.push({ id: r.id, titulo: r.titulo, texto: 'Prazo vencido (' + fmtPrazo(r.prazo) + ') — avisar ' + (r.dono || 'o dono') + ' e o Osvaldo' });
+      if (prz && prz < agora) out.push({ id: r.id, titulo: r.titulo, texto: 'Prazo vencido (' + fmtPrazo(r.prazo) + ') — avisar ' + (r.dono ? lbl(r.dono) : 'o dono') + ' e o Departamento Gestão' });
     });
     return out;
   }
@@ -351,7 +353,7 @@
       var ord = { pendente: 0, fazendo: 1, aprovacao: 2, decidir: 3, concluida: 4 };
       rows.sort(function (a, b) { return (ord[a.estado] || 0) - (ord[b.estado] || 0); });
       var chips = [{ v: '', l: 'Todas (' + rows.length + ')' }];
-      TEAM.forEach(function (n) { var c = rows.filter(function (r) { return r.dono === n; }).length; chips.push({ v: n, l: 'Para ' + art(n) + ' ' + n + (DEPT[n] ? ' · ' + DEPT[n] : '') + ' (' + c + ')' }); });
+      TEAM.forEach(function (n) { var c = rows.filter(function (r) { return r.dono === n; }).length; chips.push({ v: n, l: 'Para ' + art(n) + ' ' + lbl(n) + (DEPT[n] ? ' · ' + DEPT[n] : '') + ' (' + c + ')' }); });
       var antigos = []; rows.forEach(function (r) { if (r.dono && TEAM.indexOf(r.dono) < 0 && antigos.indexOf(r.dono) < 0) antigos.push(r.dono); });
       antigos.forEach(function (n) { var c = rows.filter(function (r) { return r.dono === n; }).length; chips.push({ v: n, l: 'Antigo: ' + n + ' (' + c + ')' }); });
       var sem = rows.filter(function (r) { return !r.dono; }).length;
@@ -380,14 +382,14 @@
       if (wrap) {
         wrap.hidden = !tfd.length;
         $('tf-dec-list').innerHTML = tfd.map(function (r) {
-          return '<div class="row tf"><div><b>' + esc(r.titulo) + '</b><p>de ' + esc(r.dono || '-') + (r.prazo ? ' · prazo ' + fmtPrazo(r.prazo) : '') + (r.descricao ? '<br>' + esc(r.descricao) : '') + '</p>' +
+          return '<div class="row tf"><div><b>' + esc(r.titulo) + '</b><p>de ' + esc(lbl(r.dono) || '-') + (r.prazo ? ' · prazo ' + fmtPrazo(r.prazo) : '') + (r.descricao ? '<br>' + esc(r.descricao) : '') + '</p>' +
             '<div class="cmbox"><textarea rows="2" maxlength="500" placeholder="Decisão do João" id="tfd-' + r.id + '"></textarea>' + ib('ok2', '✓', 'Devolver para Fazendo', 'data-act="tf-dec-resp" data-id="' + r.id + '"') + '</div></div></div>';
         }).join('');
       }
       var ap = rows.filter(function (r) { return r.estado === 'aprovacao'; });
       var apBox = $('ap-list');
       if (apBox) apBox.innerHTML = ap.length ? ap.map(function (r) {
-        return '<div class="row tf"><div><b>' + esc(r.titulo) + '</b><p>de ' + esc(r.dono || '-') + (r.prazo ? ' · prazo ' + fmtPrazo(r.prazo) : '') + (r.descricao ? '<br>' + esc(r.descricao) : '') + (r.comentario ? '<br>Comentário: ' + esc(r.comentario) : '') + '</p></div>' +
+        return '<div class="row tf"><div><b>' + esc(r.titulo) + '</b><p>de ' + esc(lbl(r.dono) || '-') + (r.prazo ? ' · prazo ' + fmtPrazo(r.prazo) : '') + (r.descricao ? '<br>' + esc(r.descricao) : '') + (r.comentario ? '<br>Comentário: ' + esc(r.comentario) : '') + '</p></div>' +
           '<div class="acts">' + ib('', '✓', 'Aprovar', 'data-act="tf-estado" data-id="' + r.id + '" data-to="concluida"') + ib('', '↺', 'Reprovar', 'data-act="tf-rep" data-id="' + r.id + '"') + '</div></div>';
       }).join('') : '<p class="src">Nada esperando aprovação.</p>';
     }).catch(function (e) { fail(e, $('tf-list')); });
@@ -541,8 +543,8 @@
   /* ---------- adicionar pelo topo (modal) ---------- */
   var ADD = {
     pendencia: { rot: 'Pendência', campos: '<input name="titulo" required maxlength="140" placeholder="Título"><textarea name="opcoes" rows="2" placeholder="Detalhe (opcional)"></textarea><select name="posicao" aria-label="Faixa"><option value="1">Faixa 1 · Decidir agora</option><option value="2">Faixa 2 · Esta semana</option><option value="3" selected>Faixa 3 · Depois</option></select>', grava: function (el) { return DB.insert('decisoes', { titulo: el.titulo.value.trim(), opcoes: el.opcoes.value.trim() || null, posicao: +el.posicao.value, estado: 'aberta' }).then(function (rr) { if (rr && rr[0]) log('pendencia_criada', { ref: 'dec:' + rr[0].id }); return loadGer(); }); } },
-    tarefa: { rot: 'Tarefa', campos: '<input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><textarea name="descricao" rows="2" maxlength="500" placeholder="Descrição (opcional)"></textarea><select name="dono" required aria-label="Responsável"><option value="">Escolher o responsável…</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<select name="prazo" required><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option><option value="120">2 h</option><option value="1440" selected>1 dia</option></select></label><textarea name="comentario" rows="2" maxlength="500" placeholder="Comentário (opcional)"></textarea>', grava: function (el) { var ovid = OV_ORIGEM, tfid = TF_ORIGEM; return DB.insert('tarefas', { titulo: el.titulo.value.trim(), dono: el.dono.value || null, prazo: prazoISO(el.prazo.value), descricao: el.descricao.value.trim() || null, comentario: el.comentario.value.trim() || null, estado: 'pendente', ouvidoria_id: ovid || null, origem_tarefa_id: tfid || null }).then(function (rr) { var tid = rr && rr[0] && rr[0].id; if (!tid) throw new Error('insert tarefa'); var det = { ref: 'tf:' + tid }; if (ovid) det.origem = 'ov:' + ovid; if (tfid) det.origem_tarefa = 'tf:' + tfid; log(tfid ? 'tarefa_derivada' : 'tarefa_criada', det); TF_ORIGEM = null; if (ovid) { OV_ORIGEM = null; return DB.update('ouvidoria', 'id=eq.' + ovid, { estado: 'tratada' }).then(function () { toast('Tarefa criada; registro tratado'); loadOv(); return loadTf(); }).catch(function () { toast('Tarefa criada'); return loadTf(); }); } return loadTf(); }); } },
-    ouvidoria: { rot: 'Registro', campos: '<select name="tipo" aria-label="Tipo"><option value="ideia">Ideia</option><option value="auditoria">Auditoria</option><option value="reclamacao">Reclamação</option></select><textarea name="texto" required rows="3" maxlength="1500" placeholder="Descreva"></textarea><input name="autor" maxlength="40" placeholder="Quem registra"><select name="responsavel" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select>', grava: function (el) { var tp = el.tipo.value, tr = el.texto.value.trim().slice(0, 120); return DB.insert('ouvidoria', { tipo: tp, texto: el.texto.value.trim(), autor: el.autor.value.trim() || null, responsavel: el.responsavel.value || null, estado: 'nova' }).then(function () { DB.insert('chamadas', { texto: 'Ouvidoria nova (' + tp + '): ' + tr }).catch(function () {}); return loadOv(); }); } },
+    tarefa: { rot: 'Tarefa', campos: '<input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><textarea name="descricao" rows="2" maxlength="500" placeholder="Descrição (opcional)"></textarea><select name="dono" required aria-label="Responsável"><option value="">Escolher o responsável…</option><option>João</option><option>Cláudio</option><option value="Osvaldo">Departamento Gestão</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<select name="prazo" required><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option><option value="120">2 h</option><option value="1440" selected>1 dia</option></select></label><textarea name="comentario" rows="2" maxlength="500" placeholder="Comentário (opcional)"></textarea>', grava: function (el) { var ovid = OV_ORIGEM, tfid = TF_ORIGEM; return DB.insert('tarefas', { titulo: el.titulo.value.trim(), dono: el.dono.value || null, prazo: prazoISO(el.prazo.value), descricao: el.descricao.value.trim() || null, comentario: el.comentario.value.trim() || null, estado: 'pendente', ouvidoria_id: ovid || null, origem_tarefa_id: tfid || null }).then(function (rr) { var tid = rr && rr[0] && rr[0].id; if (!tid) throw new Error('insert tarefa'); var det = { ref: 'tf:' + tid }; if (ovid) det.origem = 'ov:' + ovid; if (tfid) det.origem_tarefa = 'tf:' + tfid; log(tfid ? 'tarefa_derivada' : 'tarefa_criada', det); TF_ORIGEM = null; if (ovid) { OV_ORIGEM = null; return DB.update('ouvidoria', 'id=eq.' + ovid, { estado: 'tratada' }).then(function () { toast('Tarefa criada; registro tratado'); loadOv(); return loadTf(); }).catch(function () { toast('Tarefa criada'); return loadTf(); }); } return loadTf(); }); } },
+    ouvidoria: { rot: 'Registro', campos: '<select name="tipo" aria-label="Tipo"><option value="ideia">Ideia</option><option value="auditoria">Auditoria</option><option value="reclamacao">Reclamação</option></select><textarea name="texto" required rows="3" maxlength="1500" placeholder="Descreva"></textarea><input name="autor" maxlength="40" placeholder="Quem registra"><select name="responsavel" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option value="Osvaldo">Departamento Gestão</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select>', grava: function (el) { var tp = el.tipo.value, tr = el.texto.value.trim().slice(0, 120); return DB.insert('ouvidoria', { tipo: tp, texto: el.texto.value.trim(), autor: el.autor.value.trim() || null, responsavel: el.responsavel.value || null, estado: 'nova' }).then(function () { DB.insert('chamadas', { texto: 'Ouvidoria nova (' + tp + '): ' + tr }).catch(function () {}); return loadOv(); }); } },
     produto: { rot: 'Produto', campos: '<input name="codigo" required pattern="FP-0[0-9]{2}" placeholder="Código, ex.: FP-011"><input name="nome" placeholder="Nome">', grava: function (el) { return DB.insert('produtos', { codigo: el.codigo.value.trim().toUpperCase(), nome: el.nome.value.trim() || null, etapa: 'E1', loja_bloqueada: true }).then(function () { log('produto_criado', { ref: 'prod:' + el.codigo.value.trim().toUpperCase() }); return loadBc(); }); } }
   };
   var ROTA_ADD = { decidir: 'pendencia', tarefas: 'tarefa', ouvidoria: 'ouvidoria', produtos: 'produto' };
@@ -591,10 +593,10 @@
   $('addm-tipo').addEventListener('change', function () { OV_ORIGEM = null; TF_ORIGEM = null; addmForm(this.value); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('addm').hidden) closeAddm(); });
 
-  /* ---------- campainha (chamar o Osvaldo) ---------- */
+  /* ---------- campainha (chamar o Departamento Gestão) ---------- */
   function openChm() {
     var al = ALERTAS.length ? '<div class="albox"><div class="lb">Campainha (' + ALERTAS.length + ')</div>' + ALERTAS.map(function (a) { return '<p class="alitem">\uD83D\uDD14 <b>' + esc(a.titulo) + '</b> · ' + esc(a.texto) + '</p>'; }).join('') + '</div>' : '';
-    $('chm-body').innerHTML = al + '<form class="fm" id="chm-f"><div class="lb">Mensagem para o Osvaldo</div><textarea name="mensagem" rows="4" maxlength="1000" required placeholder="O que o Osvaldo precisa fazer agora"></textarea><button class="btn" type="submit" aria-label="Enviar" title="Enviar">&#x27A4;</button><p class="msg src" role="status"></p></form>';
+    $('chm-body').innerHTML = al + '<form class="fm" id="chm-f"><div class="lb">Mensagem para o Departamento Gestão</div><textarea name="mensagem" rows="4" maxlength="1000" required placeholder="O que o Departamento Gestão precisa fazer agora"></textarea><button class="btn" type="submit" aria-label="Enviar" title="Enviar">&#x27A4;</button><p class="msg src" role="status"></p></form>';
     $('chm-f').addEventListener('submit', function (e) { e.preventDefault(); sendChm(e.target); });
     $('chm').hidden = false;
     var t = document.querySelector('#chm-f textarea'); if (t) t.focus();

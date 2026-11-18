@@ -14,14 +14,14 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@700&display=swap">
-<link rel="stylesheet" href="css/app.css?v=37">
+<link rel="stylesheet" href="css/app.css?v=38">
 </head>
 <body>
 <a class="skip" href="#main">Pular para o conteúdo</a>
 
 <header class="bar"><div class="bar-in">
   <a class="brand" href="#inicio"><img class="logo" src="icons/logo-96.png" alt="" width="30" height="30"><span>Faixa Preta<small id="sub">Painel</small></span></a>
-  <div class="bar-r"><button class="ico" id="sq-btn" aria-label="Buscar" title="Buscar" aria-expanded="false">&#x1F50D;</button><button class="ico bell" id="bell" aria-label="Chamar o Osvaldo" title="Chamar o Osvaldo">&#x1F514;<span class="bell-n" id="bell-n" hidden></span></button>
+  <div class="bar-r"><button class="ico" id="sq-btn" aria-label="Buscar" title="Buscar" aria-expanded="false">&#x1F50D;</button><button class="ico bell" id="bell" aria-label="Chamar o Departamento Gestão" title="Chamar o Departamento Gestão">&#x1F514;<span class="bell-n" id="bell-n" hidden></span></button>
     <button class="ico plus" id="add-top" aria-label="Adicionar" title="Adicionar">＋</button>
   <button class="ico ham" id="ham" aria-label="Abrir menu" aria-expanded="false" aria-controls="drw"><i></i><i></i><i></i></button></div>
 </div>
@@ -112,11 +112,11 @@
 
   <div class="blk sec"><h2>Equipe</h2><div class="lb">Quem faz o quê e por onde recebe pedido</div></div>
   <div class="flow">
-    <div><b class="lb who">João · titular</b>Decide, aprova, autentica nas telas oficiais e faz testes físicos. Só ele gasta e faz o primeiro login. Publicar pode ser ele, o Osvaldo ou o Cláudio.</div>
+    <div><b class="lb who">João · titular</b>Decide, aprova, autentica nas telas oficiais e faz testes físicos. Só ele gasta e faz o primeiro login. Publicar pode ser ele, o Departamento Gestão ou o Cláudio.</div>
     <div class="go lb">↓ chat</div>
-    <div><b class="lb who">Cláudio (Claude) · head</b>Lidera a operação, consolida pendências, redige procedimentos e aciona o Osvaldo.</div>
+    <div><b class="lb who">Cláudio (Claude) · head</b>Lidera a operação, consolida pendências, redige procedimentos e aciona o Departamento Gestão.</div>
     <div class="go lb">↓ e-mail com a palavra-chave</div>
-    <div><b class="lb who">Osvaldo (Instinct) · G01 Gestão Geral</b>Executa o que o Cláudio solicitar e coordena o time. Cria e guarda chaves no cofre.</div>
+    <div><b class="lb who">Departamento Gestão (Instinct) · G01 Gestão Geral</b>Executa o que o Cláudio solicitar e coordena o time. Cria e guarda chaves no cofre.</div>
     <div class="go lb">↓ campainha ou Slack</div>
   </div>
   <div class="cards">
@@ -129,11 +129,11 @@
   <div class="blk">
     <div class="lb">Como pedir</div>
     <ol class="rules">
-      <li><b>Um canal por etapa.</b> João fala com o Cláudio por chat. O Cláudio fala com o Osvaldo por e-mail, com a palavra-chave. O Osvaldo fala com a equipe por campainha ou Slack.</li>
-      <li><b>O Slack não recebe mais pedidos ao Osvaldo.</b> Pedido sem a palavra-chave não é executado.</li>
+      <li><b>Um canal por etapa.</b> João fala com o Cláudio por chat. O Cláudio fala com o Departamento Gestão por e-mail, com a palavra-chave. O Departamento Gestão fala com a equipe por campainha ou Slack.</li>
+      <li><b>O Slack não recebe mais pedidos ao Departamento Gestão.</b> Pedido sem a palavra-chave não é executado.</li>
     </ol>
     <div class="lb">Segurança</div>
-    <ol class="rules" start="3"><li><b>Nunca senha ou chave por e-mail.</b> O Osvaldo cria a EDIT_KEY e guarda no cofre.</li></ol>
+    <ol class="rules" start="3"><li><b>Nunca senha ou chave por e-mail.</b> O Departamento Gestão cria a EDIT_KEY e guarda no cofre.</li></ol>
     <div class="lb">Só do João</div>
     <ol class="rules" start="4">
       <li><b>Gasto e primeiro login.</b> Ninguém mais faz.</li>
@@ -152,7 +152,7 @@
     <h1 tabindex="-1">Aprovação</h1>
     <p>Tarefas terminadas esperando o OK do João. Aprovar conclui e arquiva; reprovar devolve para Fazendo com o motivo.</p>
   </div>
-  <div class="blk"><p class="src">Nota: o fluxo de reprovação (devolve para Fazendo com motivo) é uma suposição do Osvaldo, a confirmar com o João.</p></div>
+  <div class="blk"><p class="src">Nota: o fluxo de reprovação (devolve para Fazendo com motivo) é uma suposição do Departamento Gestão, a confirmar com o João.</p></div>
   <div id="ap-list" class="list" aria-live="polite"><p class="src">Carregando…</p></div>
 </section>
 
@@ -177,7 +177,7 @@
     <p>Lista da operação com responsável, status e prazo.</p>
   </div>
   <form class="fm" id="tf-new"><div class="lb">Nova tarefa</div>
-    <input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><textarea name="descricao" rows="2" maxlength="500" placeholder="Descrição (opcional)"></textarea><select name="dono" required aria-label="Responsável"><option value="">Escolher o responsável…</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<select name="prazo" required><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option><option value="120">2 h</option><option value="1440" selected>1 dia</option></select></label>
+    <input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><textarea name="descricao" rows="2" maxlength="500" placeholder="Descrição (opcional)"></textarea><select name="dono" required aria-label="Responsável"><option value="">Escolher o responsável…</option><option>João</option><option>Cláudio</option><option>Departamento Gestão</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<select name="prazo" required><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option><option value="120">2 h</option><option value="1440" selected>1 dia</option></select></label>
     <button class="btn" type="submit" aria-label="Adicionar" title="Adicionar">＋</button><p class="msg src" role="status"></p></form>
   <div class="qf" id="tf-filas" aria-label="Filas por responsável"></div>
   <div id="tf-list" class="list" aria-live="polite"><p class="src">Carregando…</p></div>
@@ -193,7 +193,7 @@
   </div>
   <form class="fm" id="ov-new"><div class="lb">Novo registro</div>
     <select name="tipo"><option value="ideia">Ideia</option><option value="auditoria">Auditoria</option><option value="reclamacao">Reclamação</option></select>
-    <textarea name="texto" required rows="3" maxlength="1500" placeholder="Descreva"></textarea><input name="autor" maxlength="40" placeholder="Quem registra"><select name="responsavel" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select>
+    <textarea name="texto" required rows="3" maxlength="1500" placeholder="Descreva"></textarea><input name="autor" maxlength="40" placeholder="Quem registra"><select name="responsavel" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Departamento Gestão</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select>
     <button class="btn" type="submit" aria-label="Enviar" title="Enviar">➤</button><p class="msg src" role="status"></p></form>
   <div id="ov-list" class="list" aria-live="polite"><p class="src">Carregando…</p></div>
 </section>
@@ -238,7 +238,7 @@
 <div class="md" id="chm" hidden>
   <div class="md-bg"></div>
   <div class="md-in" role="dialog" aria-modal="true" aria-labelledby="chm-h">
-    <div class="md-h"><h2 id="chm-h">Chamar o Osvaldo</h2><button class="ico x" id="chm-x" aria-label="Fechar">×</button></div>
+    <div class="md-h"><h2 id="chm-h">Chamar o Departamento Gestão</h2><button class="ico x" id="chm-x" aria-label="Fechar">×</button></div>
     <div id="chm-body"></div>
   </div>
 </div>
@@ -273,10 +273,10 @@
   <label class="lb">E-mail<input name="email" type="email" autocomplete="username" required></label>
   <label class="lb">Senha<input name="password" type="password" autocomplete="current-password" required></label>
   <button class="btn" type="submit" aria-label="Entrar" title="Entrar">→</button><p class="msg src" id="lg-m" role="alert"></p></form></div>
-<script src="js/db.js?v=37"></script>
-<script src="js/app.js?v=37"></script>
-<script src="js/escritorio.js?v=37"></script>
-<script src="js/data.js?v=37"></script>
+<script src="js/db.js?v=38"></script>
+<script src="js/app.js?v=38"></script>
+<script src="js/escritorio.js?v=38"></script>
+<script src="js/data.js?v=38"></script>
 </body>
 </html>
 
