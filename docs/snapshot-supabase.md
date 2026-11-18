@@ -2,11 +2,10 @@
 
 Foto datada, só leitura. Fonte é o Supabase; se divergir, vale o banco. Regras em `docs/dados.md`.
 
-## Decisões em aberto (12)
+## Decisões em aberto (11)
 | # | Estado | Título |
 |---|---|---|
 | 3 | aguardando | Custos por produto e política de preço |
-| 4 | aberta | Autorizar teste do carrinho e compra-teste |
 | 5 | aguardando | Pesos e dimensões reais para o frete |
 | 6 | aguardando | Responsável e canal de atendimento |
 | 14 | aguardando | OP-D03 · FP-004: resultado do protótipo |
@@ -18,7 +17,7 @@ Foto datada, só leitura. Fonte é o Supabase; se divergir, vale o banco. Regras
 | 25 | aberta | Refazer visual do vídeo da Helena |
 | 26 | aberta | Recuperar títulos das tarefas OP-T05 a OP-T08 |
 
-Já decididas ou arquivadas: 1, 2, 7, 8, 9, 12, 13, 19, 20 (9 itens).
+Já decididas ou arquivadas: 1, 2, 4, 7, 8, 9, 12, 13, 19, 20 (10 itens). A 4 foi decidida em 18/11 pelo Cláudio, por delegação do João: teste sem custo e sem publicar.
 
 ## Tarefas em andamento (13) · concluídas: 5
 | # | Dono | Título | Prazo |

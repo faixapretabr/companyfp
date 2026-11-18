@@ -21,6 +21,8 @@ Registro único das decisões do João. Nova decisão entra no topo, com data.
 
 13. **Fonte de dados (18/11/2026):** o Supabase é o sistema vivo de decisões em aberto, tarefas, produtos, ouvidoria e status; o repositório guarda texto, regras e uma foto datada (`docs/snapshot-supabase.md`). `TAREFAS.md` deixa de ser lista de trabalho. A base `FP_BASE_COMPLETA_v01` volta a ser documento vivo em `docs/base/`. Ordem de prioridade das fontes em `CONTEXTO.md`. Dicionário e regras em `docs/dados.md`.
 
+14. **Decisões delegadas pelo João (18/11/2026):** (a) tabela `status` do Supabase é o registro do status do time e o Worker `escritorio-fp-realtime` só serve a tela; o Dante confirma, pelo Osvaldo. (b) Os 8 itens antigos do `TAREFAS.md` passam pela OP-T01 do Osvaldo antes de entrar no banco. (c) Teste do carrinho autorizado só sem custo e sem publicar objetos; compra com dinheiro real continua com o João. Filamento de teste (cerca de R$ 215): João disse não, nada será comprado.
+
 ## Plano de 30 dias
 Mira o **Natal**. Black Friday seria cedo.
 
