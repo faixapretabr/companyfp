@@ -55,7 +55,7 @@ Desenvolver, imprimir protótipo, ajustar, imprimir a versão modelo. Só vende 
 - Central com 5 blocos: Escritório LIVE, Gerência, Banco de Desenvolvimento, Tarefas e Ouvidoria.
 - Mobile first, responsivo, minimalista, fiel ao manual de marca, PWA.
 - Status do time: ninguém recebe token (regra do João, 18/11 0h). Cada agente avisa COMEÇOU/TERMINEI e o Departamento Gestão (G01) atualiza o status no Worker `escritorio-fp-realtime`. Chaves nunca ficam no repositório.
-- O painel no ar roda nesse Worker (v37 em 18/11). Este repositório guarda a cópia do código publicado em `painel/`. Trocou a versão no ar, atualiza aqui por commit.
+- O painel no ar roda nesse Worker (v38 em 18/11). Este repositório guarda a cópia do código publicado em `painel/`. Trocou a versão no ar, atualiza aqui por commit.
 
 ## Rotinas agendadas (só leitura e relatório)
 - Relatório semanal da equipe: sexta 16:41.
