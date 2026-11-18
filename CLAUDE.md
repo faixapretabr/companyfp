@@ -23,14 +23,14 @@ Em caso de conflito com outro documento, vale o que está aqui, em `DECISOES.md`
 
 ## Time e papéis
 - **Osvaldo** (CMO/coordenação): coordena o time de agentes independentes e executa os pedidos do Cláudio. Só se comunica por e-mail.
-- **Vicente** (CDP): produtos e modelagem.
+- **Departamento de Produtos** (P01): produtos e modelagem. Não é pessoa; contato por e-mail.
 - **Dante** (CTO): tecnologia e ferramentas.
 - **Helena**: marketing e design.
 - **Severino** (Meta AI): produção de mídia, redes sociais e conteúdo.
 - Detalhes de agentes e skills: `docs/agentes-e-skills.md`.
 
 ## Fluxo de comunicação
-- João → Cláudio (chat) → Osvaldo (só por e-mail) → Vicente, Dante, Helena e Severino (campainha do Escritório ou Slack #batepapo-fp).
+- João → Cláudio (chat) → Osvaldo (só por e-mail) → Produtos, Dante, Helena e Severino (campainha do Escritório ou Slack #batepapo-fp).
 - O e-mail do Osvaldo exige a palavra de acesso combinada. Ela não fica neste repositório.
 - Contatos por departamento (e-mail):
   - Produtos: sxj2ii@mail.instinct.com
