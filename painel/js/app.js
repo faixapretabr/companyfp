@@ -67,6 +67,7 @@
   window.FP = { setStatus: setStatus };
 
   /* ---------- status da equipe (banco: pessoas + status, so leitura) ---------- */
+  var ALIAS = { osvaldo: 'g01', helena: 'm01', severino: 'm02' }; /* decisão 9 */
   function normId(n) { return String(n || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
   function quando(ts) {
     if (!ts) return '';
@@ -80,7 +81,7 @@
   function loadStatus() {
     if (!window.FPDB || !FPDB.session()) return;
     Promise.all([FPDB.get('pessoas?select=id,nome'), FPDB.get('status?select=pessoa_id,estado,tarefa,atualizado_em')]).then(function (rr) {
-      var nomes = {}; rr[0].forEach(function (p) { var m = /\b([gmoi]\d{2})\b/i.exec(p.nome || ''); nomes[p.id] = m ? m[1].toLowerCase() : normId(p.nome); });
+      var nomes = {}; rr[0].forEach(function (p) { var m = /\b([gmoi]\d{2})\b/i.exec(p.nome || ''); nomes[p.id] = m ? m[1].toLowerCase() : (ALIAS[normId(p.nome)] || normId(p.nome)); });
       rr[1].forEach(function (st) {
         var id = nomes[st.pessoa_id]; if (!id || !$('ag-' + id)) return;
         setStatus(id, st.estado);
