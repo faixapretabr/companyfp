@@ -15,6 +15,8 @@ Registro único das decisões do João. Nova decisão entra no topo, com data.
 
 10. **Consolidação (18/11/2026):** `CONTEXTO.md` é a porta de entrada e o mapa de fontes. Texto e regra no repositório; dados vivos do painel no Supabase; Worker só para o status do Escritório. Arquivos antigos ficam onde estão, sem mover.
 
+11. **Ativação (18/11/2026):** fase 1 liga só I03 (ofertas) e I04 (preço), em leitura e relatório, sem publicar nem gastar. Qualquer ação de coleta automatizada passa antes pelo I07. Documento de arquitetura guardado em `docs/arquitetura-agentes.md`.
+
 ## Plano de 30 dias
 Mira o **Natal**. Black Friday seria cedo.
 

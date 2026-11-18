@@ -27,4 +27,5 @@ Texto e regra ficam no repositório. Registro vivo (linhas que mudam toda hora) 
 
 ## Pendências de organização
 - `CATALOGO.md` e `manual/` aparecem citados em `DECISOES.md` mas ainda não existem.
-- Ativação dos agentes: por fase, depois. G, E e P (Osvaldo, Dante, Vicente) já existem fora do repositório e não têm cartão aqui.
+- Arquitetura original dos agentes: `docs/arquitetura-agentes.md`.
+- Ativação dos agentes: fase 1 = I03 e I04 (decisão 11); demais por fase, depois. G, E e P (Osvaldo, Dante, Vicente) já existem fora do repositório e não têm cartão aqui.
