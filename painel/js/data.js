@@ -3,10 +3,11 @@
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var DB = window.FPDB;
-  var IBC = { 'Copiar código': 'Copiar', 'Salvar comentário': 'Salvar', 'Adicionar foto': 'Foto', 'Tratada': 'Tratar', 'Histórico': 'Hist.' };
+  var IBC = { 'Copiar código': 'Copiar', 'Salvar comentário': 'Salvar', 'Adicionar foto': 'Foto', 'Tratada': 'Tratar', 'Histórico': 'Hist.', 'Começar': 'Começar', 'Concluir': 'Concluir', 'Decidir': 'Decidir', 'Derivar': 'Derivar', 'Aprovar': 'Aprovar', 'Reprovar': 'Reprovar', 'Devolver para Fazendo': 'Devolver' };
   function ib(cls, ic, label, attrs) { return '<button class="cp ib ' + cls + '" type="button" aria-label="' + label + '" title="' + label + '" ' + (attrs || '') + '>' + ic + '<span class="ibl">' + esc(IBC[label] || label) + '</span></button>'; }
   var TEAM = ['João', 'Cláudio', 'Osvaldo', 'M01', 'M02', 'M03', 'M04', 'O01', 'O02', 'O03', 'O04', 'I01', 'I02', 'I03', 'I04', 'I05', 'I06', 'I07', 'I08']; /* organograma: decisão 9 */
   var ART = { 'João': 'o', 'Cláudio': 'o', 'Osvaldo': 'o' }; function art(n) { return ART[n] || 'o'; }
+  var DEPT = { 'Osvaldo': 'G01' };
   function rsel(tab, id, cur) {
     var o = '<option value="">Sem responsável</option>', list = TEAM.slice(); if (cur && list.indexOf(cur) < 0) list.push(cur);
     list.forEach(function (n) { o += '<option' + (n === cur ? ' selected' : '') + '>' + esc(n) + '</option>'; });
@@ -26,10 +27,14 @@
   function fmt(d) { if (!d) return ''; var x = new Date(d); return x.toLocaleDateString('pt-BR') + ' ' + x.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }); }
   function fmtD(d) { if (!d) return '-'; return new Date(String(d).length === 10 ? d + 'T12:00:00' : d).toLocaleDateString('pt-BR'); }
   function hoje() { return new Date().toLocaleDateString('en-CA'); }
+  function emMin(m) { return new Date(Date.now() + m * 60000); }
+  function prazoISO(v) { var m = parseInt(v, 10); return m ? emMin(m).toISOString() : null; }
+  function revisaoData(v) { var m = parseInt(v, 10); return m ? emMin(m).toLocaleDateString('en-CA') : null; }
+  function fmtPrazo(p) { var d = new Date(p); if (d.getTime() === Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())) return d.toLocaleDateString('pt-BR', { timeZone: 'UTC' }); return d.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }); }
   function msg(form, text, bad) { var m = form.querySelector('.msg'); if (m) { m.textContent = text; m.style.color = bad ? '#C8342B' : ''; } }
   function log(acao, detalhe) { return DB.insert('eventos_log', { acao: acao, detalhe: detalhe }, 'return=minimal').catch(function () {}); }
   function fail(e, el) { if (e && e.auth) { showLogin(); return; } if (el) el.innerHTML = '<p class="src">Erro: ' + esc(e.message) + '</p>'; }
-  var HIST = { tarefa_responsavel: 'Responsável alterado', ouvidoria_responsavel: 'Responsável alterado', produto_foto: 'Foto adicionada', produto_foto_apagada: 'Foto apagada', pendencia_criada: 'Criada', pendencia_resolvida: 'Resolvida', pendencia_decidida: 'Decidida', pendencia_executada: 'Virou tarefa', pendencia_adiada: 'Adiada', pendencia_arquivada: 'Arquivada', pendencia_reaberta: 'Reaberta', pendencia_desfeita: 'Ação desfeita', condicao_cumprida: 'Condição cumprida', pendencia_comentada: 'Comentário salvo', tarefa_criada: 'Criada', tarefa_nova: 'Criada', tarefa_recebida: 'Recebida', tarefa_fazendo: 'Começou', tarefa_feita: 'Concluída', tarefa_aberta: 'Reaberta', tarefa_apagada: 'Apagada', produto_criado: 'Cadastrado', produto_editado: 'Editado', arquivo_enviado: 'Arquivo enviado', arquivo_apagado: 'Arquivo apagado' };
+  var HIST = { tarefa_responsavel: 'Responsável alterado', ouvidoria_responsavel: 'Responsável alterado', ouvidoria_descartada: 'Descartado', produto_foto: 'Foto adicionada', produto_foto_apagada: 'Foto apagada', pendencia_criada: 'Criada', pendencia_resolvida: 'Resolvida', pendencia_decidida: 'Decidida', pendencia_executada: 'Virou tarefa', pendencia_adiada: 'Adiada', pendencia_arquivada: 'Arquivada', pendencia_reaberta: 'Reaberta', pendencia_desfeita: 'Ação desfeita', condicao_cumprida: 'Condição cumprida', pendencia_comentada: 'Comentário salvo', tarefa_criada: 'Criada', tarefa_nova: 'Criada', tarefa_recebida: 'Recebida', tarefa_fazendo: 'Começou', tarefa_feita: 'Concluída', tarefa_aberta: 'Reaberta', tarefa_apagada: 'Apagada', tarefa_esperando: 'Esperando você', tarefa_conferindo: 'Para conferir', tarefa_devolvida: 'Devolvida', tarefa_retomada: 'Retomada', tarefa_pendente: 'Pendente', tarefa_aprovacao: 'Para aprovação', tarefa_decidir: 'Para o João decidir', tarefa_aprovada: 'Aprovada e concluída', tarefa_reprovada: 'Reprovada', tarefa_decidida: 'Decisão do João', tarefa_derivada: 'Derivada', produto_criado: 'Cadastrado', produto_editado: 'Editado', arquivo_enviado: 'Arquivo enviado', arquivo_apagado: 'Arquivo apagado' };
   function loadHist(ref, box) {
     box.innerHTML = '<p class="src">Carregando…</p>';
     DB.get('eventos_log?select=acao,quando&detalhe-%3E%3Eref=eq.' + encodeURIComponent(ref) + '&order=quando.desc&limit=30').then(function (rows) {
@@ -65,7 +70,7 @@
   var DCS = { id: null, acao: null };
   function sheetRow() { var id = DCS.id; return CACHE.dec.filter(function (r) { return r.id === id; })[0]; }
   function snapOf(r) {
-    var k = ['estado', 'decisao_texto', 'decidido_por', 'revisao_em', 'condicao', 'motivo_arquivo', 'motivo_reabertura', 'resolvido_em', 'posicao'], o = {};
+    var k = ['estado', 'decisao_texto', 'decidido_por', 'revisao_em', 'condicao', 'motivo_arquivo', 'motivo_reabertura', 'resolvido_em', 'posicao', 'comentario'], o = {};
     k.forEach(function (x) { o[x] = r[x] === undefined ? null : r[x]; });
     return o;
   }
@@ -78,7 +83,7 @@
   }
   function resumo(r) {
     if (r.estado === 'decidida') return r.decisao_texto ? '\u201C' + esc(r.decisao_texto) + '\u201D' : '';
-    if (r.estado === 'em-execucao') return 'Virou tarefa' + (r.decidido_por ? ' · ' + esc(r.decidido_por) : '');
+    if (r.estado === 'em-execucao') return 'Virou tarefa' + (r.decisao_texto ? ': \u201C' + esc(r.decisao_texto) + '\u201D' : '') + (r.decidido_por ? ' · ' + esc(r.decidido_por) : '');
     if (r.estado === 'aguardando') return 'Revisão ' + fmtD(r.revisao_em) + (r.condicao ? ' · ' + esc(r.condicao) : '');
     if (r.estado === 'arquivada') return r.motivo_arquivo ? esc(r.motivo_arquivo) : '';
     if (r.estado === 'aberta' && r.motivo_reabertura) return 'Reaberta: ' + esc(r.motivo_reabertura);
@@ -117,8 +122,8 @@
     var r = sheetRow(); if (!r) return;
     var a = DCS.acao, f = '';
     if (a === 'decidir') f = '<textarea name="decisao" rows="2" maxlength="400" required placeholder="Decisão do João, em uma frase"></textarea>' + quemSel('João');
-    else if (a === 'executar') f = '<input name="titulo" required maxlength="160" value="' + esc(r.titulo) + '" aria-label="Título da tarefa"><label class="lb">Responsável<select name="dono" required><option value="">Escolher…</option>' + TEAM.map(function (n) { return '<option>' + n + '</option>'; }).join('') + '</select></label><label class="lb">Prazo (opcional)<input name="prazo" type="date"></label>' + quemSel('João');
-    else if (a === 'adiar') f = '<label class="lb">Revisão em<input name="revisao" type="date" required></label><input name="condicao" maxlength="140" placeholder="Condição para voltar (opcional)">' + quemSel('João');
+    else if (a === 'executar') f = '<textarea name="decisao" rows="2" maxlength="400" required placeholder="Decisão do João, em uma frase"></textarea><input name="comentario" maxlength="140" placeholder="Comentário (opcional)"><input name="titulo" required maxlength="160" value="' + esc(r.titulo) + '" aria-label="Título da tarefa"><label class="lb">Responsável<select name="dono" required><option value="">Escolher…</option>' + TEAM.map(function (n) { return '<option>' + n + '</option>'; }).join('') + '</select></label><label class="lb">Prazo<select name="prazo" required><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option><option value="120">2 h</option><option value="1440" selected>1 dia</option></select></label>' + quemSel('João');
+    else if (a === 'adiar') f = '<label class="lb">Revisão em<select name="revisao" required><option value="">Escolher…</option><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option><option value="120">2 h</option><option value="1440">1 dia</option></select></label><input name="condicao" maxlength="140" placeholder="Condição para voltar (opcional)">' + quemSel('João');
     else if (a === 'arquivar') f = '<input name="motivo" required maxlength="140" placeholder="Motivo do arquivamento">' + quemSel('João');
     else if (a === 'reabrir') f = '<input name="motivo" required maxlength="140" placeholder="Motivo da reabertura">' + quemSel('João');
     else if (a === 'condok') f = '<p class="src">A pendência volta para a Faixa 1 · Decidir agora.</p>' + quemSel('João');
@@ -145,17 +150,19 @@
     var b = f.querySelector('button'); b.disabled = true;
     if (a === 'executar') {
       var dono = el.dono.value;
-      DB.insert('tarefas', { titulo: el.titulo.value.trim(), dono: dono, prazo: el.prazo.value || null, estado: 'nova', decisao_id: id }).then(function (rr) {
+      DB.insert('tarefas', { titulo: el.titulo.value.trim(), dono: dono, prazo: prazoISO(el.prazo.value), estado: 'pendente', decisao_id: id, comentario: el.comentario.value.trim() || null }).then(function (rr) {
         var tid = rr && rr[0] && rr[0].id;
-        return DB.update('decisoes', 'id=eq.' + id, { estado: 'em-execucao', decidido_por: quem }).then(function () {
-          return ok('Em execução · tarefa para ' + dono, 'pendencia_executada', { tf: tid, dono: dono }, tid);
+        var drow = { estado: 'em-execucao', decidido_por: quem, decisao_texto: el.decisao.value.trim() };
+        var cm = el.comentario.value.trim(); if (cm) drow.comentario = cm;
+        return DB.update('decisoes', 'id=eq.' + id, drow).then(function () {
+          return ok('Em execução · tarefa para ' + dono, 'pendencia_executada', { tf: tid, dono: dono, decisao: drow.decisao_texto }, tid);
         });
       }).catch(function (er) { b.disabled = false; msg(f, 'Não gravou: ' + er.message, 1); });
       return;
     }
     var row = { decidido_por: quem }, rotulo = '', acaoLog = '', extra = {};
     if (a === 'decidir') { row.estado = 'decidida'; row.decisao_texto = el.decisao.value.trim(); row.resolvido_em = new Date().toISOString(); rotulo = 'Decidida'; acaoLog = 'pendencia_decidida'; }
-    else if (a === 'adiar') { row.estado = 'aguardando'; row.revisao_em = el.revisao.value; row.condicao = el.condicao.value.trim() || null; rotulo = 'Adiada até ' + fmtD(el.revisao.value); acaoLog = 'pendencia_adiada'; extra = { revisao: el.revisao.value, condicao: row.condicao }; }
+    else if (a === 'adiar') { row.estado = 'aguardando'; row.revisao_em = revisaoData(el.revisao.value); row.condicao = el.condicao.value.trim() || null; rotulo = 'Adiada até ' + fmtD(row.revisao_em); acaoLog = 'pendencia_adiada'; extra = { revisao: row.revisao_em, condicao: row.condicao }; }
     else if (a === 'arquivar') { row.estado = 'arquivada'; row.motivo_arquivo = el.motivo.value.trim(); rotulo = 'Arquivada'; acaoLog = 'pendencia_arquivada'; extra = { motivo: row.motivo_arquivo }; }
     else if (a === 'reabrir') { row.estado = 'aberta'; row.resolvido_em = null; row.revisao_em = null; row.motivo_reabertura = el.motivo.value.trim(); rotulo = 'Reaberta'; acaoLog = 'pendencia_reaberta'; extra = { motivo: row.motivo_reabertura }; }
     else if (a === 'condok') { row.estado = 'aberta'; row.posicao = 1; row.revisao_em = null; rotulo = 'De volta à fila'; acaoLog = 'condicao_cumprida'; }
@@ -179,19 +186,36 @@
     } else if (act === 'tf-estado') {
       var to = b.dataset.to, tr = CACHE.tf.filter(function (r) { return r.id === +id; })[0] || {};
       var up = { estado: to }, quem = tr.dono || 'equipe', agora = new Date().toISOString();
-      if (to === 'recebida') { up.recebida_por = quem; up.recebida_em = agora; }
+      var acao = 'tarefa_' + to;
       if (to === 'fazendo') { up.fazendo_por = quem; up.fazendo_em = agora; }
-      if (to === 'feita') { up.feita_por = quem; up.feita_em = agora; }
-      if (to === 'nova') { up.recebida_por = null; up.recebida_em = null; up.fazendo_por = null; up.fazendo_em = null; up.feita_por = null; up.feita_em = null; }
-      DB.update('tarefas', 'id=eq.' + id, up).then(function () { log('tarefa_' + to, { ref: 'tf:' + id, quem: quem }); return loadTf(); }).catch(function (er) { alert('Não gravou: ' + er.message); });
+      if (to === 'aprovacao') { acao = 'tarefa_aprovacao'; }
+      if (to === 'decidir') { acao = 'tarefa_decidir'; }
+      if (to === 'concluida') { quem = 'João'; up.feita_por = 'João'; up.feita_em = agora; acao = 'tarefa_aprovada'; }
+      DB.update('tarefas', 'id=eq.' + id, up).then(function () { log(acao, { ref: 'tf:' + id, quem: quem }); return loadTf(); }).catch(function (er) { alert('Não gravou: ' + er.message); });
     } else if (act === 'tf-fila') {
       tfF = b.dataset.f; loadTf();
     } else if (act === 'tf-del') {
       if (confirm('Apagar esta tarefa?')) DB.remove('tarefas', 'id=eq.' + id).then(function () { log('tarefa_apagada', { ref: 'tf:' + id }); return loadTf(); }).catch(function (er) { alert('Não gravou (só o dono apaga): ' + er.message); });
-    } else if (act === 'ov-estado') {
-      DB.update('ouvidoria', 'id=eq.' + id, { estado: b.dataset.to }).then(loadOv).catch(function (er) { alert('Não gravou: ' + er.message); });
-    } else if (act === 'ph-del') {
-      if (confirm('Apagar esta foto?')) DB.st('DELETE', 'object/produtos/' + b.dataset.p.split('/').map(encodeURIComponent).join('/')).then(function () { log('produto_foto_apagada', { ref: 'prod:' + b.dataset.p.split('/')[0] }); return loadPhotos(b.dataset.p.split('/')[0]); }).catch(function (er) { alert('Não apagou: ' + er.message); });
+    } else if (act === 'tf-rep') {
+      var trr = CACHE.tf.filter(function (r) { return r.id === +id; })[0];
+      if (trr) openRep(trr);
+    } else if (act === 'tf-deriv') {
+      var trd = CACHE.tf.filter(function (r) { return r.id === +id; })[0];
+      if (trd) derivarTarefa(trd);
+    } else if (act === 'tf-dec-resp') {
+      var ta = $('tfd-' + id), dec = ta ? ta.value.trim() : '';
+      if (!dec) { alert('Escreva a decisão do João.'); return; }
+      var tr2 = CACHE.tf.filter(function (r) { return r.id === +id; })[0] || {};
+      var cm2 = (tr2.comentario ? tr2.comentario + ' · ' : '') + 'Decisão do João: ' + dec;
+      DB.update('tarefas', 'id=eq.' + id, { estado: 'fazendo', comentario: cm2 }).then(function () { log('tarefa_decidida', { ref: 'tf:' + id, decisao: dec }); toast('Decisão registrada; tarefa de volta para Fazendo'); return loadTf(); }).catch(function (er) { alert('Não gravou: ' + er.message); });
+    } else if (act === 'ov-criar') {
+      var ovr = CACHE.ov.filter(function (r) { return r.id === +id; })[0];
+      if (ovr) ovCriarTarefa(ovr);
+    } else if (act === 'ov-descartar') {
+      var ovd = CACHE.ov.filter(function (r) { return r.id === +id; })[0] || {};
+      if (!confirm('Descartar este registro da ouvidoria? Ele sai do painel (fica no histórico).')) return;
+      b.disabled = true;
+      DB.remove('ouvidoria', 'id=eq.' + id).then(function () { log('ouvidoria_descartada', { ref: 'ov:' + id, trecho: (ovd.texto || '').slice(0, 80) }); toast('Registro descartado'); return loadOv(); }).catch(function (er) { b.disabled = false; alert('Não gravou: ' + er.message); });
     } else if (act === 'hist') {
       var hb = document.getElementById('h-' + b.dataset.ref.replace(/[^a-z0-9]/gi, '_')); hb.hidden = !hb.hidden; if (!hb.hidden) loadHist(b.dataset.ref, hb);
     } else if (act === 'aq-toggle') {
@@ -234,7 +258,7 @@
   }
   function loadGer() {
     return DB.get('decisoes?select=*&order=posicao.asc,id.asc').then(function (rows) {
-      CACHE.dec = rows; doSearch();
+      CACHE.dec = rows; doSearch(); renderDash();
       var open = rows.filter(function (r) { return r.estado === 'aberta'; });
       var ag = rows.filter(function (r) { return r.estado === 'aguardando'; });
       var fech = rows.filter(function (r) { return r.estado === 'decidida' || r.estado === 'em-execucao'; });
@@ -274,7 +298,7 @@
   /* ---------- Produtos ---------- */
   function loadBc() {
     return DB.get('produtos?select=*&order=codigo.asc').then(function (rows) {
-      CACHE.prod = rows; doSearch();
+      CACHE.prod = rows; doSearch(); renderDash();
       $('bc-list').innerHTML = rows.length ? rows.map(function (r) {
         return '<div class="pc"><div class="pc-h"><b>' + esc(r.codigo) + (r.nome ? ' · ' + esc(r.nome) : ' · sem nome') + '</b><span class="tag' + (r.loja_bloqueada ? '' : ' y') + '">' + (r.loja_bloqueada ? 'Loja bloqueada' : 'Liberado p/ loja') + '</span></div>' +
           '<p class="src">Etapa ' + esc(r.etapa || '-') + (r.medidas ? ' · ' + esc(r.medidas) : '') + (r.peso ? ' · ' + esc(r.peso) : '') + (r.material ? ' · ' + esc(r.material) : '') + '</p>' +
@@ -303,52 +327,92 @@
   });
 
   /* ---------- Tarefas ---------- */
-  var TF = { nova: 'Nova', recebida: 'Recebida', fazendo: 'Fazendo', feita: 'Feita' };
+  var TF = { pendente: 'Pendente', fazendo: 'Fazendo', aprovacao: 'Aprovação', decidir: 'Decidir', concluida: 'Concluída' };
   var tfF = '';
+  var ALERTAS = [];
+  function tfAlertas(rows) {
+    var agora = Date.now(), out = [];
+    rows.forEach(function (r) {
+      if (r.estado === 'concluida') return;
+      var prz = r.prazo ? new Date(r.prazo).getTime() : 0;
+      if (prz && prz < agora) out.push({ id: r.id, titulo: r.titulo, texto: 'Prazo vencido (' + fmtPrazo(r.prazo) + ') — avisar ' + (r.dono || 'o dono') + ' e o Osvaldo' });
+    });
+    return out;
+  }
+  function renderBell(als) {
+    ALERTAS = als;
+    var n = $('bell-n'); if (!n) return;
+    n.hidden = !als.length; n.textContent = als.length > 9 ? '9+' : String(als.length);
+  }
   function loadTf() {
     return DB.get('tarefas?select=*&order=criado_em.desc').then(function (rows) {
-      CACHE.tf = rows.slice(); doSearch();
-      var ord = { nova: 0, recebida: 1, fazendo: 2, feita: 3 };
+      CACHE.tf = rows.slice(); doSearch(); renderDash();
+      renderBell(tfAlertas(rows));
+      var ord = { pendente: 0, fazendo: 1, aprovacao: 2, decidir: 3, concluida: 4 };
       rows.sort(function (a, b) { return (ord[a.estado] || 0) - (ord[b.estado] || 0); });
       var chips = [{ v: '', l: 'Todas (' + rows.length + ')' }];
-      TEAM.forEach(function (n) { var c = rows.filter(function (r) { return r.dono === n; }).length; chips.push({ v: n, l: 'Para ' + art(n) + ' ' + n + ' (' + c + ')' }); });
+      TEAM.forEach(function (n) { var c = rows.filter(function (r) { return r.dono === n; }).length; chips.push({ v: n, l: 'Para ' + art(n) + ' ' + n + (DEPT[n] ? ' · ' + DEPT[n] : '') + ' (' + c + ')' }); });
       var antigos = []; rows.forEach(function (r) { if (r.dono && TEAM.indexOf(r.dono) < 0 && antigos.indexOf(r.dono) < 0) antigos.push(r.dono); });
       antigos.forEach(function (n) { var c = rows.filter(function (r) { return r.dono === n; }).length; chips.push({ v: n, l: 'Antigo: ' + n + ' (' + c + ')' }); });
       var sem = rows.filter(function (r) { return !r.dono; }).length;
       chips.push({ v: '-', l: 'Sem responsável (' + sem + ')' });
       $('tf-filas').innerHTML = chips.map(function (c) { return '<button type="button" class="cp' + (tfF === c.v ? ' on' : '') + '" data-act="tf-fila" data-f="' + esc(c.v) + '">' + esc(c.l) + '</button>'; }).join('');
-      var list = rows.filter(function (r) { return !tfF || (tfF === '-' ? !r.dono : r.dono === tfF); });
-      $('tf-list').innerHTML = list.length ? list.map(function (r) {
-        var to = r.estado === 'nova' ? ['recebida', 'Receber', '✋'] : r.estado === 'recebida' ? ['fazendo', 'Começar', '▶'] : r.estado === 'fazendo' ? ['feita', 'Concluir', '✓'] : ['nova', 'Reabrir', '↺'];
+      var ativas = rows.filter(function (r) { return r.estado !== 'concluida'; });
+      var list = ativas.filter(function (r) { return !tfF || (tfF === '-' ? !r.dono : r.dono === tfF); });
+      var done = rows.filter(function (r) { return r.estado === 'concluida'; });
+      function cardTf(r) {
+        var venc = r.prazo && new Date(r.prazo).getTime() < Date.now() && r.estado !== 'concluida';
+        var acts = '';
+        if (r.estado === 'pendente') acts = ib('', '▶', 'Começar', 'data-act="tf-estado" data-id="' + r.id + '" data-to="fazendo"');
+        else if (r.estado === 'fazendo') acts = ib('', '⚖', 'Decidir', 'data-act="tf-estado" data-id="' + r.id + '" data-to="decidir"') + ib('', '✓', 'Concluir', 'data-act="tf-estado" data-id="' + r.id + '" data-to="aprovacao"');
+        var dica = r.estado === 'aprovacao' ? ' · esperando o João na aba Aprovação' : r.estado === 'decidir' ? ' · esperando o João na aba Decidir' : '';
         var trilha = [];
         if (r.recebida_em) trilha.push('recebida por ' + esc(r.recebida_por || '-') + ' ' + fmt(r.recebida_em));
         if (r.fazendo_em) trilha.push('fazendo por ' + esc(r.fazendo_por || '-') + ' ' + fmt(r.fazendo_em));
-        if (r.feita_em) trilha.push('feita por ' + esc(r.feita_por || '-') + ' ' + fmt(r.feita_em));
-        return '<div class="row tf"><div><b>' + esc(r.titulo) + '</b><p>' + (TF[r.estado] || esc(r.estado)) + ' · criada ' + fmt(r.criado_em) + (r.prazo ? ' · prazo ' + new Date(r.prazo).toLocaleDateString('pt-BR', { timeZone: 'UTC' }) : '') + (r.decisao_id ? ' · da pendência ger-' + r.decisao_id : '') + (trilha.length ? '<br>' + trilha.join(' · ') : '') + '</p>' + rsel('tarefas', r.id, r.dono) + '</div>' +
-          '<div class="acts">' + ib('', to[2], to[1], 'data-act="tf-estado" data-id="' + r.id + '" data-to="' + to[0] + '"') + ib('', '✕', 'Apagar', 'data-act="tf-del" data-id="' + r.id + '"') + ib('', '⏱', 'Histórico', 'data-act="hist" data-ref="' + 'tf:' + r.id + '"') + '</div>' + '<div class="hbox" hidden id="h-' + ('tf:' + r.id).replace(/[^a-z0-9]/gi, '_') + '"></div>' + '</div>';
-      }).join('') : '<p class="src">Nenhuma tarefa' + (tfF ? ' nesta fila' : '') + '.</p>';
+        if (r.feita_em) trilha.push('concluída por ' + esc(r.feita_por || '-') + ' ' + fmt(r.feita_em));
+        return '<div class="row tf' + (venc ? ' atr' : '') + '"><div><b>' + esc(r.titulo) + '</b><p>' + (TF[r.estado] || esc(r.estado)) + (venc ? ' <span class="tag r">Vencida</span>' : '') + ' · criada ' + fmt(r.criado_em) + (r.prazo ? ' · prazo ' + fmtPrazo(r.prazo) : '') + (r.origem_tarefa_id ? ' · derivada de tf-' + r.origem_tarefa_id : '') + (r.decisao_id ? ' · da pendência ger-' + r.decisao_id : '') + (r.ouvidoria_id ? ' · da ouvidoria ov-' + r.ouvidoria_id : '') + dica + (r.descricao ? '<br>' + esc(r.descricao) : '') + (trilha.length ? '<br>' + trilha.join(' · ') : '') + (r.comentario ? '<br>Comentário: ' + esc(r.comentario) : '') + '</p>' + rsel('tarefas', r.id, r.dono) + '</div>' +
+          '<div class="acts">' + acts + ib('', '⤴', 'Derivar', 'data-act="tf-deriv" data-id="' + r.id + '"') + ib('', '✕', 'Apagar', 'data-act="tf-del" data-id="' + r.id + '"') + ib('', '⏱', 'Histórico', 'data-act="hist" data-ref="' + 'tf:' + r.id + '"') + '</div>' + '<div class="hbox" hidden id="h-' + ('tf:' + r.id).replace(/[^a-z0-9]/gi, '_') + '"></div>' + '</div>';
+      }
+      $('tf-list').innerHTML = list.length ? list.map(cardTf).join('') : '<p class="src">Nenhuma tarefa' + (tfF ? ' nesta fila' : '') + ' em aberto.</p>';
+      var doneBox = $('tf-done-list'); if (doneBox) doneBox.innerHTML = done.length ? done.map(cardTf).join('') : '<p class="src">Nenhuma concluída ainda.</p>';
+      var tfd = rows.filter(function (r) { return r.estado === 'decidir'; });
+      var wrap = $('tf-dec-wrap');
+      if (wrap) {
+        wrap.hidden = !tfd.length;
+        $('tf-dec-list').innerHTML = tfd.map(function (r) {
+          return '<div class="row tf"><div><b>' + esc(r.titulo) + '</b><p>de ' + esc(r.dono || '-') + (r.prazo ? ' · prazo ' + fmtPrazo(r.prazo) : '') + (r.descricao ? '<br>' + esc(r.descricao) : '') + '</p>' +
+            '<div class="cmbox"><textarea rows="2" maxlength="500" placeholder="Decisão do João" id="tfd-' + r.id + '"></textarea>' + ib('ok2', '✓', 'Devolver para Fazendo', 'data-act="tf-dec-resp" data-id="' + r.id + '"') + '</div></div></div>';
+        }).join('');
+      }
+      var ap = rows.filter(function (r) { return r.estado === 'aprovacao'; });
+      var apBox = $('ap-list');
+      if (apBox) apBox.innerHTML = ap.length ? ap.map(function (r) {
+        return '<div class="row tf"><div><b>' + esc(r.titulo) + '</b><p>de ' + esc(r.dono || '-') + (r.prazo ? ' · prazo ' + fmtPrazo(r.prazo) : '') + (r.descricao ? '<br>' + esc(r.descricao) : '') + (r.comentario ? '<br>Comentário: ' + esc(r.comentario) : '') + '</p></div>' +
+          '<div class="acts">' + ib('', '✓', 'Aprovar', 'data-act="tf-estado" data-id="' + r.id + '" data-to="concluida"') + ib('', '↺', 'Reprovar', 'data-act="tf-rep" data-id="' + r.id + '"') + '</div></div>';
+      }).join('') : '<p class="src">Nada esperando aprovação.</p>';
     }).catch(function (e) { fail(e, $('tf-list')); });
   }
   $('tf-new').addEventListener('submit', function (e) {
     e.preventDefault(); var f = e.target, el = f.elements;
-    DB.insert('tarefas', { titulo: el.titulo.value.trim(), dono: el.dono.value.trim() || null, prazo: el.prazo.value || null, estado: 'nova' }).then(function (rr) { if (rr && rr[0]) log('tarefa_criada', { ref: 'tf:' + rr[0].id }); f.reset(); msg(f, 'Adicionada.'); return loadTf(); }).catch(function (er) { msg(f, 'Não gravou: ' + er.message, 1); });
+    DB.insert('tarefas', { titulo: el.titulo.value.trim(), dono: el.dono.value.trim() || null, prazo: prazoISO(el.prazo.value), descricao: el.descricao ? el.descricao.value.trim() || null : null, estado: 'pendente' }).then(function (rr) { if (rr && rr[0]) log('tarefa_criada', { ref: 'tf:' + rr[0].id }); f.reset(); msg(f, 'Adicionada.'); return loadTf(); }).catch(function (er) { msg(f, 'Não gravou: ' + er.message, 1); });
   });
 
   /* ---------- Ouvidoria ---------- */
   var TIPO = { ideia: 'Ideia', auditoria: 'Auditoria', reclamacao: 'Reclamação' };
   function loadOv() {
     return DB.get('ouvidoria?select=*&order=criado_em.desc').then(function (rows) {
-      CACHE.ov = rows; doSearch();
+      CACHE.ov = rows; doSearch(); renderDash();
       $('ov-list').innerHTML = rows.length ? rows.map(function (r) {
         var done = r.estado === 'tratada';
         return '<div class="row tf"><div><b>' + (TIPO[r.tipo] || esc(r.tipo)) + (done ? ' · tratada' : '') + '</b><p>' + esc(r.texto) + '</p><p class="src">' + (r.autor ? esc(r.autor) + ' · ' : '') + fmt(r.criado_em) + '</p>' + rsel('ouvidoria', r.id, r.responsavel) + '</div>' +
-          '<div class="acts">' + ib('', done ? '↺' : '✓', done ? 'Reabrir' : 'Tratada', 'data-act="ov-estado" data-id="' + r.id + '" data-to="' + (done ? 'nova' : 'tratada') + '"') + '</div></div>';
+          (done ? '' : '<div class="acts">' + ib('', '⚑', 'Criar tarefa', 'data-act="ov-criar" data-id="' + r.id + '"') + ib('', '✕', 'Descartar', 'data-act="ov-descartar" data-id="' + r.id + '"') + '</div>') + '</div>';
       }).join('') : '<p class="src">Nenhum registro.</p>';
     }).catch(function (e) { fail(e, $('ov-list')); });
   }
   $('ov-new').addEventListener('submit', function (e) {
     e.preventDefault(); var f = e.target, el = f.elements;
-    DB.insert('ouvidoria', { tipo: el.tipo.value, texto: el.texto.value.trim(), autor: el.autor.value.trim() || null, responsavel: el.responsavel.value || null, estado: 'nova' }).then(function () { f.reset(); msg(f, 'Registrado.'); return loadOv(); }).catch(function (er) { msg(f, 'Não gravou: ' + er.message, 1); });
+    var ovTipo = el.tipo.value, ovTrecho = el.texto.value.trim().slice(0, 120);
+    DB.insert('ouvidoria', { tipo: ovTipo, texto: el.texto.value.trim(), autor: el.autor.value.trim() || null, responsavel: el.responsavel.value || null, estado: 'nova' }).then(function () { DB.insert('chamadas', { texto: 'Ouvidoria nova (' + ovTipo + '): ' + ovTrecho }).catch(function () {}); f.reset(); msg(f, 'Registrado.'); return loadOv(); }).catch(function (er) { msg(f, 'Não gravou: ' + er.message, 1); });
   });
 
   /* ---------- fotos dos produtos (Storage, bucket privado) ---------- */
@@ -477,11 +541,33 @@
   /* ---------- adicionar pelo topo (modal) ---------- */
   var ADD = {
     pendencia: { rot: 'Pendência', campos: '<input name="titulo" required maxlength="140" placeholder="Título"><textarea name="opcoes" rows="2" placeholder="Detalhe (opcional)"></textarea><select name="posicao" aria-label="Faixa"><option value="1">Faixa 1 · Decidir agora</option><option value="2">Faixa 2 · Esta semana</option><option value="3" selected>Faixa 3 · Depois</option></select>', grava: function (el) { return DB.insert('decisoes', { titulo: el.titulo.value.trim(), opcoes: el.opcoes.value.trim() || null, posicao: +el.posicao.value, estado: 'aberta' }).then(function (rr) { if (rr && rr[0]) log('pendencia_criada', { ref: 'dec:' + rr[0].id }); return loadGer(); }); } },
-    tarefa: { rot: 'Tarefa', campos: '<input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><select name="dono" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<input name="prazo" type="date"></label>', grava: function (el) { return DB.insert('tarefas', { titulo: el.titulo.value.trim(), dono: el.dono.value || null, prazo: el.prazo.value || null, estado: 'nova' }).then(function (rr) { if (rr && rr[0]) log('tarefa_criada', { ref: 'tf:' + rr[0].id }); return loadTf(); }); } },
-    ouvidoria: { rot: 'Registro', campos: '<select name="tipo" aria-label="Tipo"><option value="ideia">Ideia</option><option value="auditoria">Auditoria</option><option value="reclamacao">Reclamação</option></select><textarea name="texto" required rows="3" maxlength="1500" placeholder="Descreva"></textarea><input name="autor" maxlength="40" placeholder="Quem registra"><select name="responsavel" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select>', grava: function (el) { return DB.insert('ouvidoria', { tipo: el.tipo.value, texto: el.texto.value.trim(), autor: el.autor.value.trim() || null, responsavel: el.responsavel.value || null, estado: 'nova' }).then(function () { return loadOv(); }); } },
+    tarefa: { rot: 'Tarefa', campos: '<input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><textarea name="descricao" rows="2" maxlength="500" placeholder="Descrição (opcional)"></textarea><select name="dono" required aria-label="Responsável"><option value="">Escolher o responsável…</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<select name="prazo" required><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option><option value="120">2 h</option><option value="1440" selected>1 dia</option></select></label><textarea name="comentario" rows="2" maxlength="500" placeholder="Comentário (opcional)"></textarea>', grava: function (el) { var ovid = OV_ORIGEM, tfid = TF_ORIGEM; return DB.insert('tarefas', { titulo: el.titulo.value.trim(), dono: el.dono.value || null, prazo: prazoISO(el.prazo.value), descricao: el.descricao.value.trim() || null, comentario: el.comentario.value.trim() || null, estado: 'pendente', ouvidoria_id: ovid || null, origem_tarefa_id: tfid || null }).then(function (rr) { var tid = rr && rr[0] && rr[0].id; if (!tid) throw new Error('insert tarefa'); var det = { ref: 'tf:' + tid }; if (ovid) det.origem = 'ov:' + ovid; if (tfid) det.origem_tarefa = 'tf:' + tfid; log(tfid ? 'tarefa_derivada' : 'tarefa_criada', det); TF_ORIGEM = null; if (ovid) { OV_ORIGEM = null; return DB.update('ouvidoria', 'id=eq.' + ovid, { estado: 'tratada' }).then(function () { toast('Tarefa criada; registro tratado'); loadOv(); return loadTf(); }).catch(function () { toast('Tarefa criada'); return loadTf(); }); } return loadTf(); }); } },
+    ouvidoria: { rot: 'Registro', campos: '<select name="tipo" aria-label="Tipo"><option value="ideia">Ideia</option><option value="auditoria">Auditoria</option><option value="reclamacao">Reclamação</option></select><textarea name="texto" required rows="3" maxlength="1500" placeholder="Descreva"></textarea><input name="autor" maxlength="40" placeholder="Quem registra"><select name="responsavel" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select>', grava: function (el) { var tp = el.tipo.value, tr = el.texto.value.trim().slice(0, 120); return DB.insert('ouvidoria', { tipo: tp, texto: el.texto.value.trim(), autor: el.autor.value.trim() || null, responsavel: el.responsavel.value || null, estado: 'nova' }).then(function () { DB.insert('chamadas', { texto: 'Ouvidoria nova (' + tp + '): ' + tr }).catch(function () {}); return loadOv(); }); } },
     produto: { rot: 'Produto', campos: '<input name="codigo" required pattern="FP-0[0-9]{2}" placeholder="Código, ex.: FP-011"><input name="nome" placeholder="Nome">', grava: function (el) { return DB.insert('produtos', { codigo: el.codigo.value.trim().toUpperCase(), nome: el.nome.value.trim() || null, etapa: 'E1', loja_bloqueada: true }).then(function () { log('produto_criado', { ref: 'prod:' + el.codigo.value.trim().toUpperCase() }); return loadBc(); }); } }
   };
   var ROTA_ADD = { decidir: 'pendencia', tarefas: 'tarefa', ouvidoria: 'ouvidoria', produtos: 'produto' };
+  var OV_ORIGEM = null;
+  var TF_ORIGEM = null;
+  function derivarTarefa(tr) {
+    TF_ORIGEM = tr.id;
+    $('addm-tipo').value = 'tarefa';
+    addmForm('tarefa');
+    var f = $('addm-f');
+    f.elements.titulo.value = ('Derivada de tf-' + tr.id + ': ').slice(0, 160);
+    $('addm').hidden = false;
+    f.elements.titulo.focus();
+  }
+  function ovCriarTarefa(ovr) {
+    OV_ORIGEM = ovr.id;
+    $('addm-tipo').value = 'tarefa';
+    addmForm('tarefa');
+    var f = $('addm-f');
+    f.elements.titulo.value = ((TIPO[ovr.tipo] || ovr.tipo) + ': ' + (ovr.texto || '')).slice(0, 160);
+    f.elements.dono.value = ovr.responsavel || '';
+    f.elements.comentario.value = 'Origem: ouvidoria ov-' + ovr.id + ' (' + (TIPO[ovr.tipo] || ovr.tipo) + (ovr.autor ? ', ' + ovr.autor : '') + ')';
+    $('addm').hidden = false;
+    f.elements.titulo.focus();
+  }
   function addmForm(tipo) {
     var A = ADD[tipo]; if (!A) return;
     $('addm-body').innerHTML = '<form class="fm" id="addm-f"><div class="lb">' + A.rot + '</div>' + A.campos + '<button class="btn" type="submit">Adicionar</button><p class="msg src" role="status"></p></form>';
@@ -491,18 +577,64 @@
     });
   }
   function openAddm() {
+    OV_ORIGEM = null; TF_ORIGEM = null;
     var r = (location.hash || '#inicio').slice(1);
     $('addm-tipo').value = ROTA_ADD[r] || 'tarefa';
     addmForm($('addm-tipo').value);
     $('addm').hidden = false;
     var i = document.querySelector('#addm-f input'); if (i) i.focus();
   }
-  function closeAddm() { $('addm').hidden = true; }
+  function closeAddm() { $('addm').hidden = true; OV_ORIGEM = null; TF_ORIGEM = null; }
   $('add-top').addEventListener('click', openAddm);
   $('addm-x').addEventListener('click', closeAddm);
   $('addm').addEventListener('click', function (e) { if (e.target.classList && e.target.classList.contains('md-bg')) closeAddm(); });
-  $('addm-tipo').addEventListener('change', function () { addmForm(this.value); });
+  $('addm-tipo').addEventListener('change', function () { OV_ORIGEM = null; TF_ORIGEM = null; addmForm(this.value); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('addm').hidden) closeAddm(); });
+
+  /* ---------- campainha (chamar o Osvaldo) ---------- */
+  function openChm() {
+    var al = ALERTAS.length ? '<div class="albox"><div class="lb">Campainha (' + ALERTAS.length + ')</div>' + ALERTAS.map(function (a) { return '<p class="alitem">\uD83D\uDD14 <b>' + esc(a.titulo) + '</b> · ' + esc(a.texto) + '</p>'; }).join('') + '</div>' : '';
+    $('chm-body').innerHTML = al + '<form class="fm" id="chm-f"><div class="lb">Mensagem para o Osvaldo</div><textarea name="mensagem" rows="4" maxlength="1000" required placeholder="O que o Osvaldo precisa fazer agora"></textarea><button class="btn" type="submit" aria-label="Enviar" title="Enviar">&#x27A4;</button><p class="msg src" role="status"></p></form>';
+    $('chm-f').addEventListener('submit', function (e) { e.preventDefault(); sendChm(e.target); });
+    $('chm').hidden = false;
+    var t = document.querySelector('#chm-f textarea'); if (t) t.focus();
+  }
+  function closeChm() { $('chm').hidden = true; }
+  function sendChm(f) {
+    var b = f.querySelector('button'); b.disabled = true;
+    DB.insert('chamadas', { texto: f.elements.mensagem.value.trim() }).then(function () {
+      log('chamada_enviada', { ref: 'campainha' });
+      closeChm(); toast('Chamada registrada');
+    }).catch(function (er) { b.disabled = false; msg(f, 'N\u00e3o registrou: ' + er.message, 1); });
+  }
+  $('bell').addEventListener('click', openChm);
+  $('chm-x').addEventListener('click', closeChm);
+  $('chm').addEventListener('click', function (e) { if (e.target.classList && e.target.classList.contains('md-bg')) closeChm(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('chm').hidden) closeChm(); });
+
+  /* ---------- reprovar (aprovação -> fazendo com motivo) ---------- */
+  var REP = { id: null };
+  function openRep(tr) {
+    REP.id = tr.id;
+    $('rep-body').innerHTML = '<form class="fm" id="rep-f"><div class="lb">Motivo da reprovação</div><p class="src">' + esc(tr.titulo) + '</p><textarea name="motivo" rows="3" maxlength="500" required placeholder="Por que reprovou? O motivo volta com a tarefa"></textarea><button class="btn" type="submit" aria-label="Reprovar" title="Reprovar">&#x27A4;</button><p class="msg src" role="status"></p></form>';
+    $('rep-f').addEventListener('submit', function (e) { e.preventDefault(); sendRep(e.target); });
+    $('rep').hidden = false;
+    var t = document.querySelector('#rep-f textarea'); if (t) t.focus();
+  }
+  function closeRep() { $('rep').hidden = true; REP.id = null; }
+  function sendRep(f) {
+    var b = f.querySelector('button'); b.disabled = true;
+    var tr = CACHE.tf.filter(function (r) { return r.id === REP.id; })[0] || {};
+    var motivo = f.elements.motivo.value.trim();
+    var cm = (tr.comentario ? tr.comentario + ' · ' : '') + 'Reprovada: ' + motivo;
+    DB.update('tarefas', 'id=eq.' + REP.id, { estado: 'fazendo', comentario: cm }).then(function () {
+      log('tarefa_reprovada', { ref: 'tf:' + REP.id, motivo: motivo });
+      closeRep(); toast('Reprovada; voltou para Fazendo'); return loadTf();
+    }).catch(function (er) { b.disabled = false; msg(f, 'N\u00e3o gravou: ' + er.message, 1); });
+  }
+  $('rep-x').addEventListener('click', closeRep);
+  $('rep').addEventListener('click', function (e) { if (e.target.classList && e.target.classList.contains('md-bg')) closeRep(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('rep').hidden) closeRep(); });
 
   /* ---------- busca ---------- */
   function norm(s) { return String(s == null ? '' : s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
@@ -518,6 +650,30 @@
     box.hidden = false; box.innerHTML = out.length ? out.slice(0, 25).join('') : '<p class="src">Nada encontrado.</p>';
   }
   $('sq').addEventListener('input', doSearch);
+  $('sq-btn').addEventListener('click', function () {
+    var b = $('bar-sq'), open = b.classList.toggle('open');
+    this.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) $('sq').focus(); else { $('sq').value = ''; doSearch(); }
+  });
+
+  /* ---------- dashboard do início (resumo das abas) ---------- */
+  function renderDash() {
+    function num(id, v) { var e = $(id); if (e) e.textContent = v; }
+    function cap(id, v) { var e = $(id); if (e) e.textContent = v; }
+    var ab = CACHE.dec.filter(function (r) { return r.estado === 'aberta'; }).length;
+    var agd = CACHE.dec.filter(function (r) { return r.estado === 'aguardando'; }).length;
+    num('dnum-dec', ab + agd);
+    num('dnum-prod', CACHE.prod.length);
+    cap('dcap-prod', CACHE.prod.length ? CACHE.prod.length + ' produto' + (CACHE.prod.length > 1 ? 's' : '') + ' cadastrado' + (CACHE.prod.length > 1 ? 's' : '') + '.' : 'Nenhum produto ainda.');
+    var tfAb = CACHE.tf.filter(function (r) { return r.estado !== 'concluida'; }).length;
+    var tfFaz = CACHE.tf.filter(function (r) { return r.estado === 'fazendo'; }).length;
+    var tfJoao = CACHE.tf.filter(function (r) { return r.estado === 'aprovacao' || r.estado === 'decidir'; }).length;
+    num('dnum-tf', tfAb);
+    cap('dcap-tf', tfAb ? tfAb + ' em aberto · ' + tfFaz + ' fazendo' + (tfJoao ? ' · ' + tfJoao + ' com o João' : '') + '.' : 'Nenhuma tarefa em aberto.');
+    var ovAb = CACHE.ov.filter(function (r) { return r.estado !== 'tratada'; }).length;
+    num('dnum-ouv', ovAb);
+    cap('dcap-ouv', ovAb ? ovAb + ' registro' + (ovAb > 1 ? 's' : '') + ' em aberto.' : 'Nada em aberto.');
+  }
   function all() { loadGer(); loadBc(); loadTf(); loadOv(); }
   function start() {
     if (started) return; started = true; all();
@@ -526,3 +682,4 @@
   }
   if (DB.session()) start(); else showLogin();
 })();
+
