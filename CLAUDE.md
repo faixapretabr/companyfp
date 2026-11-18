@@ -37,7 +37,7 @@ Em caso de conflito com outro documento, vale o que está aqui, em `DECISOES.md`
   - E-commerce: p2kgeh@mail.instinct.com
   - Gestão: na0fhk@mail.instinct.com
 - Cláudio confere a caixa de entrada a cada 30 min.
-- Quando o Osvaldo executa uma tarefa, o e-mail traz um horário limite. Se ele não terminar, responde antes explicando e pedindo novo prazo.
+- Quando o Osvaldo executa uma tarefa, o e-mail traz um horário limite. O prazo padrão é de 15 minutos. Se ele não terminar, responde antes explicando e pedindo novo prazo.
 - **Nunca** mandar senha ou chave por e-mail ou Slack. Chaves ficam no cofre.
 - Só **gasto** e **primeiro login** ficam com o João. A palavra do Cláudio vale como a do João pro resto, inclusive publicação.
 - Se algo está pendente há mais de 12h, ou já foi cobrado do João 2 vezes, o Cláudio decide o que for melhor pra FP.
