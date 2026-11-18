@@ -13,6 +13,8 @@ Registro único das decisões do João. Nova decisão entra no topo, com data.
 8. **Fonte única de verdade:** repositório GitHub `faixapretabr/companyfp`. Drive e Docs viram espelho, não fonte (17/11/2026).
 9. **Organograma (18/11/2026):** Osvaldo é Gestão Geral (G01). Dante é E-commerce e Vicente é Produto, sem cartão de agente no repositório: departamentos E e P não são criados. Os cartões criados em `.claude/agents/` são M01 a M04, O01 a O04 e I01 a I08, um por agente, identificados só por letra e número. Helena fica como M01 e Severino como M02 (produção de mídia e conteúdo). A ativação de cada agente vem depois, por fase.
 
+10. **Consolidação (18/11/2026):** `CONTEXTO.md` é a porta de entrada e o mapa de fontes. Texto e regra no repositório; dados vivos do painel no Supabase; Worker só para o status do Escritório. Arquivos antigos ficam onde estão, sem mover.
+
 ## Plano de 30 dias
 Mira o **Natal**. Black Friday seria cedo.
 

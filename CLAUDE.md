@@ -50,7 +50,8 @@ Desenvolver, imprimir protótipo, ajustar, imprimir a versão modelo. Só vende 
 ## Painel FP
 - Central com 5 blocos: Escritório LIVE, Gerência, Banco de Desenvolvimento, Tarefas e Ouvidoria.
 - Mobile first, responsivo, minimalista, fiel ao manual de marca, PWA.
-- Status do time grava no Worker com chave por pessoa. Chaves nunca ficam no repositório.
+- Dados vivos do painel (decisões, tarefas, produtos, ouvidoria) ficam no Supabase. O status do time no Escritório grava no Worker com chave por pessoa. Chaves nunca ficam no repositório.
+- Mapa de fontes: `CONTEXTO.md`.
 
 ## Rotinas agendadas (só leitura e relatório)
 - Relatório semanal da equipe: sexta 16:41.
