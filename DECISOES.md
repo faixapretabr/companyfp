@@ -5,7 +5,7 @@ Registro único das decisões do João. Nova decisão entra no topo, com data.
 ## Decisões já tomadas
 1. **Claude é o head da FP.**
 2. **Catálogo inicial fechado:** os 10 objetos lançam juntos (não só 3).
-3. **Regra de venda:** desenvolver, imprimir protótipo, ajustar, imprimir a versão modelo. Só vende com o produto final aprovado na mão, produzindo sob demanda.
+3. **Regra de venda:** desenvolver, imprimir protótipo, ajustar, imprimir o piloto. Só vende com o piloto aprovado na mão, produzindo sob demanda.
 4. **Time:** Osvaldo, Helena, Dante, Vicente e Meta. Bento, Dora e Nilo (marketing da Helena) saíram.
 5. **Painel e materiais** seguem a identidade da marca.
 6. **Deploy direto no Cloudflare** autorizado pelo João em 15/11/2026.
