@@ -67,7 +67,7 @@
   window.FP = { setStatus: setStatus };
 
   /* ---------- status da equipe (banco: pessoas + status, so leitura) ---------- */
-  var ALIAS = { osvaldo: 'g01' }; /* decisão 9 */
+  var ALIAS = { osvaldo: 'g01', helena: 'm01', severino: 'm02' }; /* decisão 9 */
   function normId(n) { return String(n || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
   function quando(ts) {
     if (!ts) return '';
