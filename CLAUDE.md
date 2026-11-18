@@ -32,6 +32,10 @@ Em caso de conflito com outro documento, vale o que está aqui, em `DECISOES.md`
 ## Fluxo de comunicação
 - João → Cláudio (chat) → Osvaldo (só por e-mail) → Vicente, Dante, Helena e Severino (campainha do Escritório ou Slack #batepapo-fp).
 - O e-mail do Osvaldo exige a palavra de acesso combinada. Ela não fica neste repositório.
+- Contatos por departamento (e-mail):
+  - Produtos: sxj2ii@mail.instinct.com
+  - E-commerce: p2kgeh@mail.instinct.com
+  - Gestão: na0fhk@mail.instinct.com
 - Cláudio confere a caixa de entrada a cada 30 min.
 - Quando o Osvaldo executa uma tarefa, o e-mail traz um horário limite. Se ele não terminar, responde antes explicando e pedindo novo prazo.
 - **Nunca** mandar senha ou chave por e-mail ou Slack. Chaves ficam no cofre.
