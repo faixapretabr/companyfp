@@ -5,7 +5,7 @@
 
 ## Para que serve
 
-Uma fonte só, curta e concreta, para qualquer pessoa ou agente (Cláudio, Osvaldo, Departamento de Produtos, Departamento Ecommerce, Helena, Severino) consultar antes de agir. Se uma informação está aqui, ela vale. Se conflita com um arquivo antigo, vale a daqui.
+Uma fonte só, curta e concreta, para qualquer pessoa ou agente (Cláudio, Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Helena, Severino) consultar antes de agir. Se uma informação está aqui, ela vale. Se conflita com um arquivo antigo, vale a daqui.
 
 ## Os 11 arquivos
 
@@ -54,7 +54,7 @@ Divergência encontrada vai para a seção "Divergências" do arquivo 09. Não s
 - **Piloto**: a peça final aprovada pelo João, na mão, que serve de padrão para vender (decisão do João, 15/11; antes chamada "versão modelo").
 - **Sob demanda**: só imprime depois do pedido.
 - **Fila de 3**: lista de no máximo 3 decisões levadas ao João, com recomendação na frente.
-- **Palavra mágica**: senha de texto que valida e-mails entre Cláudio e Osvaldo. Não fica escrita nesta base.
+- **Palavra mágica**: senha de texto que valida e-mails entre Cláudio e Departamento Gestão. Não fica escrita nesta base.
 - **A1 mini**: impressora 3D de referência (mesa 180 × 180 mm).
 - **Painel FP / Escritório LIVE**: central web da operação (arquivo 08).
 
@@ -77,7 +77,7 @@ Meta atual: lançar a Coleção GEN (10 objetos) mirando o **Natal de 2026**. Bl
 1. O Claude (Cláudio) é o head da operação.
 2. O catálogo inicial é fechado: os 10 objetos lançam juntos.
 3. Regra de venda: desenvolver → imprimir protótipo → ajustar → imprimir o piloto. **Só vende com o produto final aprovado na mão**, produzindo sob demanda.
-4. Time: Osvaldo, Departamento de Produtos, Departamento Ecommerce, Helena e Severino (Meta AI). Bento, Dora e Nilo saíram.
+4. Time: Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Helena e Severino (Meta AI). Bento, Dora e Nilo saíram.
 5. Todo material e o painel seguem a identidade da marca (arquivo 02).
 
 ## Quem é quem
@@ -85,8 +85,8 @@ Meta atual: lançar a Coleção GEN (10 objetos) mirando o **Natal de 2026**. Bl
 | Nome | Ferramenta | Papel | Entrega típica |
 |---|---|---|---|
 | **João** | — | Titular. Dono da marca e do dinheiro | Decisões, gasto, primeiro login, impressão, testes físicos |
-| **Cláudio** | Claude | Head da operação. Lidera e decide | Base de fonte, prioridades, fila de 3 do João, pedidos ao Osvaldo |
-| **Osvaldo** | Instinct | Coordenação. Executa o que o Cláudio pede e coordena o time | Execução, registro, organização de arquivos, chaves no cofre |
+| **Cláudio** | Claude | Head da operação. Lidera e decide | Base de fonte, prioridades, fila de 3 do João, pedidos ao Departamento Gestão |
+| **Departamento Gestão** | Instinct | Coordenação. Executa o que o Cláudio pede e coordena o time | Execução, registro, organização de arquivos, chaves no cofre |
 | **Departamento de Produtos** | Instinct | Produto e modelagem 3D (CDP) | STL, prancha, orientação de impressão, correções |
 | **Departamento Ecommerce** | Instinct | Tecnologia e ferramentas (CTO); revisão técnica independente | Painel, loja, domínio, integrações, parecer técnico |
 | **Helena** | Instinct | Marketing e design | Direção de marca, peças, plano de campanha |
@@ -113,16 +113,16 @@ JOÃO
   ↓ chat
 CLÁUDIO
   ↓ e-mail (só e-mail, com a palavra mágica no corpo)
-OSVALDO
+DEPARTAMENTO GESTÃO
   ↓ campainha do Escritório ou Slack #batepapo-fp
 DEPARTAMENTO DE PRODUTOS · DEPARTAMENTO ECOMMERCE · HELENA · SEVERINO
 ```
 
 - **João ↔ Cláudio:** chat. O João só recebe o que exige decisão dele, na fila de no máximo 3 itens, com a recomendação na frente.
-- **Cláudio ↔ Osvaldo:** só por e-mail (endereço do Osvaldo no Instinct). Todo e-mail, dos dois lados, leva a palavra mágica no corpo. Sem ela, o Osvaldo não executa.
+- **Cláudio ↔ Departamento Gestão:** só por e-mail (endereço do Departamento Gestão no Instinct). Todo e-mail, dos dois lados, leva a palavra mágica no corpo. Sem ela, o Departamento Gestão não executa.
 - **Ritmo:** o Cláudio confere a caixa a cada 30 min.
-- **Pedido com prazo:** todo pedido traz horário limite ("antes de HH:MM"). O Cláudio agenda a conferência para esse horário. Se não der, o Osvaldo avisa **antes** do prazo, com motivo e novo prazo. Terminada a tarefa, volta o ritmo de 30 min.
-- **Osvaldo ↔ time:** campainha do Escritório ou Slack. O Slack não recebe mais pedidos ao Osvaldo.
+- **Pedido com prazo:** todo pedido traz horário limite ("antes de HH:MM"). O Cláudio agenda a conferência para esse horário. Se não der, o Departamento Gestão avisa **antes** do prazo, com motivo e novo prazo. Terminada a tarefa, volta o ritmo de 30 min.
+- **Departamento Gestão ↔ time:** campainha do Escritório ou Slack. O Slack não recebe mais pedidos ao Departamento Gestão.
 - **Status do time:** cada membro posta o próprio status no Escritório LIVE, com a sua chave pessoal entregue pelo cofre (decisão do João, 15/11 08h15). Ninguém escreve status no lugar de outro.
 - **Registro de fato:** separar sempre PEDIDO (o que foi pedido), RELATO (alguém disse que fez) e VERIFICADO (alguém conferiu, com data e hora).
 
@@ -136,7 +136,7 @@ DEPARTAMENTO DE PRODUTOS · DEPARTAMENTO ECOMMERCE · HELENA · SEVERINO
 
 ## Segurança
 
-- **Nunca** senha, chave, token, CPF, CNPJ ou dado bancário em e-mail, Slack, chat, arquivo ou código. Chaves ficam no cofre, com o Osvaldo.
+- **Nunca** senha, chave, token, CPF, CNPJ ou dado bancário em e-mail, Slack, chat, arquivo ou código. Chaves ficam no cofre, com o Departamento Gestão.
 - Autenticação sempre na tela oficial do serviço, pelo titular.
 - Dado de cliente circula pelo menor número possível de ferramentas (LGPD). Nada de dado de cliente nos agentes.
 - Acessar serviço só pelo endereço oficial digitado, nunca por link recebido.
@@ -486,7 +486,7 @@ Os rodapés internos desses objetos se contradizem ("Revisão Departamento Ecomm
 
 | Etapa | O que acontece | Quem faz | Sai daqui com |
 |---|---|---|---|
-| **E1 Briefing** | João pede o produto. Osvaldo registra. Departamento de Produtos faz até 3 perguntas, uma por vez. Departamento de Produtos propõe 2–3 arquiteturas e recomenda a mais simples. | João pede e escolhe; Departamento de Produtos propõe | Briefing e arquitetura aprovados pelo João |
+| **E1 Briefing** | João pede o produto. Departamento Gestão registra. Departamento de Produtos faz até 3 perguntas, uma por vez. Departamento de Produtos propõe 2–3 arquiteturas e recomenda a mais simples. | João pede e escolhe; Departamento de Produtos propõe | Briefing e arquitetura aprovados pelo João |
 | **E2 Modelo digital** | Departamento de Produtos modela, pesquisa se o assunto é novo, confere medidas (completa se há encaixe, simplificada se é decorativo). Departamento Ecommerce faz revisão independente; Departamento de Produtos corrige; Departamento Ecommerce reconfere. | Departamento de Produtos, Departamento Ecommerce | STL + prancha técnica + parecer do Departamento Ecommerce |
 | **E3 Cupom físico** | Departamento de Produtos fatia e simula o cupom do encaixe (snap, rosca, trava) e passa as orientações. João imprime e testa. Material novo sempre começa por cupom. | Departamento de Produtos prepara; João imprime | Encaixe aprovado na mão |
 | **E4 Protótipo** | Departamento de Produtos fatia e simula a peça inteira e mostra resultado, configurações e riscos. João aprova a simulação e imprime (na máquina própria ou no fornecedor). | Departamento de Produtos, João | Protótipo impresso |
@@ -535,7 +535,7 @@ Departamento de Produtos atualiza nos marcos: início, arquiteturas, fim da mode
 - Fotos da peça física (a partir da E5).
 - Linha atualizada no arquivo 04.
 
-Osvaldo confere, organiza e arquiva na pasta oficial do produto.
+Departamento Gestão confere, organiza e arquiva na pasta oficial do produto.
 
 ## Versões e arquivos
 
@@ -706,7 +706,7 @@ Legenda: **PEDIDO** = foi pedido · **RELATO** = alguém disse que fez · **VERI
 | Peça | Tipo | Endereço | Estado |
 |---|---|---|---|
 | `escritorio-fp-realtime` | Cloudflare Worker | escritorio-fp-realtime.faixapretabr2026.workers.dev | **VERIFICADO** 15/11 11h22: raiz responde 200 (Departamento Ecommerce). Rota `/products` do Banco: **PEDIDO** em 15/11 03h01; `GET /products` sem credencial dá 404, o que não prova se o deploy foi feito |
-| `escritorio-fp-novo` | Cloudflare Pages | escritorio-fp-novo.pages.dev | **RELATO** do Osvaldo: no ar desde 15/11 ~03h55 (fonte v04). Checagem de DNS do Departamento Ecommerce às 11h22 foi inconclusiva. Redeploy com menu hambúrguer: **PEDIDO** |
+| `escritorio-fp-novo` | Cloudflare Pages | escritorio-fp-novo.pages.dev | **RELATO** do Departamento Gestão: no ar desde 15/11 ~03h55 (fonte v04). Checagem de DNS do Departamento Ecommerce às 11h22 foi inconclusiva. Redeploy com menu hambúrguer: **PEDIDO** |
 | `banco-fp` | Cloudflare Pages | banco-fp.pages.dev | **PEDIDO** em 15/11; execução não comprovada |
 
 Conta Cloudflare da FP. Plano gratuito.
@@ -729,11 +729,11 @@ Conta Cloudflare da FP. Plano gratuito.
 
 ## Chaves e segredos
 
-- Chave mestra e chaves pessoais: criadas pelo Osvaldo como secret do Worker e guardadas no cofre.
+- Chave mestra e chaves pessoais: criadas pelo Departamento Gestão como secret do Worker e guardadas no cofre.
 - Segredos de integração (Slack): secret do Worker, fora de qualquer pacote.
 - Nesta base só aparece o nome das chaves, nunca o valor.
 - **Nunca** chave em e-mail, Slack, chat, arquivo, código ou Drive.
-- `KEY_CLAUDIO` pedida ao Osvaldo em 15/11. Falta definir como a chave chega ao Cláudio sem passar por chat.
+- `KEY_CLAUDIO` pedida ao Departamento Gestão em 15/11. Falta definir como a chave chega ao Cláudio sem passar por chat.
 
 ## Código-fonte
 
@@ -747,9 +747,9 @@ Conta Cloudflare da FP. Plano gratuito.
 - Resumo do e-mail da marca: todo dia, 18h46.
 - Radar de mercado: dias 1 e 15, 9h27.
 - Conferência de identidade visual nos materiais e no painel.
-- Conferência da caixa do Osvaldo: a cada 30 min, ou no prazo do pedido.
+- Conferência da caixa do Departamento Gestão: a cada 30 min, ou no prazo do pedido.
 
-Osvaldo sugeriu enxugar as rotinas (ver arquivo 09).
+Departamento Gestão sugeriu enxugar as rotinas (ver arquivo 09).
 
 ## Ferramentas em uso
 
@@ -761,7 +761,7 @@ Google Drive e Gmail (conta da FP), Slack (#batepapo-fp), Cloudflare (Worker e P
 # FP · 09 · DECISÕES E PENDÊNCIAS
 
 > Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Cláudio · Status: VIGENTE
-> Arquivo vivo. Toda decisão nova entra aqui com data e quem decidiu. Pendência resolvida sai da lista e vira decisão. Revisado com o time (Osvaldo, Departamento de Produtos, Departamento Ecommerce, Helena) em 15/11.
+> Arquivo vivo. Toda decisão nova entra aqui com data e quem decidiu. Pendência resolvida sai da lista e vira decisão. Revisado com o time (Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Helena) em 15/11.
 
 ## Fila do João (máx. 3, recomendação na frente)
 
@@ -783,22 +783,22 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 | 14/11 | CTA "Ver coleção" suspenso; nomes de produto fora das peças até liberar; sem promessa de alcance | Coordenação |
 | 14/11 10h51 | Boca superior do porta-canetas [04] com caneta pode aparecer em vídeo (sem fundo, mecanismo ou interior) | João |
 | 14/11 11h14 | [04] enviado para impressão externa pelo fornecedor do João | João |
-| 14/11 11h33 | [05]: cabo sai do escopo; segue corpo + placa ("comprar o fio e adaptar"), sem função elétrica | João (via Osvaldo) |
+| 14/11 11h33 | [05]: cabo sai do escopo; segue corpo + placa ("comprar o fio e adaptar"), sem função elétrica | João (via Departamento Gestão) |
 | 14/11 12h02 | Vídeo digital estilo UGC sem selo na peça; nunca alegar filmagem física nem depoimento real | João |
 | 14/11 13h20 | Mercado Livre: cadastro como PF, no nome do titular (cadastro ainda não autorizado) | João (via coordenação) |
 | 14/11 14h16 | Base digital v05 dos vídeos aprovada | João (via coordenação) |
-| 14/11 15h13 | [01] Gaveta: base passa a ser a v07-2p afinada | João (via Osvaldo) |
-| 14/11 15h14 | [02] Livro: direção LEVE (2 peças, sem faixa), como base de estudo | João (via Osvaldo) |
-| 14/11 15h17 | [03] Vaso: base passa a ser a B150 com tampa de referência | João (via Osvaldo) |
+| 14/11 15h13 | [01] Gaveta: base passa a ser a v07-2p afinada | João (via Departamento Gestão) |
+| 14/11 15h14 | [02] Livro: direção LEVE (2 peças, sem faixa), como base de estudo | João (via Departamento Gestão) |
+| 14/11 15h17 | [03] Vaso: base passa a ser a B150 com tampa de referência | João (via Departamento Gestão) |
 | 15/11 | Claude (Cláudio) é o head da Faixa Preta | João |
 | 15/11 | Catálogo fechado: os 10 objetos lançam juntos | João |
 | 15/11 | Regra de venda: protótipo → ajuste → piloto aprovado na mão → venda sob demanda | João |
-| 15/11 | Time: Osvaldo, Departamento de Produtos, Departamento Ecommerce, Helena, Severino. Bento, Dora e Nilo saem | João |
-| 15/11 | Cláudio ↔ Osvaldo só por e-mail, com palavra mágica; conferência a cada 30 min; pedido com prazo | João |
+| 15/11 | Time: Departamento Gestão, Departamento de Produtos, Departamento Ecommerce, Helena, Severino. Bento, Dora e Nilo saem | João |
+| 15/11 | Cláudio ↔ Departamento Gestão só por e-mail, com palavra mágica; conferência a cada 30 min; pedido com prazo | João |
 | 15/11 08h15 | Cada membro posta o próprio status no Escritório LIVE, com chave pessoal entregue pelo cofre | João |
 | 15/11 08h17 | A palavra do Cláudio vale como a do João (inclui publicação). Gasto, primeiro login, senhas e CPF continuam só com o João. Impressão e compra com o João | João |
 | 15/11 | Regra das 12h / cobrado 2x: Cláudio decide e avisa depois | João |
-| 15/11 | Chaves só no cofre, com o Osvaldo; nunca por e-mail ou Slack | João |
+| 15/11 | Chaves só no cofre, com o Departamento Gestão; nunca por e-mail ou Slack | João |
 | 15/11 | Nome da coleção: **GEN** | João |
 | 15/11 | A peça final aprovada passa a se chamar **piloto** | João |
 | 15/11 | Esta base (arquivos 00 a 10) substitui P01 a P08, a Lista Real e o guia do MEI como referência de trabalho | João (pedido) e Cláudio |
@@ -839,13 +839,13 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 - Hashtag da Coleção GEN.
 - Fechar criativos dos posts 1, 3 e 4 e a montagem do post 2.
 
-**Osvaldo**
+**Departamento Gestão**
 - Executar o deploy pendente e a KEY_CLAUDIO (fora do chat).
 - Subir uma foto por card no Banco quando houver peça física.
 
 **Cláudio**
 - Manter esta base; revisão semanal.
-- Enxugar as rotinas agendadas (proposta do Osvaldo).
+- Enxugar as rotinas agendadas (proposta do Departamento Gestão).
 
 ## Divergências encontradas e como ficaram
 
@@ -862,7 +862,7 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 | 9 | Manual mostra a gaveta com 150 × 150 × 20 mm | Imagem conceitual. Vale o arquivo 04 |
 | 10 | Autores antigos (Bento, Dora, Nilo) assinam arquivos | Saíram do time; arquivos ficam como histórico |
 | 11 | P05 cita a pasta "Faixa Preta - Documentação oficial" | Existe no Drive pessoal do João, fora da conta da FP. Vira histórico |
-| 12 | Um resumo de 15/11 chama o Osvaldo de "CMO" | Osvaldo = coordenação; marketing = Helena |
+| 12 | Um resumo de 15/11 chama o Departamento Gestão de "CMO" | Departamento Gestão = coordenação; marketing = Helena |
 | 13 | "Coleção 05 – Utilitária" nos PDFs | Coleção GEN (15/11) |
 
 
@@ -870,8 +870,8 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 
 # FP · 10 · MAPA DO DRIVE
 
-> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Osvaldo (organização) · Status: VIGENTE
-> Retrato auditado e reorganizado em 15/11 pelo Cláudio, com acordo do Osvaldo. Arquivamento executado: só movido, nada apagado nem renomeado.
+> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Departamento Gestão (organização) · Status: VIGENTE
+> Retrato auditado e reorganizado em 15/11 pelo Cláudio, com acordo do Departamento Gestão. Arquivamento executado: só movido, nada apagado nem renomeado.
 
 ## Estrutura (pasta FaixaPreta, conta da FP)
 

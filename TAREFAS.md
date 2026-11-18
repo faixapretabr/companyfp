@@ -5,7 +5,7 @@ Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se fo
 ## João
 - [ ] Imprimir o cupom do porta-canetas [04] (primeira peça física). Prazo: em aberto.
 - [ ] Decidir os 7 itens do /DECIDIR do Departamento Ecommerce: domínio faixapreta.shop (titularidade e autenticação na Hostinger), enquadramento fiscal, estrutura mínima da primeira venda, cadastro no Mercado Livre (PF x PJ). Prazo: em aberto.
-- [ ] Enviar foto por card no Banco de Desenvolvimento (Osvaldo sobe uma por card). Prazo: em aberto.
+- [ ] Enviar foto por card no Banco de Desenvolvimento (Departamento Gestão sobe uma por card). Prazo: em aberto.
 
 ## Departamento de Produtos
 - [ ] Decisão de produto. Prazo previsto: 16/11/2026. **Vencido**, status cobrado por e-mail em 18/11/2026.
@@ -14,7 +14,7 @@ Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se fo
 - [ ] Verificação de vendedor no TikTok Shop. Dono: a confirmar.
 - [ ] Acesso do João Victor à pasta "Faixa Preta - 10 objetos". Dono: a confirmar.
 - [ ] MEI: ver pasta de referência. Dono: a confirmar.
-- [ ] Osvaldo enxugar as 9 rotinas agendadas. Dono: Osvaldo.
+- [ ] Departamento Gestão enxugar as 9 rotinas agendadas. Dono: Departamento Gestão.
 
 ## Em aberto sem resposta
 - Impressora A1 mini.
