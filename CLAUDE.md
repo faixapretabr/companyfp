@@ -1,7 +1,7 @@
 # Faixa Preta: contexto e combinados
 
 Fonte principal da operação. Chat, Claude Code e celular devem ler este arquivo primeiro.
-Em caso de conflito com outro documento, vale o que está aqui, em `DECISOES.md` e em `TAREFAS.md`.
+Em caso de conflito com outro documento, vale o que está aqui e em `DECISOES.md`. Mapa de fontes e ordem de prioridade: `CONTEXTO.md`.
 
 ## Quem somos
 - **João**: titular da Faixa Preta (FP). Decide gasto e primeiro login.

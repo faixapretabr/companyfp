@@ -1,9 +1,14 @@
 # companyfp
 
-Repositório privado da Faixa Preta.
+Repositório privado da Faixa Preta. Não publicar conteúdo fora da equipe.
 
-## Conteúdo
+Comece por `CONTEXTO.md` (mapa de fontes) e `CLAUDE.md` (combinados).
 
-- `docs/agentes-e-skills.md`: referência da equipe de agentes, skills da marca, regras de trabalho, conectores, painel FP e produtos.
-
-Repositório privado. Não publicar conteúdo fora da equipe.
+- `CONTEXTO.md`, `CLAUDE.md`, `DECISOES.md`, `TAREFAS.md`: contexto, regras e decisões.
+- `docs/base/`: base de conhecimento da empresa.
+- `docs/dados.md` e `docs/snapshot-supabase.md`: dados vivos (Supabase) e foto datada.
+- `docs/agentes-e-skills.md`, `docs/arquitetura-agentes.md`: equipe de agentes.
+- `docs/relatorios/`: entregas dos agentes.
+- `.claude/agents/`: cartões dos agentes M, O e I.
+- `.claude/skills/`: skills de impressão 3D e preço.
+- `painel/`: painel FP (PWA).

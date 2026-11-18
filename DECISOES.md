@@ -17,7 +17,9 @@ Registro único das decisões do João. Nova decisão entra no topo, com data.
 
 11. **Ativação (18/11/2026):** fase 1 liga só I03 (ofertas) e I04 (preço), em leitura e relatório, sem publicar nem gastar. Qualquer ação de coleta automatizada passa antes pelo I07. Documento de arquitetura guardado em `docs/arquitetura-agentes.md`.
 
-12. **Limpeza (18/11/2026):** `FP_BASE_COMPLETA_v01` movida para `docs/arquivo/`.
+12. **Limpeza (18/11/2026):** `FP_BASE_COMPLETA_v01` foi movida para `docs/arquivo/` (corrigido na decisão 13). Branches antigas apagadas pelo Osvaldo.
+
+13. **Fonte de dados (18/11/2026):** o Supabase é o sistema vivo de decisões em aberto, tarefas, produtos, ouvidoria e status; o repositório guarda texto, regras e uma foto datada (`docs/snapshot-supabase.md`). `TAREFAS.md` deixa de ser lista de trabalho. A base `FP_BASE_COMPLETA_v01` volta a ser documento vivo em `docs/base/`. Ordem de prioridade das fontes em `CONTEXTO.md`. Dicionário e regras em `docs/dados.md`.
 
 ## Plano de 30 dias
 Mira o **Natal**. Black Friday seria cedo.
@@ -25,4 +27,4 @@ Mira o **Natal**. Black Friday seria cedo.
 ## Nova forma de trabalhar
 - Peça física antes do papel.
 - 8 procedimentos viram um manual curto (`manual/`, sob demanda).
-- Catálogo, registro de decisões e quadro de tarefas (`CATALOGO.md`, `DECISOES.md`, `TAREFAS.md`).
+- Catálogo na tabela `produtos` do Supabase e no arquivo 04 da base; registro de decisões em `DECISOES.md`; quadro de tarefas no Supabase (`TAREFAS.md` só guarda os itens antigos a migrar).
