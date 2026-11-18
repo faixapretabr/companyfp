@@ -10,7 +10,7 @@ Todo chat, Claude Code e sessão na nuvem começa por aqui. Depois lê `CLAUDE.m
 | Tarefas e pendências | `TAREFAS.md` | Quadro do dia a dia |
 | Agentes (M, O, I) | `.claude/agents/` | Um cartão por agente, só letra e número |
 | Agentes e skills (visão geral) | `docs/agentes-e-skills.md` | Referência |
-| Base de conhecimento completa | `FP_BASE_COMPLETA_v01_20261115.md` | Referência detalhada, não muda sozinha |
+| Base de conhecimento completa | `docs/arquivo/FP_BASE_COMPLETA_v01_20261115.md` | Referência detalhada, não muda sozinha |
 | Dados vivos do painel (decisões, tarefas, produtos, ouvidoria) | Supabase `faixa-preta` | O painel lê daqui |
 | Status do time no Escritório LIVE | Worker `escritorio-fp-realtime` | Só o Escritório usa o Worker |
 | Loja e pedidos | Shopify | Trial, nada publicado |

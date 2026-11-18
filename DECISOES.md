@@ -17,6 +17,8 @@ Registro único das decisões do João. Nova decisão entra no topo, com data.
 
 11. **Ativação (18/11/2026):** fase 1 liga só I03 (ofertas) e I04 (preço), em leitura e relatório, sem publicar nem gastar. Qualquer ação de coleta automatizada passa antes pelo I07. Documento de arquitetura guardado em `docs/arquitetura-agentes.md`.
 
+12. **Limpeza (18/11/2026):** `FP_BASE_COMPLETA_v01` movida para `docs/arquivo/`.
+
 ## Plano de 30 dias
 Mira o **Natal**. Black Friday seria cedo.
 
