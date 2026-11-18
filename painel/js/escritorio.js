@@ -8,13 +8,13 @@
   var STATE_URL = 'https://escritorio-fp-realtime.faixapretabr2026.workers.dev/state';
   var STATUS = { trabalhando: 'Trabalhando', aguardando: 'Aguardando', parado: 'Parado', 'sem-sinal': 'Sem sinal' };
   var ORDER = ['trabalhando', 'aguardando', 'parado', 'sem-sinal'];
-  var ALIAS = { osvaldo: 'g01', helena: 'm01', severino: 'm02' }; /* decisão 9 */
+  var ALIAS = { osvaldo: 'g01' }; /* G01 ainda pode chegar como "osvaldo" */
   var DEMO = /[?&]demo=1/.test(location.search);
   var REDUCED = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- organograma (decisão 9) e posição de cada mesa na planta ---------- */
   var DEPS = [
-    { id: 'g', nome: 'Gestão', ag: [['joao', 'JOÃO', 'Titular'], ['claudio', 'CLÁUDIO', 'Head da operação'], ['g01', 'G01', 'Osvaldo · gestão geral']] },
+    { id: 'g', nome: 'Gestão', ag: [['joao', 'JOÃO', 'Titular'], ['claudio', 'CLÁUDIO', 'Head da operação'], ['g01', 'G01', 'Gestão geral']] },
     { id: 'm', nome: 'Marketing', ag: [['m01', 'M01', 'Estratégia e marca'], ['m02', 'M02', 'Conteúdo e criação'], ['m03', 'M03', 'Tráfego pago'], ['m04', 'M04', 'Relacionamento']] },
     { id: 'o', nome: 'Operação', ag: [['o01', 'O01', 'Atendimento'], ['o02', 'O02', 'Pedido e entrega'], ['o03', 'O03', 'Insumo e estoque'], ['o04', 'O04', 'Caixa e MEI']] },
     { id: 'i', nome: 'Inteligência', ag: [['i01', 'I01', 'Concorrentes'], ['i02', 'I02', 'Demanda e nichos'], ['i03', 'I03', 'Ofertas e revenda'], ['i04', 'I04', 'Preço e frete'], ['i05', 'I05', 'Fornecedores'], ['i06', 'I06', 'Produtos de referência'], ['i07', 'I07', 'Conferência legal'], ['i08', 'I08', 'Coordena I01 a I07']] }
