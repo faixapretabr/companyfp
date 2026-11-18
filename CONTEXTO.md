@@ -13,6 +13,7 @@ Todo chat, Claude Code e sessão na nuvem começa por aqui. Depois lê `CLAUDE.m
 | Arquitetura original dos agentes | `docs/arquitetura-agentes.md` | Referência |
 | Decisões em aberto, tarefas, produtos, ouvidoria, status | **Supabase `faixa-preta`** | Sistema vivo. O painel lê daqui |
 | Dicionário das tabelas e regras de escrita | `docs/dados.md` | |
+| Onde o trabalho parou (memória recente) | `docs/registro-contexto.md` | Ler logo depois deste arquivo. Atualizar ao fim de cada sessão |
 | Foto datada do Supabase | `docs/snapshot-supabase.md` | Só leitura. Se divergir, vale o banco |
 | Relatórios de agentes | `docs/relatorios/` | Um arquivo por entrega, com data |
 | Tela do Escritório em tempo real | Worker `escritorio-fp-realtime` | Só a tela. Registro do status é a tabela `status` |
@@ -32,7 +33,8 @@ Divergência achada não se corrige em silêncio: registrar em `DECISOES.md` e c
 Texto e regra no repositório. Registro que muda toda hora no Supabase. Nunca duas fontes editáveis para a mesma coisa.
 
 ## Fluxo para não perder trabalho entre chat, Code e nuvem
-1. Começar lendo `CONTEXTO.md` e `CLAUDE.md`. Para estado do dia, `docs/snapshot-supabase.md` ou o próprio Supabase.
+1. Começar lendo `CONTEXTO.md`, `docs/registro-contexto.md` e `CLAUDE.md`. Para estado do dia, `docs/snapshot-supabase.md` ou o próprio Supabase.
+1b. Ao encerrar, atualizar `docs/registro-contexto.md` (feito, em andamento, próximo passo, o que precisa do João).
 2. Todo arquivo novo ou alterado entra por commit na branch da sessão.
 3. Decisão nova do João: registrar no mesmo commit.
 4. Chaves nunca no repositório. Ficam no cofre.

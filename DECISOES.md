@@ -23,6 +23,8 @@ Registro único das decisões do João. Nova decisão entra no topo, com data.
 
 14. **Decisões delegadas pelo João (18/11/2026):** (a) tabela `status` do Supabase é o registro do status do time e o Worker `escritorio-fp-realtime` só serve a tela; o Dante confirma, pelo Osvaldo. (b) Os 8 itens antigos do `TAREFAS.md` passam pela OP-T01 do Osvaldo antes de entrar no banco. (c) Teste do carrinho autorizado só sem custo e sem publicar objetos; compra com dinheiro real continua com o João. Filamento de teste (cerca de R$ 215): João disse não, nada será comprado.
 
+15. **Registro de contexto (18/11/2026):** `docs/registro-contexto.md` guarda a memória recente (feito, em andamento, próximo passo, o que precisa do João), com os últimos 14 dias. Toda sessão lê depois do `CONTEXTO.md` e atualiza ao encerrar. O que virar regra sobe para este arquivo.
+
 ## Plano de 30 dias
 Mira o **Natal**. Black Friday seria cedo.
 
