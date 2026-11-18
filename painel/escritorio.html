@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<script>(function(){function go(){if(location.hash==="#escritorio")location.replace("/escritorio.html");if(location.hash==="#gerencia")location.replace("#decidir");if(location.hash==="#banco")location.replace("#produtos")}go();addEventListener("hashchange",go)})();</script>
+<script>(function(){if(!location.hash)location.replace("/escritorio#escritorio")})();</script>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
 <meta name="mobile-web-app-capable" content="yes">
@@ -14,16 +14,19 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@700&display=swap">
-<link rel="stylesheet" href="css/app.css?v=19">
+<link rel="stylesheet" href="css/app.css?v=35">
 </head>
 <body>
 <a class="skip" href="#main">Pular para o conteúdo</a>
 
 <header class="bar"><div class="bar-in">
   <a class="brand" href="#inicio"><img class="logo" src="icons/logo-96.png" alt="" width="30" height="30"><span>Faixa Preta<small id="sub">Painel</small></span></a>
-  <div class="bar-r"><button class="ico plus" id="add-top" aria-label="Adicionar" title="Adicionar">＋</button>
+  <div class="bar-r"><button class="ico" id="sq-btn" aria-label="Buscar" title="Buscar" aria-expanded="false">&#x1F50D;</button><button class="ico bell" id="bell" aria-label="Chamar o Osvaldo" title="Chamar o Osvaldo">&#x1F514;<span class="bell-n" id="bell-n" hidden></span></button>
+    <button class="ico plus" id="add-top" aria-label="Adicionar" title="Adicionar">＋</button>
   <button class="ico ham" id="ham" aria-label="Abrir menu" aria-expanded="false" aria-controls="drw"><i></i><i></i><i></i></button></div>
-</div></header>
+</div>
+  <div class="bar-sq" id="bar-sq"><input id="sq" type="search" aria-label="Buscar" placeholder="🔍 Buscar em tudo" autocomplete="off"><div id="sq-res" class="list" hidden aria-live="polite"></div></div>
+</header>
 
 <div class="ov" id="ov"></div>
 <nav class="drw" id="drw" aria-label="Menu">
@@ -31,6 +34,7 @@
   <a href="#inicio" data-r="inicio">Início</a>
   <a href="escritorio.html">Escritório <span>●</span></a>
   <a href="#decidir" data-r="decidir">Decidir</a>
+  <a href="#aprovacao" data-r="aprovacao">Aprovação</a>
   <a href="#produtos" data-r="produtos">Produtos</a>
   <a href="#tarefas" data-r="tarefas">Tarefas</a>
   <a href="#ouvidoria" data-r="ouvidoria">Ouvidoria</a>
@@ -47,16 +51,18 @@
   <div class="hd">
     <div class="lb">Faixa Preta · Painel interno</div>
     <h1 tabindex="-1">Nada é só o que parece.</h1>
-    <p>Central da operação. Abra o escritório para ver a equipe, ou use o menu.</p>
+    <p>Central da operação: equipe, pendências e atalhos.</p>
   </div>
-  <div class="blk"><input id="sq" type="search" aria-label="Buscar" placeholder="🔍 Buscar em tudo" autocomplete="off"><div id="sq-res" class="list" hidden aria-live="polite"></div></div>
   <div class="blk" id="dec-now" hidden><span class="tag y">Decidir agora</span><div id="dec-now-list"></div></div>
-  <a class="btn" href="escritorio.html" aria-label="Abrir escritório" title="Abrir escritório">▦ →</a>
+  <div class="stage home-stage"><svg class="office-scene" viewBox="0 0 300 220" role="img" aria-label="Escritório isométrico em pixel com cinco mesas"></svg></div>
+  <a class="btn" href="escritorio.html" aria-label="Abrir escritório" title="Abrir escritório">▦ Escritório</a>
+  <div class="dash">
+    <a class="dcard" href="#decidir"><span class="lb">Decidir</span><span class="dnum" id="dnum-dec">–</span><p id="dcap-dec">Pendências e decisões.</p><span class="ar" aria-hidden="true">→</span></a>
+    <a class="dcard" href="#produtos"><span class="lb">Produtos</span><span class="dnum" id="dnum-prod">–</span><p id="dcap-prod">Produtos, modelos e versões.</p><span class="ar" aria-hidden="true">→</span></a>
+    <a class="dcard" href="#tarefas"><span class="lb">Tarefas</span><span class="dnum" id="dnum-tf">–</span><p id="dcap-tf">Quem faz o quê, com prazo.</p><span class="ar" aria-hidden="true">→</span></a>
+    <a class="dcard" href="#ouvidoria"><span class="lb">Ouvidoria</span><span class="dnum" id="dnum-ouv">–</span><p id="dcap-ouv">Auditoria, ideias e reclamações.</p><span class="ar" aria-hidden="true">→</span></a>
+  </div>
   <div class="list">
-    <a class="row" href="#decidir"><div><b>Decidir</b><p>3 decisões do João travam a primeira venda.</p></div><span class="ar" aria-hidden="true">→</span></a>
-    <a class="row" href="#produtos"><div><b>Produtos</b><p>Produtos, modelos e versões.</p></div><span class="ar" aria-hidden="true">→</span></a>
-    <a class="row" href="#tarefas"><div><b>Tarefas</b><p>Quem faz o quê, com prazo.</p></div><span class="ar" aria-hidden="true">→</span></a>
-    <a class="row" href="#ouvidoria"><div><b>Ouvidoria</b><p>Auditoria, ideias e reclamações.</p></div><span class="ar" aria-hidden="true">→</span></a>
     <a class="row" href="#links"><div><b>Links úteis</b><p>Identidade visual, pastas e loja.</p></div><span class="ar" aria-hidden="true">→</span></a>
   </div>
 </section>
@@ -66,14 +72,15 @@
   <div class="hd">
     <div class="lb">Escritório</div>
     <h1 tabindex="-1">Escritório</h1>
-    <p>Os agentes por departamento, com o status de cada um.</p>
+    <p>Liderança nas mesas e os agentes por departamento, com o status de cada um.</p>
     
   </div>
+  <div class="stage"><svg class="office-scene" viewBox="0 0 300 220" role="img" aria-label="Escritório isométrico em pixel com cinco mesas"></svg></div>
   <div>
     <div class="lb">Status dos agentes</div>
     <div class="list" id="ag" aria-live="polite"></div>
   </div>
-  <p class="src">O status vem do banco, com o tempo da última atualização ao lado. Agente que nunca registrou aparece como "sem sinal".</p>
+  <p class="src">O status vem do banco, com o tempo da última atualização ao lado. Quem nunca registrou aparece como "sem sinal".</p>
 </section>
 
 <!-- GERÊNCIA -->
@@ -85,6 +92,10 @@
     <p class="src">Toque na pendência para abrir as ações: Decidir, Executar, Adiar ou Arquivar. Comentário, código e histórico ficam no detalhe.</p>
   </div>
   <div class="blk"><h2>Abacaxis pro João</h2><div class="lb">Fila em 3 faixas, da mais urgente à menos</div></div>
+  <div id="tf-dec-wrap" hidden>
+    <div class="blk"><span class="tag y">Tarefas esperando decisão do João</span><div class="lb">Escrever a decisão devolve a tarefa para Fazendo</div></div>
+    <div id="tf-dec-list" class="list"></div>
+  </div>
   <div id="ger-list" aria-live="polite"><p class="src">Carregando…</p></div>
   <details class="blk" id="ger-done"><summary class="lb">Decididas e em execução</summary><div id="ger-done-list"></div></details>
   <details class="blk" id="ger-arch"><summary class="lb">Arquivadas</summary><div id="ger-arch-list"></div></details>
@@ -99,7 +110,7 @@
     <div class="go lb">↓ chat</div>
     <div><b class="lb who">Cláudio (Claude) · head</b>Lidera a operação, consolida pendências, redige procedimentos e aciona o Osvaldo.</div>
     <div class="go lb">↓ e-mail com a palavra-chave</div>
-    <div><b class="lb who">Osvaldo (Instinct) · G01 Gestão Geral</b>Executa o que o Cláudio solicitar e coordena os agentes. Cria e guarda chaves no cofre.</div>
+    <div><b class="lb who">Osvaldo (Instinct) · G01 Gestão Geral</b>Executa o que o Cláudio solicitar e coordena o time. Cria e guarda chaves no cofre.</div>
     <div class="go lb">↓ campainha ou Slack</div>
   </div>
   <div class="cards">
@@ -128,6 +139,17 @@
   <p class="src">A regra 6 vale para tudo, exceto gasto e primeiro login (regra 4). Leitura do Cláudio: João, confirme ou ajuste.</p>
 </section>
 
+<!-- APROVAÇÃO -->
+<section class="pg" id="p-aprovacao" hidden>
+  <div class="hd">
+    <div class="lb">Aprovação</div>
+    <h1 tabindex="-1">Aprovação</h1>
+    <p>Tarefas terminadas esperando o OK do João. Aprovar conclui e arquiva; reprovar devolve para Fazendo com o motivo.</p>
+  </div>
+  <div class="blk"><p class="src">Nota: o fluxo de reprovação (devolve para Fazendo com motivo) é uma suposição do Osvaldo, a confirmar com o João.</p></div>
+  <div id="ap-list" class="list" aria-live="polite"><p class="src">Carregando…</p></div>
+</section>
+
 <!-- BANCO -->
 <section class="pg" id="p-produtos" hidden>
   <div class="hd">
@@ -149,10 +171,11 @@
     <p>Lista da operação com responsável, status e prazo.</p>
   </div>
   <form class="fm" id="tf-new"><div class="lb">Nova tarefa</div>
-    <input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><select name="dono" aria-label="Responsável"><option value="">Sem responsável</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<input name="prazo" type="date"></label>
+    <input name="titulo" required maxlength="160" placeholder="O que precisa ser feito"><textarea name="descricao" rows="2" maxlength="500" placeholder="Descrição (opcional)"></textarea><select name="dono" required aria-label="Responsável"><option value="">Escolher o responsável…</option><option>João</option><option>Cláudio</option><option>Osvaldo</option><option>M01</option><option>M02</option><option>M03</option><option>M04</option><option>O01</option><option>O02</option><option>O03</option><option>O04</option><option>I01</option><option>I02</option><option>I03</option><option>I04</option><option>I05</option><option>I06</option><option>I07</option><option>I08</option></select><label class="lb">Prazo<select name="prazo" required><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option><option value="120">2 h</option><option value="1440" selected>1 dia</option></select></label>
     <button class="btn" type="submit" aria-label="Adicionar" title="Adicionar">＋</button><p class="msg src" role="status"></p></form>
   <div class="qf" id="tf-filas" aria-label="Filas por responsável"></div>
   <div id="tf-list" class="list" aria-live="polite"><p class="src">Carregando…</p></div>
+  <details class="blk" id="tf-done"><summary class="lb">Concluídas e arquivadas</summary><div id="tf-done-list"></div></details>
 </section>
 
 <!-- OUVIDORIA -->
@@ -206,6 +229,20 @@
     <div id="afs-body"></div>
   </div>
 </div>
+<div class="md" id="chm" hidden>
+  <div class="md-bg"></div>
+  <div class="md-in" role="dialog" aria-modal="true" aria-labelledby="chm-h">
+    <div class="md-h"><h2 id="chm-h">Chamar o Osvaldo</h2><button class="ico x" id="chm-x" aria-label="Fechar">×</button></div>
+    <div id="chm-body"></div>
+  </div>
+</div>
+<div class="md" id="rep" hidden>
+  <div class="md-bg"></div>
+  <div class="md-in" role="dialog" aria-modal="true" aria-labelledby="rep-h">
+    <div class="md-h"><h2 id="rep-h">Reprovar tarefa</h2><button class="ico x" id="rep-x" aria-label="Fechar">×</button></div>
+    <div id="rep-body"></div>
+  </div>
+</div>
 <div class="md" id="dcs" hidden>
   <div class="md-bg"></div>
   <div class="md-in" role="dialog" aria-modal="true" aria-labelledby="dcs-h">
@@ -218,6 +255,7 @@
 <nav class="bn" id="bn" aria-label="Principal">
   <a href="#inicio" data-r="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg><span>Início</span></a>
   <a href="#decidir" data-r="decidir"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Decidir</span></a>
+  <a href="#aprovacao" data-r="aprovacao"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 5.9-5.3-3-5.3 3 1.2-5.9L3.4 9.3l6-.7z"/></svg><span>Aprovação</span></a>
   <a href="#produtos" data-r="produtos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5v8l-9 5-9-5V8zM3 8l9 5 9-5M12 13v8"/></svg><span>Produtos</span></a>
   <a href="#tarefas" data-r="tarefas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h3M4 12h3M4 18h3M10 6h10M10 12h10M10 18h10"/></svg><span>Tarefas</span></a>
   <a href="#ouvidoria" data-r="ouvidoria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Ouvidoria</span></a>
@@ -229,8 +267,9 @@
   <label class="lb">E-mail<input name="email" type="email" autocomplete="username" required></label>
   <label class="lb">Senha<input name="password" type="password" autocomplete="current-password" required></label>
   <button class="btn" type="submit" aria-label="Entrar" title="Entrar">→</button><p class="msg src" id="lg-m" role="alert"></p></form></div>
-<script src="js/db.js?v=19"></script>
-<script src="js/app.js?v=19"></script>
-<script src="js/data.js?v=19"></script>
+<script src="js/db.js?v=35"></script>
+<script src="js/app.js?v=35"></script>
+<script src="js/data.js?v=35"></script>
 </body>
 </html>
+
