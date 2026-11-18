@@ -14,7 +14,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@700&display=swap">
-<link rel="stylesheet" href="css/app.css?v=35">
+<link rel="stylesheet" href="css/app.css?v=36">
 </head>
 <body>
 <a class="skip" href="#main">Pular para o conteúdo</a>
@@ -54,8 +54,11 @@
     <p>Central da operação: equipe, pendências e atalhos.</p>
   </div>
   <div class="blk" id="dec-now" hidden><span class="tag y">Decidir agora</span><div id="dec-now-list"></div></div>
-  <div class="stage home-stage"><svg class="office-scene" viewBox="0 0 300 220" role="img" aria-label="Escritório isométrico em pixel com cinco mesas"></svg></div>
-  <a class="btn" href="escritorio.html" aria-label="Abrir escritório" title="Abrir escritório">▦ Escritório</a>
+  <a class="stage home-stage" href="escritorio.html" aria-label="Abrir o escritório">
+    <span class="stage-top"><span class="vivo" data-v="try"><i></i><span class="vivo-tx">Conectando</span></span><span class="src" id="home-vivo"></span></span>
+    <svg class="office-scene" viewBox="0 0 280 196" role="img" aria-label="Escritório ao vivo: um robô por agente, na mesa do seu departamento"></svg>
+  </a>
+  <a class="btn" href="escritorio.html">Abrir escritório</a>
   <div class="dash">
     <a class="dcard" href="#decidir"><span class="lb">Decidir</span><span class="dnum" id="dnum-dec">–</span><p id="dcap-dec">Pendências e decisões.</p><span class="ar" aria-hidden="true">→</span></a>
     <a class="dcard" href="#produtos"><span class="lb">Produtos</span><span class="dnum" id="dnum-prod">–</span><p id="dcap-prod">Produtos, modelos e versões.</p><span class="ar" aria-hidden="true">→</span></a>
@@ -69,18 +72,21 @@
 
 <!-- ESCRITÓRIO -->
 <section class="pg" id="p-escritorio" hidden>
-  <div class="hd">
-    <div class="lb">Escritório</div>
+  <div class="esc-hd">
     <h1 tabindex="-1">Escritório</h1>
-    <p>Liderança nas mesas e os agentes por departamento, com o status de cada um.</p>
-    
+    <span class="vivo" data-v="try"><i></i><span class="vivo-tx">Conectando</span></span>
   </div>
-  <div class="stage"><svg class="office-scene" viewBox="0 0 300 220" role="img" aria-label="Escritório isométrico em pixel com cinco mesas"></svg></div>
-  <div>
-    <div class="lb">Status dos agentes</div>
-    <div class="list" id="ag" aria-live="polite"></div>
+  <p class="src" id="esc-hora">Cada robô é um agente. Ele anda, senta e acende conforme o status.</p>
+  <div class="stage"><svg class="office-scene" viewBox="0 0 280 196" role="img" aria-label="Escritório ao vivo: um robô por agente, na mesa do seu departamento"></svg></div>
+  <div class="fita-w">
+    <div class="fita" id="esc-fita" role="img"></div>
+    <div class="leg" id="esc-leg"></div>
   </div>
-  <p class="src">O status vem do banco, com o tempo da última atualização ao lado. Quem nunca registrou aparece como "sem sinal".</p>
+  <div class="filtro" id="esc-filtro" role="group" aria-label="Filtrar por departamento">
+    <button type="button" data-f="" aria-pressed="true">Todos</button><button type="button" data-f="g" aria-pressed="false">Gestão</button><button type="button" data-f="m" aria-pressed="false">Marketing</button><button type="button" data-f="o" aria-pressed="false">Operação</button><button type="button" data-f="i" aria-pressed="false">Inteligência</button>
+  </div>
+  <div id="ag" class="ag-list" aria-live="polite"></div>
+  <p class="src">Toque num robô ou num agente para destacar. O status chega em tempo real pelo servidor do escritório e, com login, também pelo banco.</p>
 </section>
 
 <!-- GERÊNCIA -->
@@ -267,9 +273,10 @@
   <label class="lb">E-mail<input name="email" type="email" autocomplete="username" required></label>
   <label class="lb">Senha<input name="password" type="password" autocomplete="current-password" required></label>
   <button class="btn" type="submit" aria-label="Entrar" title="Entrar">→</button><p class="msg src" id="lg-m" role="alert"></p></form></div>
-<script src="js/db.js?v=35"></script>
-<script src="js/app.js?v=35"></script>
-<script src="js/data.js?v=35"></script>
+<script src="js/db.js?v=36"></script>
+<script src="js/app.js?v=36"></script>
+<script src="js/escritorio.js?v=36"></script>
+<script src="js/data.js?v=36"></script>
 </body>
 </html>
 
