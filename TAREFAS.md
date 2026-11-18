@@ -7,8 +7,8 @@ Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se fo
 - [ ] Decidir os 7 itens do /DECIDIR do Dante: domínio faixapreta.shop (titularidade e autenticação na Hostinger), enquadramento fiscal, estrutura mínima da primeira venda, cadastro no Mercado Livre (PF x PJ). Prazo: em aberto.
 - [ ] Enviar foto por card no Banco de Desenvolvimento (Osvaldo sobe uma por card). Prazo: em aberto.
 
-## Vicente
-- [ ] Decisão de produto. Prazo previsto: 16/11/2026. **Vencido**, confirmar status.
+## Departamento de Produtos
+- [ ] Decisão de produto. Prazo previsto: 16/11/2026. **Vencido**, status cobrado por e-mail em 18/11/2026.
 
 ## Outros
 - [ ] Verificação de vendedor no TikTok Shop. Dono: a confirmar.

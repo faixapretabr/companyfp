@@ -23,17 +23,21 @@ Em caso de conflito com outro documento, vale o que está aqui, em `DECISOES.md`
 
 ## Time e papéis
 - **Osvaldo** (CMO/coordenação): coordena o time de agentes independentes e executa os pedidos do Cláudio. Só se comunica por e-mail.
-- **Vicente** (CDP): produtos e modelagem.
+- **Departamento de Produtos** (P01): produtos e modelagem. Não é pessoa; contato por e-mail.
 - **Dante** (CTO): tecnologia e ferramentas.
 - **Helena**: marketing e design.
 - **Severino** (Meta AI): produção de mídia, redes sociais e conteúdo.
 - Detalhes de agentes e skills: `docs/agentes-e-skills.md`.
 
 ## Fluxo de comunicação
-- João → Cláudio (chat) → Osvaldo (só por e-mail) → Vicente, Dante, Helena e Severino (campainha do Escritório ou Slack #batepapo-fp).
+- João → Cláudio (chat) → Osvaldo (só por e-mail) → Produtos, Dante, Helena e Severino (campainha do Escritório ou Slack #batepapo-fp).
 - O e-mail do Osvaldo exige a palavra de acesso combinada. Ela não fica neste repositório.
+- Contatos por departamento (e-mail):
+  - Produtos: sxj2ii@mail.instinct.com
+  - E-commerce: p2kgeh@mail.instinct.com
+  - Gestão: na0fhk@mail.instinct.com
 - Cláudio confere a caixa de entrada a cada 30 min.
-- Quando o Osvaldo executa uma tarefa, o e-mail traz um horário limite. Se ele não terminar, responde antes explicando e pedindo novo prazo.
+- Quando o Osvaldo executa uma tarefa, o e-mail traz um horário limite. O prazo padrão é de 15 minutos. Se ele não terminar, responde antes explicando e pedindo novo prazo.
 - **Nunca** mandar senha ou chave por e-mail ou Slack. Chaves ficam no cofre.
 - Só **gasto** e **primeiro login** ficam com o João. A palavra do Cláudio vale como a do João pro resto, inclusive publicação.
 - Se algo está pendente há mais de 12h, ou já foi cobrado do João 2 vezes, o Cláudio decide o que for melhor pra FP.
