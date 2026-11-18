@@ -5,7 +5,7 @@
 
 ## Para que serve
 
-Uma fonte só, curta e concreta, para qualquer pessoa ou agente (Cláudio, Osvaldo, Vicente, Dante, Helena, Severino) consultar antes de agir. Se uma informação está aqui, ela vale. Se conflita com um arquivo antigo, vale a daqui.
+Uma fonte só, curta e concreta, para qualquer pessoa ou agente (Cláudio, Osvaldo, Departamento de Produtos, Departamento Ecommerce, Helena, Severino) consultar antes de agir. Se uma informação está aqui, ela vale. Se conflita com um arquivo antigo, vale a daqui.
 
 ## Os 11 arquivos
 
@@ -77,7 +77,7 @@ Meta atual: lançar a Coleção GEN (10 objetos) mirando o **Natal de 2026**. Bl
 1. O Claude (Cláudio) é o head da operação.
 2. O catálogo inicial é fechado: os 10 objetos lançam juntos.
 3. Regra de venda: desenvolver → imprimir protótipo → ajustar → imprimir o piloto. **Só vende com o produto final aprovado na mão**, produzindo sob demanda.
-4. Time: Osvaldo, Vicente, Dante, Helena e Severino (Meta AI). Bento, Dora e Nilo saíram.
+4. Time: Osvaldo, Departamento de Produtos, Departamento Ecommerce, Helena e Severino (Meta AI). Bento, Dora e Nilo saíram.
 5. Todo material e o painel seguem a identidade da marca (arquivo 02).
 
 ## Quem é quem
@@ -87,8 +87,8 @@ Meta atual: lançar a Coleção GEN (10 objetos) mirando o **Natal de 2026**. Bl
 | **João** | — | Titular. Dono da marca e do dinheiro | Decisões, gasto, primeiro login, impressão, testes físicos |
 | **Cláudio** | Claude | Head da operação. Lidera e decide | Base de fonte, prioridades, fila de 3 do João, pedidos ao Osvaldo |
 | **Osvaldo** | Instinct | Coordenação. Executa o que o Cláudio pede e coordena o time | Execução, registro, organização de arquivos, chaves no cofre |
-| **Vicente** | Instinct | Produto e modelagem 3D (CDP) | STL, prancha, orientação de impressão, correções |
-| **Dante** | Instinct | Tecnologia e ferramentas (CTO); revisão técnica independente | Painel, loja, domínio, integrações, parecer técnico |
+| **Departamento de Produtos** | Instinct | Produto e modelagem 3D (CDP) | STL, prancha, orientação de impressão, correções |
+| **Departamento Ecommerce** | Instinct | Tecnologia e ferramentas (CTO); revisão técnica independente | Painel, loja, domínio, integrações, parecer técnico |
 | **Helena** | Instinct | Marketing e design | Direção de marca, peças, plano de campanha |
 | **Severino** | Meta AI Plus | Mídia, redes sociais e conteúdo | Legendas, roteiros, posts, vídeos curtos (rascunho para aprovação) |
 
@@ -102,7 +102,7 @@ Meta atual: lançar a Coleção GEN (10 objetos) mirando o **Natal de 2026**. Bl
 | Pedir produto novo | **Só o João** |
 | Aprovar o piloto de um produto | **Só o João** (teste físico na mão) |
 | Publicar, agendar, alterar loja e painel, decidir rotina | Cláudio (a palavra do Cláudio vale como a do João) |
-| Decisão técnica dentro do escopo aprovado | Vicente (produto), Dante (tecnologia) |
+| Decisão técnica dentro do escopo aprovado | Departamento de Produtos (produto), Departamento Ecommerce (tecnologia) |
 
 **Regra das 12 horas:** se algo está parado há mais de 12h esperando o João, ou já foi cobrado dele 2 vezes, o Cláudio decide o que for melhor para a FP e avisa depois. Não vale para gasto, primeiro login, impressão e compra.
 
@@ -115,7 +115,7 @@ CLÁUDIO
   ↓ e-mail (só e-mail, com a palavra mágica no corpo)
 OSVALDO
   ↓ campainha do Escritório ou Slack #batepapo-fp
-VICENTE · DANTE · HELENA · SEVERINO
+DEPARTAMENTO DE PRODUTOS · DEPARTAMENTO ECOMMERCE · HELENA · SEVERINO
 ```
 
 - **João ↔ Cláudio:** chat. O João só recebe o que exige decisão dele, na fila de no máximo 3 itens, com a recomendação na frente.
@@ -367,14 +367,14 @@ Canais e perfis oficiais; nome público de cada produto; hashtag da Coleção GE
 
 # FP · 04 · CATÁLOGO — COLEÇÃO GEN
 
-> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Vicente · Status: VIGENTE
-> Substitui, como resumo de trabalho, as 10 fichas de dossiê e as 8 cópias da "Lista Real" (v01 a v17, 14/11). Revisado pelo Vicente em 15/11. Hash SHA256 completo dos arquivos antigos continua na Lista Real v17 (01_PRODUTOS/00 - Controle). Etapas conforme o arquivo 05.
+> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Departamento de Produtos · Status: VIGENTE
+> Substitui, como resumo de trabalho, as 10 fichas de dossiê e as 8 cópias da "Lista Real" (v01 a v17, 14/11). Revisado pelo Departamento de Produtos em 15/11. Hash SHA256 completo dos arquivos antigos continua na Lista Real v17 (01_PRODUTOS/00 - Controle). Etapas conforme o arquivo 05.
 
 ## Retrato geral (15/11)
 
 - 10 objetos modelados no digital, com prancha técnica e revisão técnica.
 - **Nenhuma peça física na mão.** O porta-canetas [04] foi enviado para impressão externa pelo fornecedor do João em 14/11 11h14; o resultado ainda não chegou. Peso real, medida física, foto real e frete: **não existem ainda**.
-- Etapa: [04] em **E4 (protótipo em impressão externa)**; os outros 9 em **E2 (modelo digital)**. A classificação de etapa é do Cláudio; o Vicente não a verificou.
+- Etapa: [04] em **E4 (protótipo em impressão externa)**; os outros 9 em **E2 (modelo digital)**. A classificação de etapa é do Cláudio; o Departamento de Produtos não a verificou.
 - [01], [02] e [03] mudaram de base em 14/11 à tarde (decisões do João abaixo). Medidas antigas **não** valem para as bases novas.
 - Bloqueio físico: **[05] não cabe** na mesa 180 × 180 da A1 mini. 3 opções esperando o João.
 - Nomes abaixo são **internos**. Nome público de cada produto: pendente.
@@ -382,7 +382,7 @@ Canais e perfis oficiais; nome público de cada produto; hashtag da Coleção GE
 
 ## Tabela-resumo
 
-| Cód. | Objeto (nome interno) | Função extra (Vicente, 15/11) | Base vigente | Peças | Envelope de malha (mm) | Cabe na A1 mini? | Etapa | Decisão / bloqueio aberto |
+| Cód. | Objeto (nome interno) | Função extra (Departamento de Produtos, 15/11) | Base vigente | Peças | Envelope de malha (mm) | Cabe na A1 mini? | Etapa | Decisão / bloqueio aberto |
 |---|---|---|---|---|---|---|---|---|
 | FP-001 | [01] Gaveta de mesa | Bandeja deslizante sob o tampo | **v07-2p afinada** | 2: corpo, bandeja | A medir na v07 (v06 era 178 × 150 × 30) | Sim (v06) | E2 | João decide v07 x v09 em 16/11; bandeja v08 não validada |
 | FP-002 | [02] Livro Caixa Traço | Livro com cavidade interna | **LEVE** (2 peças, sem faixa) | 2: corpo (fundo + miolo), tampa | A medir na LEVE | A confirmar | E2 | Aparência; cupom do fecho |
@@ -403,7 +403,7 @@ Envelopes são medidas de malha (digitais), verificadas em 14/11. Não substitue
 - **Conceito:** bloco fixo sob o tampo da mesa com bandeja deslizante. De fora, peça preta e lisa. Ocultar é objetivo do projeto, ainda não validado.
 - **Base vigente:** v07-2p afinada (João, 14/11 15h13). Arquivos `FP-001-corpo-v07-afinado_v01.stl` e `FP-001-bandeja-v07-afinado_v01.stl`, mais cupons `FP-001-cupomA-modulo-v07` e `FP-001-cupomB-contraparte-v07`.
 - **Não promover:** `FP-001-bandeja-v08-folga` é variante posterior, **não validada** (nova colisão com o corpo v07 relatada; o cupom anterior não representa essa interface). Data de arquivo não define versão.
-- **Histórico:** v06-2p H-SNAP-C (178 × 150 × 30, ~200 g estimado, "passa com ressalvas" do Dante em 13/11) fica preservada.
+- **Histórico:** v06-2p H-SNAP-C (178 × 150 × 30, ~200 g estimado, "passa com ressalvas" do Departamento Ecommerce em 13/11) fica preservada.
 - **Falta:** decisão v07 x v09 do João (16/11), medidas da v07, cupons, material.
 
 ### FP-002 · [02] Livro Caixa Traço
@@ -425,7 +425,7 @@ Envelopes são medidas de malha (digitais), verificadas em 14/11. Não substitue
 - **Conceito:** porta-canetas cilíndrico com tampa de rosca; dois módulos lado a lado. Compartimento extra específico não declarado nas fontes.
 - **Versão:** v1.5 (malha reparada da v1.4). Corpo Ø50 × 150; parede 1,2 mm; útil superior 80 mm. Rosca passo ~4 mm, folga radial 0,55 mm, axial ~1,5 mm.
 - **Material:** PETG, bico 0,6 (registro de 12/11). Cor: pendente.
-- **Revisão:** fechamento de malha CONFORME (Dante rev2, 14/11). Rosqueamento dinâmico e imprimibilidade não validados no digital.
+- **Revisão:** fechamento de malha CONFORME (Departamento Ecommerce rev2, 14/11). Rosqueamento dinâmico e imprimibilidade não validados no digital.
 - **Atenção no fatiador:** overhangs > 45° (corpo 2.542 mm², tampa 1.736 mm²).
 - **Estado:** enviado para impressão externa pelo fornecedor do João em 14/11 11h14. Resultado físico não recebido nem confirmado (15/11 10h06). **Primeira peça física da FP.**
 - **Liberado em vídeo:** boca superior com caneta (sem fundo, mecanismo ou interior).
@@ -462,9 +462,9 @@ Envelopes são medidas de malha (digitais), verificadas em 14/11. Não substitue
 - **Versão:** v0.2. Corpo 57,7 × 28 × 32,3; tampa 9,5 × 28 × 32,3. 4 travas cantilever.
 - **Falta:** volume útil, cupom da retenção.
 
-## Revisão do Dante nos objetos [05], [06] e [10]
+## Revisão do Departamento Ecommerce nos objetos [05], [06] e [10]
 
-Os rodapés internos desses objetos se contradizem ("Revisão Dante PENDENTE" x "CONFEREM"). O Dante não tem registro de revisão entregue. **Vale: revisão pendente de comprovação.** Só vira "confere" com parecer identificado. Rodapé não valida malha, funcionamento, resistência nem fabricação.
+Os rodapés internos desses objetos se contradizem ("Revisão Departamento Ecommerce PENDENTE" x "CONFEREM"). O Departamento Ecommerce não tem registro de revisão entregue. **Vale: revisão pendente de comprovação.** Só vira "confere" com parecer identificado. Rodapé não valida malha, funcionamento, resistência nem fabricação.
 
 ## Regras do catálogo
 
@@ -479,20 +479,20 @@ Os rodapés internos desses objetos se contradizem ("Revisão Dante PENDENTE" x 
 
 # FP · 05 · PROCESSO DE PRODUTO
 
-> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Vicente · Status: VIGENTE
+> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Departamento de Produtos · Status: VIGENTE
 > Substitui P02 (Desenvolvimento), P03 (Produção e qualidade) e P04 (Gestão de produtos) de 14/11. Mantém o conteúdo deles e aplica a decisão do João: peça física antes de papel, venda só com o piloto aprovado na mão, produção sob demanda.
 
 ## O fluxo em 7 etapas
 
 | Etapa | O que acontece | Quem faz | Sai daqui com |
 |---|---|---|---|
-| **E1 Briefing** | João pede o produto. Osvaldo registra. Vicente faz até 3 perguntas, uma por vez. Vicente propõe 2–3 arquiteturas e recomenda a mais simples. | João pede e escolhe; Vicente propõe | Briefing e arquitetura aprovados pelo João |
-| **E2 Modelo digital** | Vicente modela, pesquisa se o assunto é novo, confere medidas (completa se há encaixe, simplificada se é decorativo). Dante faz revisão independente; Vicente corrige; Dante reconfere. | Vicente, Dante | STL + prancha técnica + parecer do Dante |
-| **E3 Cupom físico** | Vicente fatia e simula o cupom do encaixe (snap, rosca, trava) e passa as orientações. João imprime e testa. Material novo sempre começa por cupom. | Vicente prepara; João imprime | Encaixe aprovado na mão |
-| **E4 Protótipo** | Vicente fatia e simula a peça inteira e mostra resultado, configurações e riscos. João aprova a simulação e imprime (na máquina própria ou no fornecedor). | Vicente, João | Protótipo impresso |
-| **E5 Teste e ajuste** | João testa: encaixes e folgas, funcionamento, resistência, estabilidade, montagem, remoção de suporte, acabamento. Problema → Vicente corrige → volta à E4. | João testa; Vicente corrige | Lista de ajustes zerada |
+| **E1 Briefing** | João pede o produto. Osvaldo registra. Departamento de Produtos faz até 3 perguntas, uma por vez. Departamento de Produtos propõe 2–3 arquiteturas e recomenda a mais simples. | João pede e escolhe; Departamento de Produtos propõe | Briefing e arquitetura aprovados pelo João |
+| **E2 Modelo digital** | Departamento de Produtos modela, pesquisa se o assunto é novo, confere medidas (completa se há encaixe, simplificada se é decorativo). Departamento Ecommerce faz revisão independente; Departamento de Produtos corrige; Departamento Ecommerce reconfere. | Departamento de Produtos, Departamento Ecommerce | STL + prancha técnica + parecer do Departamento Ecommerce |
+| **E3 Cupom físico** | Departamento de Produtos fatia e simula o cupom do encaixe (snap, rosca, trava) e passa as orientações. João imprime e testa. Material novo sempre começa por cupom. | Departamento de Produtos prepara; João imprime | Encaixe aprovado na mão |
+| **E4 Protótipo** | Departamento de Produtos fatia e simula a peça inteira e mostra resultado, configurações e riscos. João aprova a simulação e imprime (na máquina própria ou no fornecedor). | Departamento de Produtos, João | Protótipo impresso |
+| **E5 Teste e ajuste** | João testa: encaixes e folgas, funcionamento, resistência, estabilidade, montagem, remoção de suporte, acabamento. Problema → Departamento de Produtos corrige → volta à E4. | João testa; Departamento de Produtos corrige | Lista de ajustes zerada |
 | **E6 Piloto aprovado** | Impressão da versão final. João aprova na mão. Registra peso real, medidas físicas, material, cor, tempo de impressão. | João aprova | **Produto validado** |
-| **E7 Pronto para vender** | Fotos reais, preço, cadastro na loja, texto. Produção sob demanda a partir daqui. | Helena/Severino (foto e texto), Dante (loja), João (preço) | Produto publicado |
+| **E7 Pronto para vender** | Fotos reais, preço, cadastro na loja, texto. Produção sob demanda a partir daqui. | Helena/Severino (foto e texto), Departamento Ecommerce (loja), João (preço) | Produto publicado |
 
 **Parada do João:** E1 (arquitetura), E4 (simulação antes de imprimir) e E6 (aprovação final). Impressão e compra de material sempre com autorização do João.
 
@@ -504,7 +504,7 @@ Nenhum produto vai para loja, conteúdo promocional ou venda antes da **E6**. Re
 
 Todos os itens marcados:
 - [ ] Modelagem concluída
-- [ ] Revisão independente aprovada (Dante)
+- [ ] Revisão independente aprovada (Departamento Ecommerce)
 - [ ] Simulação no fatiador aprovada
 - [ ] Cupom e protótipo impressos
 - [ ] Testes físicos feitos
@@ -513,10 +513,10 @@ Todos os itens marcados:
 
 ## Regras de decisão
 
-1. Vicente tem autonomia técnica dentro do briefing e da arquitetura aprovados.
+1. Departamento de Produtos tem autonomia técnica dentro do briefing e da arquitetura aprovados.
 2. Mudar custo, material, dimensão ou função exige autorização do João.
 3. Mudar arquitetura volta para a E1.
-4. Dante aponta, Vicente corrige.
+4. Departamento Ecommerce aponta, Departamento de Produtos corrige.
 5. Não há limite de revisões nem prazo obrigatório; prioridade definida pelo Cláudio.
 6. João pode interromper ou cancelar qualquer projeto.
 7. Mudança depois da E6 exige autorização do João e registro no arquivo 04.
@@ -524,7 +524,7 @@ Todos os itens marcados:
 
 ## Comunicação
 
-Vicente atualiza nos marcos: início, arquiteturas, fim da modelagem, revisão do Dante, simulação, resultado do teste físico, piloto aprovado. Impedimento ou mudança de premissa: avisar na hora. Não precisa atualizar cada tarefa pequena.
+Departamento de Produtos atualiza nos marcos: início, arquiteturas, fim da modelagem, revisão do Departamento Ecommerce, simulação, resultado do teste físico, piloto aprovado. Impedimento ou mudança de premissa: avisar na hora. Não precisa atualizar cada tarefa pequena.
 
 ## Entrega técnica de cada produto (pasta do objeto no Drive)
 
@@ -551,18 +551,18 @@ Osvaldo confere, organiza e arquiva na pasta oficial do produto.
 2. João imprime a peça com o perfil aprovado (prazo de produção: 1 dia, ver arquivo 06).
 3. Conferência de qualidade contra o piloto aprovado: medida, encaixe, acabamento, função extra.
 4. Embala no padrão da marca (arquivo 02) e envia.
-5. Defeito: reimprime; se repetir, Vicente investiga.
+5. Defeito: reimprime; se repetir, Departamento de Produtos investiga.
 
 ## Impressão por fornecedor externo (herdado do P03; em uso no [04] desde 14/11)
 
-A impressão pode ser feita na máquina própria ou por fornecedor externo; quem escolhe é o João. No fornecedor: João escolhe e contrata o fornecedor; Vicente passa a especificação; fornecedor faz amostra; João aprova a amostra; João define quantidade e autoriza o lote; João confere o recebido e controla o estoque. Nenhum lote sem amostra aprovada.
+A impressão pode ser feita na máquina própria ou por fornecedor externo; quem escolhe é o João. No fornecedor: João escolhe e contrata o fornecedor; Departamento de Produtos passa a especificação; fornecedor faz amostra; João aprova a amostra; João define quantidade e autoriza o lote; João confere o recebido e controla o estoque. Nenhum lote sem amostra aprovada.
 
 
 ---
 
 # FP · 06 · LOJA, VENDAS E ATENDIMENTO
 
-> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Dante (loja) e Cláudio (políticas) · Status: VIGENTE
+> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Departamento Ecommerce (loja) e Cláudio (políticas) · Status: VIGENTE
 > Substitui P06 (Loja) e P07 (Atendimento) de 14/11. Atualizado com a loja Shopify em prévia de 15/11.
 
 ## Situação em 15/11
@@ -684,7 +684,7 @@ Escolha final: João, validada com contador antes da inscrição.
 
 # FP · 08 · TECNOLOGIA E PAINEL
 
-> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Dante · Status: VIGENTE
+> Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Departamento Ecommerce · Status: VIGENTE
 > Consolida os LEIA-ME do Escritório (fonte v02 a v04), do Banco de Desenvolvimento (v01) e os e-mails de 15/11.
 
 ## Painel FP
@@ -705,8 +705,8 @@ Legenda: **PEDIDO** = foi pedido · **RELATO** = alguém disse que fez · **VERI
 
 | Peça | Tipo | Endereço | Estado |
 |---|---|---|---|
-| `escritorio-fp-realtime` | Cloudflare Worker | escritorio-fp-realtime.faixapretabr2026.workers.dev | **VERIFICADO** 15/11 11h22: raiz responde 200 (Dante). Rota `/products` do Banco: **PEDIDO** em 15/11 03h01; `GET /products` sem credencial dá 404, o que não prova se o deploy foi feito |
-| `escritorio-fp-novo` | Cloudflare Pages | escritorio-fp-novo.pages.dev | **RELATO** do Osvaldo: no ar desde 15/11 ~03h55 (fonte v04). Checagem de DNS do Dante às 11h22 foi inconclusiva. Redeploy com menu hambúrguer: **PEDIDO** |
+| `escritorio-fp-realtime` | Cloudflare Worker | escritorio-fp-realtime.faixapretabr2026.workers.dev | **VERIFICADO** 15/11 11h22: raiz responde 200 (Departamento Ecommerce). Rota `/products` do Banco: **PEDIDO** em 15/11 03h01; `GET /products` sem credencial dá 404, o que não prova se o deploy foi feito |
+| `escritorio-fp-novo` | Cloudflare Pages | escritorio-fp-novo.pages.dev | **RELATO** do Osvaldo: no ar desde 15/11 ~03h55 (fonte v04). Checagem de DNS do Departamento Ecommerce às 11h22 foi inconclusiva. Redeploy com menu hambúrguer: **PEDIDO** |
 | `banco-fp` | Cloudflare Pages | banco-fp.pages.dev | **PEDIDO** em 15/11; execução não comprovada |
 
 Conta Cloudflare da FP. Plano gratuito.
@@ -715,7 +715,7 @@ Conta Cloudflare da FP. Plano gratuito.
 
 - Estados: **trabalhando, aguardando, parado, sem-sinal**.
 - Cada pessoa grava o próprio status no Worker com a sua chave pessoal (`KEY_<ID>`), entregue pelo cofre. Existe também uma chave mestra (`EDIT_KEY`).
-- **VERIFICADO:** só o card do Dante (gravação aceita em 15/11 08h51). Chaves dos outros, chave mestra, leitura do Slack e tempo de expiração: **não verificados**.
+- **VERIFICADO:** só o card do Departamento Ecommerce (gravação aceita em 15/11 08h51). Chaves dos outros, chave mestra, leitura do Slack e tempo de expiração: **não verificados**.
 - O quadro só espelha o que cada um publica. Ninguém escreve status no lugar de outro. Post de teste vai marcado TESTE e é apagado depois.
 - O Worker também lê os STATUS publicados no Slack #batepapo-fp (formato com data dd/mm HHhMM, linha PRECISA de até 800 caracteres). "FEITO" com pedido ao João vira **ESPERANDO JOÃO**.
 
@@ -761,7 +761,7 @@ Google Drive e Gmail (conta da FP), Slack (#batepapo-fp), Cloudflare (Worker e P
 # FP · 09 · DECISÕES E PENDÊNCIAS
 
 > Base de fonte da Faixa Preta · v01 · 15/11/2026 · Dono: Cláudio · Status: VIGENTE
-> Arquivo vivo. Toda decisão nova entra aqui com data e quem decidiu. Pendência resolvida sai da lista e vira decisão. Revisado com o time (Osvaldo, Vicente, Dante, Helena) em 15/11.
+> Arquivo vivo. Toda decisão nova entra aqui com data e quem decidiu. Pendência resolvida sai da lista e vira decisão. Revisado com o time (Osvaldo, Departamento de Produtos, Departamento Ecommerce, Helena) em 15/11.
 
 ## Fila do João (máx. 3, recomendação na frente)
 
@@ -793,7 +793,7 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 | 15/11 | Claude (Cláudio) é o head da Faixa Preta | João |
 | 15/11 | Catálogo fechado: os 10 objetos lançam juntos | João |
 | 15/11 | Regra de venda: protótipo → ajuste → piloto aprovado na mão → venda sob demanda | João |
-| 15/11 | Time: Osvaldo, Vicente, Dante, Helena, Severino. Bento, Dora e Nilo saem | João |
+| 15/11 | Time: Osvaldo, Departamento de Produtos, Departamento Ecommerce, Helena, Severino. Bento, Dora e Nilo saem | João |
 | 15/11 | Cláudio ↔ Osvaldo só por e-mail, com palavra mágica; conferência a cada 30 min; pedido com prazo | João |
 | 15/11 08h15 | Cada membro posta o próprio status no Escritório LIVE, com chave pessoal entregue pelo cofre | João |
 | 15/11 08h17 | A palavra do Cláudio vale como a do João (inclui publicação). Gasto, primeiro login, senhas e CPF continuam só com o João. Impressão e compra com o João | João |
@@ -804,7 +804,7 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 | 15/11 | Esta base (arquivos 00 a 10) substitui P01 a P08, a Lista Real e o guia do MEI como referência de trabalho | João (pedido) e Cláudio |
 | 15/11 | Código FP-0NN = número do catálogo [NN] | Cláudio |
 | 15/11 | Processo de produto em 7 etapas (E1 a E7), arquivo 05 | Cláudio |
-| 15/11 | Revisão do Dante em [05], [06] e [10]: vale "pendente de comprovação" até haver parecer identificado | Cláudio (recomendação do Dante) |
+| 15/11 | Revisão do Departamento Ecommerce em [05], [06] e [10]: vale "pendente de comprovação" até haver parecer identificado | Cláudio (recomendação do Departamento Ecommerce) |
 
 ## Pendências por dono
 
@@ -822,13 +822,13 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 - Pasta "Faixa Preta - Documentação oficial" no seu Drive pessoal (3 PDFs + 8 DOCX): passa a ser histórico, já que esta base a substitui.
 - Impressora: confirmar se há A1 mini própria ou se a produção fica no fornecedor.
 
-**Vicente**
+**Departamento de Produtos**
 - Medir e registrar no arquivo 04 as bases novas: [01] v07, [02] LEVE, [03] B150.
 - Definir a função extra de [06], [07], [09] e [10].
 - Volume útil do [10].
 - Receber e avaliar a peça do [04] com o João (E5).
 
-**Dante**
+**Departamento Ecommerce**
 - Comprovar o deploy do Banco de Desenvolvimento (rota /products, Pages banco-fp, redeploy do Escritório).
 - Verificar chaves pessoais, chave mestra, leitura do Slack e expiração do status.
 - Conferir o estado atual do DNS do faixapreta.shop.
@@ -857,7 +857,7 @@ Acompanhando, sem decisão sua agora: chegada da peça do [04] do fornecedor.
 | 4 | Rodapés de [05], [06], [10]: "PENDENTE" x "CONFEREM" | **Resolvido:** vale "pendente de comprovação" |
 | 5 | P05 a P08 e a Helena citam publicação reservada ao titular | **Superado** pela regra de 15/11 08h17: a palavra do Cláudio vale como a do João, inclusive para publicar. Gasto continua só com o João |
 | 6 | P03 assume só fabricação por terceiros | Arquivo 05: máquina própria ou fornecedor, escolha do João |
-| 7 | P04 cita "lista real v19"; o último arquivo no Drive é a v17; o Vicente cita "pacote v21" | Vale esta base. Listas não serão mais reemitidas |
+| 7 | P04 cita "lista real v19"; o último arquivo no Drive é a v17; o Departamento de Produtos cita "pacote v21" | Vale esta base. Listas não serão mais reemitidas |
 | 8 | Manual chama o vaso de "FP08"; no catálogo, FP-008 é o Powerbank | Vale o arquivo 04 (vaso = FP-003) |
 | 9 | Manual mostra a gaveta com 150 × 150 × 20 mm | Imagem conceitual. Vale o arquivo 04 |
 | 10 | Autores antigos (Bento, Dora, Nilo) assinam arquivos | Saíram do time; arquivos ficam como histórico |

@@ -4,7 +4,7 @@ Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se fo
 
 ## João
 - [ ] Imprimir o cupom do porta-canetas [04] (primeira peça física). Prazo: em aberto.
-- [ ] Decidir os 7 itens do /DECIDIR do Dante: domínio faixapreta.shop (titularidade e autenticação na Hostinger), enquadramento fiscal, estrutura mínima da primeira venda, cadastro no Mercado Livre (PF x PJ). Prazo: em aberto.
+- [ ] Decidir os 7 itens do /DECIDIR do Departamento Ecommerce: domínio faixapreta.shop (titularidade e autenticação na Hostinger), enquadramento fiscal, estrutura mínima da primeira venda, cadastro no Mercado Livre (PF x PJ). Prazo: em aberto.
 - [ ] Enviar foto por card no Banco de Desenvolvimento (Osvaldo sobe uma por card). Prazo: em aberto.
 
 ## Departamento de Produtos

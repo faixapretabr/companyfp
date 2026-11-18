@@ -23,8 +23,8 @@ Ferramentas de IA da equipe:
 |---|---|---|
 | **Cláudio** | Head da operação. Lidera, decide, faz a conferência final das entregas e o deploy direto no Cloudflare. | Claude |
 | **Osvaldo** | Coordena o time de agentes independentes. Faz a checagem diária de Drive, Gmail e Worker (somente leitura), cobra prazos da equipe, organiza o Drive sem apagar nada e envia um resumo diário de no máximo 10 linhas. | Instinct (ilimitado) |
-| **Vicente** | Produtos e modelagem. | Agente da equipe |
-| **Dante** | Tecnologia e ferramentas. | Agente da equipe |
+| **Departamento de Produtos** | Produtos e modelagem. | Agente da equipe |
+| **Departamento Ecommerce** | Tecnologia e ferramentas. | Agente da equipe |
 | **Helena** | Marketing e design. | Agente da equipe |
 | **Severino** | Produção de mídia, redes sociais e conteúdo. | Meta AI |
 
@@ -52,7 +52,7 @@ O Cláudio lê só o resumo e a fila, não os arquivos inteiros. Isso economiza 
 ## 3. Fluxo de comunicação
 
 ```
-João → Cláudio (chat) → Osvaldo (e-mail) → Vicente / Dante / Helena / Severino (campainha ou Slack)
+João → Cláudio (chat) → Osvaldo (e-mail) → Departamento de Produtos / Departamento Ecommerce / Helena / Severino (campainha ou Slack)
 ```
 
 Regras:
