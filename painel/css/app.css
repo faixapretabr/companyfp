@@ -100,22 +100,13 @@ a.row:active{background:var(--line)}
 .rules b{font-weight:500}
 
 /* escritório */
-.stage{border:1px solid var(--fg);background:var(--surface);padding:var(--s2)}
-.stage svg{display:block;width:100%;height:auto;shape-rendering:crispEdges}
-.stage polygon,.stage rect{stroke:var(--fg);stroke-width:1}
-.stage .wa{fill:var(--surface)}.stage .wb,.stage .t0{fill:var(--bg)}.stage .t1{fill:var(--tile)}
-.stage .t0,.stage .t1{stroke:var(--line)}
-.stage .top{fill:var(--surface)}.stage .l{fill:var(--fg)}.stage .r{fill:var(--side)}
-.stage text{font:700 8px var(--d);text-transform:uppercase;fill:var(--fg);paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.dep{margin-top:var(--s4)}
 .ag{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
 .ag b{font:700 1rem/1.1 var(--d);text-transform:uppercase}
 .st{font:500 .625rem var(--b);letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:var(--s2)}
 .dot{width:10px;height:10px;border:1px solid var(--fg)}
 [data-st=trabalhando] .dot{background:var(--fg)}
 [data-st=aguardando] .dot{background:linear-gradient(90deg,var(--fg) 50%,transparent 50%)}
-.stage [data-st=trabalhando]{fill:var(--fg)}
-.stage [data-st=sem-sinal],.stage [data-st=parado]{fill:var(--bg)}
-.stage [data-st=aguardando]{fill:var(--side)}
 
 /* avisos: offline e nova versão */
 .note{position:fixed;left:var(--s4);right:var(--s4);bottom:calc(var(--s4) + env(safe-area-inset-bottom,0px));z-index:50;max-width:calc(var(--w) - 2 * var(--s4));margin:0 auto;
@@ -166,7 +157,6 @@ body.open .bn{display:none}
 .btn[aria-label]{min-width:var(--tap);font-size:1.1rem}
 .btn:hover{background:#000}
 .drw a span{opacity:.9}
-.stage .wa{fill:var(--surface)}
 
 [hidden]{display:none!important}
 
