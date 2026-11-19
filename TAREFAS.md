@@ -1,6 +1,6 @@
 # Tarefas e pendências
 
-Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se for decisão, vai ao histórico de `DECISOES.md`.
+Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se for decisão, vai ao Histórico de decisões, no fim deste arquivo.
 
 ## João
 - [ ] Imprimir o cupom do porta-canetas [04] (primeira peça física). Prazo: em aberto.
@@ -25,3 +25,12 @@ Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se fo
 
 ## Auditoria
 Risco fiscal e de marketplace: "a verificar", não parecer. Limite: Slack e painéis da Nuvemshop, Hostinger e Bling não foram vistos.
+
+## Histórico de decisões
+| Data | Decisão | Quem |
+|---|---|---|
+| 19/11/2026 | Modelo AI-first: o time opera sozinho; João aprova a ideia, aprova o PILOTO na mão, define o gasto e despacha o pedido (`docs/modelo-operacional-ai-first.md`) | João |
+| 19/11/2026 | Teto de anúncio: R$ 300/semana, todas as redes somadas; o M03 divide pelo resultado | João |
+| 19/11/2026 | Postar nas redes e anunciar dentro da marca e do teto: sem OK a cada post | João |
+| 19/11/2026 | Lançamento objeto a objeto, começando pelo GEN04 (porta-canetas). Substitui "os 10 lançam juntos" (15/11/2026) | João |
+| 19/11/2026 | `DECISOES.md` excluído; o histórico de decisões fica aqui | João |

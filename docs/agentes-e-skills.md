@@ -92,7 +92,7 @@ Missão do replicador-3d: o objeto mais leve possível, porém resistente, com q
 
 - Antes de qualquer material visual, ler a identidade da marca na pasta 00_MARCA do Drive (FaixaPreta).
 - Produto só vai à venda com o piloto aprovado na mão. Não existe "versão modelo": a regra é desenvolver, imprimir o protótipo, ajustar, imprimir o piloto e aprovar. A produção é sob demanda.
-- O catálogo inicial é fechado: os 10 objetos (FP-001 a FP-010) lançam juntos.
+- Lançamento objeto a objeto (GEN01 a GEN10), começando pelo GEN04: cada um vai ao ar quando o seu piloto for aprovado (João, 19/11/2026).
 - O painel e os materiais seguem o manual de marca.
 - Antes de mexer na loja Shopify, checar o plano e avisar que o trial limita vendas.
 - Só planos gratuitos. Nenhum upgrade pago sem decisão do João.

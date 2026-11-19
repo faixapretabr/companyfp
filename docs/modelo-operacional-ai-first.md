@@ -24,7 +24,7 @@ Decisão do João em 19/11/2026: a FP opera sozinha e por iniciativa própria. O
 - Peça perfeita na primeira impressão não é garantida. A meta é que o João só elogie; a regra é que o P05 registra a falha e o ciclo volta à etapa 1 sem que o João precise explicar.
 - Viral e resultado de anúncio não se prometem. O que se garante é teste contínuo de criativo e corte rápido do que não vende, com relatório semanal.
 
-## Regras que precisam mudar para isso valer (PENDENTE: OK do João)
-- companyfp e fabrica3d: "falar com terceiros em nome da FP: OK do João" passa a valer só para negócio e contrato. Postar e anunciar dentro da marca fica liberado.
-- fpshop: "os 10 publicam juntos" conflita com lançar objeto a objeto.
-- Referências ao `DECISOES.md` excluído.
+## Regras ajustadas (OK do João em 19/11/2026)
+- companyfp e fabrica3d: OK do João só para gasto fora do teto, negócio e contrato com terceiros. Postar e anunciar dentro da marca e do teto é livre.
+- fpshop: lançamento objeto a objeto, começando pelo GEN04 (antes: os 10 juntos).
+- `DECISOES.md` excluído: o histórico de decisões fica no `TAREFAS.md`.

@@ -1,7 +1,7 @@
 # Faixa Preta: contexto e combinados
 
 Fonte principal da operação. Chat, Claude Code e celular devem ler este arquivo primeiro.
-Em caso de conflito com outro documento, vale o que está aqui, em `DECISOES.md` e em `TAREFAS.md`.
+Em caso de conflito com outro documento, vale o que está aqui e em `TAREFAS.md`.
 
 ## Quem somos
 - **João**: titular da Faixa Preta (FP). Decide gasto e primeiro login.
@@ -41,6 +41,7 @@ Em caso de conflito com outro documento, vale o que está aqui, em `DECISOES.md`
 - Só **gasto** e **primeiro login** ficam com o João. A palavra do Cláudio vale como a do João pro resto, inclusive publicação.
 - Se algo está pendente há mais de 12h, ou já foi cobrado do João 2 vezes, o Cláudio decide o que for melhor pra FP.
 - Impressão e compra só com autorização do João.
+- Postar nas redes e anunciar dentro da marca e do teto de R$ 300/semana (todas as redes somadas): livre, sem OK a cada post (João, 19/11/2026; ver `docs/modelo-operacional-ai-first.md`).
 
 ## Regras de execução
 - Antes de qualquer busca, usar grep para localizar o que for necessário.
