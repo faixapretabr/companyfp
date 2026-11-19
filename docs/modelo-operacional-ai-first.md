@@ -10,13 +10,13 @@ Decisão do João em 19/11/2026: a FP opera sozinha e por iniciativa própria. O
 | 1 | Desenvolver | P01 a P04: briefing, modelo, ficha, custo, arquivo fatiado | Nenhum |
 | 2 | Imprimir e aprovar | P05 entrega o arquivo pronto e a checklist de inspeção | Imprime, olha e aprova o PILOTO. Faz as fotos e vídeos pelo roteiro (cerca de 5 min) |
 | 3 | Vitrine | M02 edita fotos e vídeos, E02 cadastra, E05 confere, Cláudio publica | Nenhum |
-| 4 | Anúncios | M03 cria, publica e otimiza as campanhas | Define o teto mensal uma vez |
+| 4 | Anúncios | M03 cria, publica e otimiza as campanhas | Definiu o teto: R$ 300/semana |
 | 5 | Redes sociais | M02 e Severino produzem e postam pelo calendário | Nenhum |
 | 6 | Venda | Shopify, checkout e e-mails (E01, M04, O01) | Nenhum |
 | 7 | Pedido | O02 avisa, confere o pagamento e gera a etiqueta | Imprime, embala e envia |
 
 ## O que continua com o João
-- **Gasto**: teto mensal de anúncio. Dentro do teto, o M03 decide sozinho. Valor: PENDENTE.
+- **Gasto**: teto de anúncio de R$ 300 por semana, somando todas as redes (João, 19/11/2026; cerca de R$ 1.300 por mês). Dentro do teto, o M03 decide sozinho como dividir entre as redes. O gasto só começa quando houver produto publicado na loja. Passar do teto: só com o João.
 - **Primeiro login**: criar uma vez cada conta (Meta Business, TikTok, Mercado Livre etc.) e ligar ao time.
 - **Peça na mão**: o PILOTO é aprovado fisicamente. Foto de produto é foto da peça real; render só entra como apoio e marcado como render.
 
