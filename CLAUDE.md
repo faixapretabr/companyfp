@@ -18,8 +18,7 @@ Em caso de conflito com outro documento, vale o que está aqui, em `DECISOES.md`
 - Por fora: preto, fosco, simples, sem logo grande. Não pode parecer gadget, produto de segurança nem pegadinha.
 - Três princípios: aparência familiar, construção precisa, função extra sem anúncio. Quem quebra algum volta pra prancheta.
 - Identidade visual está no Drive. Todo material e painel segue ela.
-- Coleção 05 (Utilitária): 10 objetos, de [01] a [10]. O porta-canetas [04] é o mais pronto.
-- Ferramentas de IA: Claude (head), Instinct beta (Departamento Gestão) e Meta AI Plus (Severino). Instinct e Meta são auxiliares quando o Cláudio pedir.
+- GEN: 10 objetos, de [01] a [10]. O porta-canetas [04] é o mais pronto.
 
 ## Time e papéis
 - **Departamento Gestão** (CMO/coordenação): coordena o time de agentes independentes e executa os pedidos do Cláudio. Só se comunica por e-mail.
