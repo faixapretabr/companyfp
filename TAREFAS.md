@@ -3,7 +3,7 @@
 Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se for decisão, vai ao Histórico de decisões, no fim deste arquivo.
 
 ## João
-- [ ] Mandar os dados do GEN04 (porta-canetas): altura, diâmetro, peso, gramas de filamento e tempo de impressão. Destrava o preço. Prazo: 20/11/2026.
+- [ ] GEN04 em stand by. Quando liberar: mandar altura, diâmetro, peso, gramas de filamento e tempo de impressão. Prazo: a definir pelo João.
 - [ ] Decidir os 7 itens do /DECIDIR do Departamento Ecommerce: domínio faixapreta.shop (titularidade e autenticação na Hostinger), enquadramento fiscal, estrutura mínima da primeira venda, cadastro no Mercado Livre (PF x PJ). Prazo: em aberto.
 - [ ] Enviar foto por card no Banco de Desenvolvimento (Departamento Gestão sobe uma por card). Prazo: em aberto.
 
@@ -37,3 +37,4 @@ Risco fiscal e de marketplace: "a verificar", não parecer. Limite: Slack e pain
 | 19/11/2026 | Cortadas 7 regras: OK por mais de um arquivo, autorização de impressão e compra, checkpoint do briefing, E03 e E04 desligados, merge pelo João (agora é o Cláudio), preço só do João (agora o Cláudio define pela `custo-preco` e o João pode vetar) e relé obrigatório do Departamento Gestão | João |
 | 19/11/2026 | Revenda de produto de terceiros: fora do escopo por enquanto, avaliada caso a caso com OK do João | João |
 | 19/11/2026 | PILOTO do GEN04 (porta-canetas) aprovado na mão. Fotos: M02 limpa e trata as dos vídeos e gera versões de estúdio a partir da peça real | João |
+| 19/11/2026 | GEN04 em stand by: nada novo (cadastro, preço, anúncio) até o João liberar. Mídia e PILOTO ficam guardados | João |
