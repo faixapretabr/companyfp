@@ -11,9 +11,9 @@ Quadro único. Cada item tem dono e prazo. Item concluído sai da lista e, se fo
 - [ ] Decisão de produto. Prazo previsto: 16/11/2026. **Vencido**, status cobrado por e-mail em 18/11/2026.
 
 ## Outros
-- [ ] Verificação de vendedor no TikTok Shop. Dono: a confirmar.
-- [ ] Acesso do João Victor à pasta "Faixa Preta - 10 objetos". Dono: a confirmar.
-- [ ] MEI: ver pasta de referência. Dono: a confirmar.
+- [ ] Verificação de vendedor no TikTok Shop. Dono: João (primeiro login).
+- [ ] Acesso do João Victor à pasta "Faixa Preta - 10 objetos". Dono: Cláudio.
+- [ ] MEI: ver pasta de referência. Dono: O04.
 - [ ] Departamento Gestão enxugar as 9 rotinas agendadas. Dono: Departamento Gestão.
 
 ## Em aberto sem resposta
@@ -34,3 +34,4 @@ Risco fiscal e de marketplace: "a verificar", não parecer. Limite: Slack e pain
 | 19/11/2026 | Postar nas redes e anunciar dentro da marca e do teto: sem OK a cada post | João |
 | 19/11/2026 | Lançamento objeto a objeto, começando pelo GEN04 (porta-canetas). Substitui "os 10 lançam juntos" (15/11/2026) | João |
 | 19/11/2026 | `DECISOES.md` excluído; o histórico de decisões fica aqui | João |
+| 19/11/2026 | Cortadas 7 regras: OK por mais de um arquivo, autorização de impressão e compra, checkpoint do briefing, E03 e E04 desligados, merge pelo João (agora é o Cláudio), preço só do João (agora o Cláudio define pela `custo-preco` e o João pode vetar) e relé obrigatório do Departamento Gestão | João |

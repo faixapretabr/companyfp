@@ -21,7 +21,7 @@ Em caso de conflito com outro documento, vale o que está aqui e em `TAREFAS.md`
 - GEN: 10 objetos, de [01] a [10]. O porta-canetas [04] é o mais pronto.
 
 ## Time e papéis
-- **Departamento Gestão** (CMO/coordenação): coordena o time de agentes independentes e executa os pedidos do Cláudio. Só se comunica por e-mail.
+- **Departamento Gestão** (CMO/coordenação): coordena o time de agentes independentes e apoio opcional do Cláudio, por e-mail.
 - **Departamento de Produtos** (P01): produtos e modelagem. Não é pessoa; contato por e-mail.
 - **Departamento Ecommerce** (CTO): tecnologia e ferramentas.
 - **Departamento Marketing**: marketing e design.
@@ -29,24 +29,19 @@ Em caso de conflito com outro documento, vale o que está aqui e em `TAREFAS.md`
 - Detalhes de agentes e skills: `docs/agentes-e-skills.md`.
 
 ## Fluxo de comunicação
-- João → Cláudio (chat) → Departamento Gestão (só por e-mail) → Produtos, Departamento Ecommerce, Departamento Marketing e Severino (campainha do Escritório ou Slack #batepapo-fp).
-- O e-mail do Departamento Gestão exige a palavra de acesso combinada. Ela não fica neste repositório.
+- João → Cláudio (chat) → agentes e departamentos, acionados direto pelo Cláudio (Slack #batepapo-fp ou campainha do Escritório quando for o caso). O Departamento Gestão por e-mail é opcional; se usado, vale a palavra de acesso combinada, que não fica neste repositório.
 - Contatos por departamento (e-mail):
   - Produtos: sxj2ii@mail.instinct.com
   - E-commerce: p2kgeh@mail.instinct.com
   - Gestão: na0fhk@mail.instinct.com
-- Cláudio confere a caixa de entrada a cada 30 min.
-- Quando o Departamento Gestão executa uma tarefa, o e-mail traz um horário limite. O prazo padrão é de 15 minutos. Se ele não terminar, responde antes explicando e pedindo novo prazo.
 - **Nunca** mandar senha ou chave por e-mail ou Slack. Chaves ficam no cofre.
 - Só **gasto** e **primeiro login** ficam com o João. A palavra do Cláudio vale como a do João pro resto, inclusive publicação.
 - Se algo está pendente há mais de 12h, ou já foi cobrado do João 2 vezes, o Cláudio decide o que for melhor pra FP.
-- Impressão e compra só com autorização do João.
 - Postar nas redes e anunciar dentro da marca e do teto de R$ 300/semana (todas as redes somadas): livre, sem OK a cada post (João, 19/11/2026; ver `docs/modelo-operacional-ai-first.md`).
 
 ## Regras de execução
 - Antes de qualquer busca, usar grep para localizar o que for necessário.
-- Toda mudança de arquivo entra por commit neste repositório.
-- Mudança em mais de um arquivo: pedir OK ao João antes.
+- Toda mudança de arquivo entra por commit neste repositório. O Cláudio faz o merge no `main` depois de conferir.
 
 ## Regra de venda
 Desenvolver, imprimir protótipo, ajustar, imprimir a versão PILOTO. Só vende com o produto final aprovado na mão, produzindo sob demanda.

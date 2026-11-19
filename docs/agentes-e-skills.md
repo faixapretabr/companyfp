@@ -52,7 +52,7 @@ O Cláudio lê só o resumo e a fila, não os arquivos inteiros. Isso economiza 
 ## 3. Fluxo de comunicação
 
 ```
-João → Cláudio (chat) → Departamento Gestão (e-mail) → Departamento de Produtos / Departamento Ecommerce / Departamento Marketing / Severino (campainha ou Slack)
+João → Cláudio (chat) → agentes e departamentos, acionados direto (Slack #batepapo-fp ou campainha). Departamento Gestão por e-mail é opcional.
 ```
 
 Regras:
