@@ -139,7 +139,7 @@ Requisitos: mobile first, responsivo, minimalista, fiel ao manual de marca, layo
 
 ## 8. Produtos
 
-Os 10 objetos (FP-001 a FP-010) estão cadastrados na Shopify como rascunho de teste, sem imagens, sem publicação e com preço sugerido só para teste.
+Os 10 objetos (GEN01 a GEN10; renomeados de FP-00X em 19/11/2026) estão cadastrados na Shopify como rascunho de teste, sem imagens, sem publicação e com preço sugerido só para teste.
 
 | Código | Preço de teste (BRL) |
 |---|---|

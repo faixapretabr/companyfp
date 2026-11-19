@@ -49,7 +49,7 @@ Em caso de conflito com outro documento, vale o que está aqui e em `TAREFAS.md`
 - Mudança em mais de um arquivo: pedir OK ao João antes.
 
 ## Regra de venda
-Desenvolver, imprimir protótipo, ajustar, imprimir a versão modelo. Só vende com o produto final aprovado na mão, produzindo sob demanda.
+Desenvolver, imprimir protótipo, ajustar, imprimir a versão PILOTO. Só vende com o produto final aprovado na mão, produzindo sob demanda.
 
 ## Painel FP
 - Central com 5 blocos: Escritório LIVE, Gerência, Banco de Desenvolvimento, Tarefas e Ouvidoria.
