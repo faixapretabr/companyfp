@@ -29,4 +29,4 @@ Peso (g), tempo (h), material, preço do rolo (R$/kg), tarifa de energia (R$/kWh
 - Peso e frete só valem com peça física pesada na balança.
 
 ## Limite
-Preço final e qualquer gasto são do João. Aqui é recomendação, não decisão. Regime fiscal não é parecer: "a verificar".
+O Cláudio define o preço por esta skill (João, 19/11/2026) e o João pode vetar. Gasto fora do teto é do João. Regime fiscal não é parecer: "a verificar".
