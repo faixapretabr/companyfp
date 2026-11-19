@@ -35,3 +35,4 @@ Risco fiscal e de marketplace: "a verificar", não parecer. Limite: Slack e pain
 | 19/11/2026 | Lançamento objeto a objeto, começando pelo GEN04 (porta-canetas). Substitui "os 10 lançam juntos" (15/11/2026) | João |
 | 19/11/2026 | `DECISOES.md` excluído; o histórico de decisões fica aqui | João |
 | 19/11/2026 | Cortadas 7 regras: OK por mais de um arquivo, autorização de impressão e compra, checkpoint do briefing, E03 e E04 desligados, merge pelo João (agora é o Cláudio), preço só do João (agora o Cláudio define pela `custo-preco` e o João pode vetar) e relé obrigatório do Departamento Gestão | João |
+| 19/11/2026 | Revenda de produto de terceiros: fora do escopo por enquanto, avaliada caso a caso com OK do João | João |
